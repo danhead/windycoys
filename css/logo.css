@@ -1,0 +1,28 @@
+/** @define Logo */
+
+.Logo {
+  display: flex;
+  font-size: 0;
+  justify-content: center;
+}
+
+.Logo-image {
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.5));
+  max-width: 360px;
+  transition: filter var(--transitionMd) ease-in;
+}
+
+.Logo-link:focus .Logo-image {
+  filter: drop-shadow(6px 4px 4px var(--colorLightBlue));
+}
+
+@media (--viewportLg) {
+  .Logo {
+    grid-column: span 2;
+    justify-content: left;
+  }
+
+  .Logo-image {
+    max-width: 224px;
+  }
+}

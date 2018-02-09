@@ -1,0 +1,38 @@
+/*!
+Theme Name: WindyCOYS
+Theme URI: https://danielhead.com
+Author: Dan Head
+Author URI: https://danielhead.com
+Description: Theme for windycoys.com
+Version: 2.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+@import "normalize.css";
+@import "base";
+@import "grid";
+@import "logo";
+@import "article";
+@import "metadata";
+@import "footer";
+@import "icon";
+
+:root {
+  --colorPrimaryBlue: #201f42;
+  --colorNearBlack: #333;
+  --colorGrey: #828282;
+  --colorLightGrey: #e0e0e0;
+  --colorFacebook: #3e5a98;
+  --colorTwitter: #1da1f2;
+  --colorLightBlue: #1b8eff;
+  --spaceSm: 10px;
+  --spaceMd: 30px;
+  --spaceLg: 60px;
+  --transitionMd: 300ms;
+  --headingFontFamily: 'Raleway', sans-serif;
+  --bodyFontFamily: 'Open Sans', sans-serif;
+}
+
+@custom-media --viewportMd (min-width: 640px);
+@custom-media --viewportLg (min-width: 960px);

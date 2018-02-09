@@ -1,0 +1,40 @@
+{
+  "name": "windycoys",
+  "version": "0.1.0",
+  "description": "Wordpress theme for windycoys.com",
+  "scripts": {
+    "css": "run-s css:*",
+    "css:compile": "postcss -o theme/style.css css/index.css",
+    "css:lint": "stylelint --config .stylelintrc \"css/**/*.css\"",
+    "serve": "browser-sync start --config .browser-sync.js",
+    "start": "run-p watch serve",
+    "watch": "npm-watch"
+  },
+  "author": "Dan Head <me@danielhead.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "npm-run-all": "^4.1.2",
+    "npm-watch": "^0.3.0",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^18.0.0",
+    "stylelint-selector-bem-pattern": "^2.0.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^7.2.5",
+    "cssnano": "^3.10.0",
+    "normalize.css": "^7.0.0",
+    "postcss-cli": "^4.1.1",
+    "postcss-custom-media": "^6.0.0",
+    "postcss-custom-properties": "^6.2.0",
+    "postcss-import": "^11.0.0"
+  },
+  "watch": {
+    "css": {
+      "patterns": [
+        "css"
+      ],
+      "extensions": "css"
+    }
+  }
+}

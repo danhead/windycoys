@@ -1,0 +1,15 @@
+web:
+  image: wordpress
+  links:
+    - mysql
+  environment:
+    - WORDPRESS_DB_PASSWORD=myPass
+  volumes:
+    - ./theme:/var/www/html/wp-content/themes/windycoys
+  ports:
+    - "80:80"
+mysql:
+  image: tutum/mysql
+  environment:
+    - MYSQL_PASS=myPass
+    - MYSQL_DATABASE=wordpress

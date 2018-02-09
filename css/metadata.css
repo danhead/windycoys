@@ -1,0 +1,43 @@
+/** @define Metadata */
+
+.Metadata {
+  border-bottom: 1px solid var(--colorLightGrey);
+  font-size: 14px;
+  margin-bottom: var(--spaceMd);
+}
+
+@media (--viewportLg) {
+  .Metadata {
+    border-bottom: none;
+  }
+}
+
+.Metadata-date {
+  color: var(--colorGrey);
+  display: none;
+  margin-bottom: var(--spaceSm);
+}
+
+@media (--viewportLg) {
+  .Metadata-date {
+    display: block;
+  }
+}
+
+.Metadata-comments,
+.Metadata-categories,
+.Metadata-share {
+  margin-bottom: var(--spaceSm);
+}
+
+.Metadata-categoriesText,
+.Metadata-dateText {
+  line-height: 2.3;
+  margin-left: 10px;
+  text-transform: capitalize;
+  vertical-align: top;
+}
+
+.Metadata-shareLink {
+  margin-right: var(--spaceSm);
+}

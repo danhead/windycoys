@@ -1,0 +1,20 @@
+/** @define Icon */
+
+.Icon {
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+}
+
+.Icon--small {
+  height: 24px;
+  width: 24px;
+}
+
+.Icon--facebook {
+  color: var(--colorFacebook);
+}
+
+.Icon--twitter {
+  color: var(--colorTwitter);
+}

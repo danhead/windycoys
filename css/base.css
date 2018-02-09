@@ -1,0 +1,55 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23e0e0e0' fill-opacity='0.3' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  color: var(--colorNearBlack);
+  font-family: var(--bodyFontFamily);
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+figure,
+table,
+p,
+pre {
+  margin: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  user-select: none;
+  vertical-align: middle;
+}
+
+a,
+a:active,
+a:focus,
+a:hover,
+a:visited {
+  color: var(--colorNearBlack);
+  font-weight: 700;
+  outline: none;
+  text-decoration: none;
+}
