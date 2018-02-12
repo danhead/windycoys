@@ -1,5 +1,5 @@
 module.exports = {
-  proxy: '172.17.0.3',
+  proxy: 'windycoys.local',
   files: [
     'theme/**/*',
   ],
