@@ -1,0 +1,75 @@
+/** @define Menu */
+
+.Menu {
+  background-color: var(--colorDarkBlue);
+  border-radius: 999px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  display: block;
+  height: 64px;
+  left: 5px;
+  position: fixed;
+  top: 5px;
+  transform: translateX(-100px);
+  transition:
+    filter var(--transitionMd) ease-out,
+    opacity var(--transitionMd) ease-out,
+    transform var(--transitionMd) ease-out;
+  width: 64px;
+  will-change: opacity, transition;
+  z-index: 5;
+}
+
+.Menu-line {
+  background-color: #fff;
+  border-radius: 2px;
+  height: 4px;
+  left: 15px;
+  position: absolute;
+  right: 15px;
+  transform: translateY(-50%);
+}
+
+.Menu-line:nth-of-type(1) {
+  top: 33%;
+}
+
+.Menu-line:nth-of-type(2) {
+  top: 50%;
+}
+
+.Menu-line:nth-of-type(3) {
+  top: 66%;
+}
+
+.Menu-text {
+  left: -10000px;
+  position: absolute;
+  top: -10000px;
+}
+
+.Menu--visible {
+  transform: translateX(0);
+}
+
+.Menu--minimized {
+  opacity: 0.5;
+  transform: translateX(-20px) translateY(-20px);
+}
+
+/**
+ * Focus state
+ */
+
+.Menu:focus {
+  outline: none;
+}
+
+/**
+ * Hover state
+ */
+
+.Menu:hover {
+  opacity: 1;
+  filter: brightness(125%);
+}

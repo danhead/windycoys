@@ -1,0 +1,144 @@
+/** @define Nav */
+
+:root {
+  --Nav-transitionDuration: var(--transitionMd);
+}
+
+.Nav::after {
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  content: '';
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  transition:
+    opacity var(--Nav-transitionDuration) ease-out,
+    visibility var(--Nav-transitionDuration) ease-out;
+  top: 0;
+  visibility: hidden;
+  z-index: 5;
+}
+
+.Nav-content {
+  background-color: var(--colorDarkBlue);
+  bottom: 0;
+  box-shadow: 6px 0 4px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  padding: var(--spaceSm);
+  position: fixed;
+  top: 0;
+  transform: translateX(-100%);
+  transition: transform var(--Nav-transitionDuration) ease-out;
+  z-index: 10;
+}
+
+.Nav-title {
+  font-family: var(--headingFontFamily);
+  font-size: 2.5rem;
+  margin-right: 62px;
+}
+
+.Nav-close {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: block;
+  height: 32px;
+  padding: 0;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 32px;
+}
+
+.Nav-closeBar {
+  background-color: #fff;
+  border-radius: 2px;
+  height: 4px;
+  left: 4px;
+  position: absolute;
+  transition: transform var(--Nav-transitionDuration) ease-out var(--Nav-transitionDuration);
+  top: 14px;
+  width: 24px;
+}
+
+.Nav-closeText {
+  left: -10000px;
+  position: absolute;
+  top: -10000px;
+}
+
+/**
+ * Nav List
+ */
+
+.Nav-list {
+  flex-grow: 1;
+  font-family: var(--headingFontFamily);
+  font-size: 1.5rem;
+  margin: var(--spaceMd) 0 0 var(--spaceMd);
+}
+
+.Nav--subList {
+  margin-top: 0;
+}
+
+.Nav--open::after {
+  visibility: visible;
+  opacity: 1;
+}
+
+.Nav-link,
+.Nav-link:active,
+.Nav-link:focus,
+.Nav-link:hover,
+.Nav-link:visited {
+  color: #fff;
+  display: inline-block;
+  margin-bottom: var(--spaceSm);
+  transition: text-shadow var(--Nav-transitionDuration) ease-out;
+}
+
+.Nav-link:focus,
+.Nav-link:hover {
+  text-shadow: 0 0 2px #fff;
+}
+
+/**
+ * Nav Social
+ */
+
+.Nav-social {
+  margin-bottom: var(--spaceSm);
+}
+
+.Nav-socialLink,
+.Nav-socialLink:active,
+.Nav-socialLink:focus,
+.Nav-socialLink:hover,
+.Nav-socialLink:visited {
+  color: #fff;
+  transition: filter var(--Nav-transitionDuration) ease-out;
+}
+
+.Nav-socialLink:focus,
+.Nav-socialLink:hover {
+  filter: drop-shadow(0 0 2px #fff);
+}
+
+.Nav--open .Nav-content {
+  transform: translateX(0);
+}
+
+.Nav--open .Nav-closeBar:nth-of-type(1) {
+  transform: rotate(45deg);
+}
+
+.Nav--open .Nav-closeBar:nth-of-type(2) {
+  transform: rotate(-45deg);
+}
+

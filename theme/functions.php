@@ -1,5 +1,24 @@
 <?php
 
+class Windycoys_Walker extends Walker_Nav_Menu {
+  function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
+    $title = $item->post_title;
+    $uri = get_site_url() . '/' . $item->post_name;
+
+    $output .= '<li class="Nav-listItem">';
+    $output .= '<a class="Nav-link" href="' . $uri .'">';
+    $output .= $title . '</a></li>';
+  }
+}
+
+function windycoys_nav() {
+  wp_nav_menu(array(
+    'container' => 'ul',
+    'menu_class' => 'Nav-list Nav--subList',
+    'walker' => new Windycoys_Walker()
+  ));
+}
+
 function windycoys_the_tags() {
   $tags = get_the_tags();
   if ($tags) {

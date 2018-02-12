@@ -11,6 +11,11 @@
   width: 24px;
 }
 
+.Icon--large {
+  height: 48px;
+  width: 48px;
+}
+
 .Icon--facebook {
   color: var(--colorFacebook);
 }

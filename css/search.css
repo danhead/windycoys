@@ -1,0 +1,28 @@
+/** @define Search */
+
+.Search {
+  display: flex;
+}
+
+.Search-label {
+  left: -10000px;
+  position: absolute;
+  top: -10000px;
+}
+
+.Search-input {
+  border: none;
+  border-radius: 0;
+  color: var(--colorNearBlack);
+  font-family: var(--headingFontFamily);
+  max-width: 200px;
+  padding: 10px;
+}
+
+.Search-submit {
+  background-color: var(--colorLightBlue);
+  border: none;
+  color: #fff;
+  font-family: var(--headingFontFamily);
+  min-width: 100px;
+}

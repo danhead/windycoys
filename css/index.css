@@ -16,20 +16,24 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 @import "article";
 @import "metadata";
 @import "footer";
+@import "menu";
+@import "nav";
+@import "search";
 @import "icon";
 
 :root {
-  --colorPrimaryBlue: #201f42;
   --colorNearBlack: #333;
+  --colorDarkBlue: #201f42;
+  --colorLightBlue: #1b8eff;
   --colorGrey: #828282;
   --colorLightGrey: #e0e0e0;
   --colorFacebook: #3e5a98;
   --colorTwitter: #1da1f2;
-  --colorLightBlue: #1b8eff;
   --spaceSm: 10px;
   --spaceMd: 30px;
   --spaceLg: 60px;
   --transitionMd: 300ms;
+  --transitionSl: 600ms;
   --headingFontFamily: 'Raleway', sans-serif;
   --bodyFontFamily: 'Open Sans', sans-serif;
 }
