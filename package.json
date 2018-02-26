@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "description": "Wordpress theme for windycoys.com",
   "scripts": {
-    "build": "run-p css:compile js:compile",
+    "build": "npm run css:compile && npm run js:compile",
     "css": "run-p css:*",
     "css:compile": "postcss -o theme/style.css css/index.css",
     "css:lint": "stylelint --config .stylelintrc \"css/**/*.css\"",
-    "js": "run-p js:*",
+    "js": "run-s js:*",
     "js:compile": "rollup --config rollup.config.js",
     "js:lint": "eslint js/",
+    "lint": "npm run css:lint && npm run js:lint",
     "serve": "browser-sync start --config .browser-sync.js",
     "start": "run-p watch serve",
     "watch": "npm-watch"
