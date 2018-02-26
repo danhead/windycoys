@@ -1,5 +1,5 @@
 const CLS = {
-  open: 'Nav--open',
+  open: 'is-open',
 };
 
 export default class Nav {

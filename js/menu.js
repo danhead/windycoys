@@ -1,6 +1,6 @@
 const CLS = {
-  visible: 'Menu--visible',
-  minimized: 'Menu--minimized',
+  visible: 'is-visible',
+  minimized: 'is-minimized',
 };
 
 export default class Menu {

@@ -1,12 +1,20 @@
+import Article from './article';
 import Menu from './menu';
 import Nav from './nav';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const menu = new Menu({
+  const site = {};
+  site.menu = new Menu({
     el: document.querySelector('.Menu'),
   });
-  new Nav({
+  site.nav = new Nav({
     el: document.querySelector('.Nav'),
-    menu,
+    menu: site.menu,
   });
+
+  site.articles = [].slice.call(document.querySelectorAll('.Article'))
+    .map((article, index) => new Article({
+      article,
+      metadata: document.querySelectorAll('.Metadata')[index],
+    }));
 });
