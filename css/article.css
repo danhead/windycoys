@@ -14,7 +14,7 @@
 
 @media (--viewportLg) {
   .Article-title {
-    margin-bottom: var(--spaceLg);
+    margin-bottom: var(--spaceMd);
   }
 }
 

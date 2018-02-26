@@ -6,14 +6,15 @@
   grid-gap: var(--spaceSm);
   grid-template-columns: 1fr;
   max-width: 1200px;
-  margin: 0 var(--spaceSm);
+  margin: 0 auto;
+  padding: 0 var(--spaceSm);
 }
 
 @media (--viewportLg) {
   .Grid {
     grid-template-columns: 224px 1fr;
     grid-gap: var(--spaceMd);
-    margin: 0 var(--spaceMd);
+    padding: 0 var(--spaceMd);
   }
 
   .Grid-article {
