@@ -87,7 +87,7 @@
   margin-top: 0;
 }
 
-.Nav--open::after {
+.Nav.is-open::after {
   visibility: visible;
   opacity: 1;
 }
@@ -130,15 +130,15 @@
   filter: drop-shadow(0 0 2px #fff);
 }
 
-.Nav--open .Nav-content {
+.Nav.is-open .Nav-content {
   transform: translateX(0);
 }
 
-.Nav--open .Nav-closeBar:nth-of-type(1) {
+.Nav.is-open .Nav-closeBar:nth-of-type(1) {
   transform: rotate(45deg);
 }
 
-.Nav--open .Nav-closeBar:nth-of-type(2) {
+.Nav.is-open .Nav-closeBar:nth-of-type(2) {
   transform: rotate(-45deg);
 }
 

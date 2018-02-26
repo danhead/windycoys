@@ -48,11 +48,11 @@
   top: -10000px;
 }
 
-.Menu--visible {
+.Menu.is-visible {
   transform: translateX(0);
 }
 
-.Menu--minimized {
+.Menu.is-minimized {
   opacity: 0.5;
   transform: translateX(-20px) translateY(-20px);
 }
