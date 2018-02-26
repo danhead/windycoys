@@ -21,6 +21,12 @@ function windycoys_nav() {
 
 function windycoys_the_tags() {
   $tags = get_the_tags();
+  // Suppress NewsNow tag
+  foreach($tags as $key=>$tag) {
+    if($tag->name === "newsnow") {
+      unset($tags[$key]);
+    }
+  }
   if ($tags) {
     foreach($tags as $key=>$tag) {
       echo '<a class="Metadata-categoriesLink" href="' .
