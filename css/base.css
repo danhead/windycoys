@@ -8,6 +8,7 @@ body {
   color: var(--colorNearBlack);
   font-family: var(--bodyFontFamily);
   font-size: 16px;
+  line-height: 1.5;
 }
 
 *,
