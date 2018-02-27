@@ -1,15 +1,19 @@
-web:
-  image: wordpress
-  links:
-    - mysql
+wordpress:
   environment:
-    - WORDPRESS_DB_PASSWORD=myPass
-  volumes:
-    - ./theme:/var/www/html/wp-content/themes/windycoys
+    - WORDPRESS_DB_HOST=db
+    - WORDPRESS_DB_PASSWORD=password
+    - WORDPRESS_DB_USER=windycoys
+  image: 'wordpress:4.9.4-php5.6-apache'
+  links:
+    - db
   ports:
     - "80:80"
-mysql:
-  image: tutum/mysql
+  volumes:
+    - ./theme:/var/www/html/wp-content/themes/windycoys
+db:
   environment:
-    - MYSQL_PASS=myPass
     - MYSQL_DATABASE=wordpress
+    - MYSQL_PASSWORD=password
+    - MYSQL_ROOT_PASSWORD=password
+    - MYSQL_USER=windycoys
+  image: 'mariadb:10.3.4'
