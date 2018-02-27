@@ -8,8 +8,12 @@
 
 .Article-title {
   font-family: var(--headingFontFamily);
-  color: var(--colorNearBlack);
+  color: var(--colorDarkBlue);
   margin-bottom: var(--spaceSm);
+}
+
+.Article-title a {
+  color: inherit;
 }
 
 @media (--viewportLg) {
