@@ -1,0 +1,11 @@
+/** @define Social */
+
+.Social {
+  position: absolute;
+  right: var(--spaceSm);
+  top: var(--spaceSm);
+}
+
+.Social-link {
+  display: inline-block;
+}

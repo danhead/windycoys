@@ -23,3 +23,7 @@
 .Icon--twitter {
   color: var(--colorTwitter);
 }
+
+.Icon--rss {
+  color: var(--colorRss);
+}

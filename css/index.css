@@ -19,6 +19,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 @import "menu";
 @import "nav";
 @import "search";
+@import "social";
 @import "icon";
 
 :root {
@@ -29,6 +30,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   --colorLightGrey: #e0e0e0;
   --colorFacebook: #3e5a98;
   --colorTwitter: #1da1f2;
+  --colorRss: #ee802f;
   --spaceSm: 10px;
   --spaceMd: 30px;
   --spaceLg: 60px;

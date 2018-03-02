@@ -1,9 +1,11 @@
 <?php get_header() ?>
 <main class="Grid">
-  <?php get_template_part('partials/logo') ?>
-  <?php while ( have_posts() ) : the_post() ?>
+  <section class="Grid-logo">
+    <?php get_template_part('partials/logo') ?>
+  </section>
+  <?php while ( have_posts() ) : the_post(); $index++; ?>
   <section class="Grid-article">
-    <article class="Article">
+    <article class="Article<?php echo ($index === 1 ? ' is-first' : '') ?>">
       <div class="Article-date">
         <svg class="Icon">
           <use href="#icon-calendar"></use>
@@ -26,6 +28,9 @@
     <?php get_template_part('partials/metadata') ?>
   </section>
   <?php endwhile; ?>
+  <section class="Grid-banner">
+    <?php get_template_part('partials/banner') ?>
+  </section>
   <section class="Grid-footer">
     <?php get_template_part('partials/footer') ?>
   </section>

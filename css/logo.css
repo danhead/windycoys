@@ -1,11 +1,5 @@
 /** @define Logo */
 
-.Logo {
-  display: flex;
-  font-size: 0;
-  justify-content: center;
-}
-
 .Logo-image {
   filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.5));
   max-width: 320px;

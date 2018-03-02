@@ -10,11 +10,28 @@
   padding: 0 var(--spaceSm);
 }
 
+.Grid-logo {
+  display: flex;
+  font-size: 0;
+  justify-content: center;
+}
+
+.Grid-banner {
+  display: none;
+  position: relative;
+}
+
 @media (--viewportLg) {
   .Grid {
     grid-template-columns: 224px 1fr;
     grid-gap: var(--spaceMd);
     padding: 0 var(--spaceMd);
+  }
+
+  .Grid-banner {
+    display: block;
+    grid-column-start: 2;
+    grid-row-start: 1;
   }
 
   .Grid-article {
