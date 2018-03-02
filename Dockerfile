@@ -7,6 +7,4 @@ ENV NODE_ENV production
 
 RUN npm install
 
-RUN npm run build
-
-RUN mv theme windycoys
+CMD ["npm", "run", "build"]

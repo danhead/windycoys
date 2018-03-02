@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "Wordpress theme for windycoys.com",
   "scripts": {
-    "build": "npm run css:compile && npm run js:compile",
+    "build": "npm run css:compile && npm run js:compile && npm run copytheme",
+    "copytheme": "copyup theme/** theme/**/* windycoys",
     "css": "run-p css:*",
     "css:compile": "postcss -o theme/style.css css/index.css",
     "css:lint": "stylelint --config .stylelintrc \"css/**/*.css\"",
@@ -33,6 +34,7 @@
     "@babel/core": "^7.0.0-beta.39",
     "@babel/preset-env": "^7.0.0-beta.39",
     "autoprefixer": "^7.2.5",
+    "copyfiles": "^1.2.0",
     "cssnano": "^3.10.0",
     "normalize.css": "^7.0.0",
     "postcss-cli": "^4.1.1",
