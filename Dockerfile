@@ -1,4 +1,4 @@
-FROM node:8.9.4-alpine
+FROM node:9.7.1-alpine
 
 COPY ./ /var/www/html/wp-content/themes
 WORKDIR /var/www/html/wp-content/themes
@@ -7,6 +7,4 @@ ENV NODE_ENV production
 
 RUN npm install
 
-RUN npm run build
-
-RUN mv theme windycoys
+CMD ["sh", "build.sh"]
