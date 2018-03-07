@@ -2,7 +2,7 @@
 
 # Build and copy theme files
 npm run build
-cp -vfr theme windycoys
+cp -vfr theme/* windycoys
 
 # Purge Cloudflair cache
 if [[ -z "${CLOUDFLARE_API_KEY}" ]] || [[ -z "${CLOUDFLARE_EMAIL}" ]] || [[ -z "${CLOUDFLARE_IDENTIFIER}" ]]; then
