@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "description": "Wordpress theme for windycoys.com",
   "scripts": {
-    "build": "npm run css:compile && npm run js:compile && npm run copytheme",
-    "copytheme": "copyup theme/** theme/**/* windycoys",
+    "build": "npm run css:compile && npm run js:compile",
     "css": "run-p css:*",
     "css:compile": "postcss -o theme/style.css css/index.css",
     "css:lint": "stylelint --config .stylelintrc \"css/**/*.css\"",
@@ -30,11 +29,10 @@
     "stylelint-selector-bem-pattern": "^2.0.0"
   },
   "dependencies": {
-    "@babel/cli": "^7.0.0-beta.39",
-    "@babel/core": "^7.0.0-beta.39",
-    "@babel/preset-env": "^7.0.0-beta.39",
+    "@babel/cli": "^7.0.0-beta.40",
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/preset-env": "^7.0.0-beta.40",
     "autoprefixer": "^7.2.5",
-    "copyfiles": "^1.2.0",
     "cssnano": "^3.10.0",
     "normalize.css": "^7.0.0",
     "postcss-cli": "^4.1.1",
@@ -42,7 +40,7 @@
     "postcss-custom-properties": "^6.2.0",
     "postcss-import": "^11.0.0",
     "rollup": "^0.55.5",
-    "rollup-plugin-babel": "^4.0.0-beta.1",
+    "rollup-plugin-babel": "^4.0.0-beta.2",
     "rollup-plugin-uglify": "^3.0.0"
   },
   "watch": {
