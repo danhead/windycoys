@@ -8,5 +8,4 @@ jobs:
       - run: sudo apt install -y rsync
       - run: npm install
       - run: npm run build
-      - run: rsync -avzu --progress -h theme $SSH_USER@$SSH_IP:~/windycoys_theme
-
+      - run: bash deploy.sh
