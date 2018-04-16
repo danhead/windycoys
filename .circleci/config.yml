@@ -1,0 +1,12 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.11.1
+    steps:
+      - checkout
+      - run: sudo apt install -y rsync
+      - run: npm install
+      - run: npm run build
+      - run: rsync -avzu --progress -h theme $SSH_USER@$SSH_IP:~/windycoys_theme
+
