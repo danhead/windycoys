@@ -2,59 +2,76 @@
   "name": "windycoys",
   "version": "0.1.0",
   "description": "Wordpress theme for windycoys.com",
+  "author": "Dan Head <me@danielhead.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danhead/windycoys"
+  },
   "scripts": {
     "build": "npm run css:compile && npm run js:compile",
     "css": "run-p css:*",
     "css:compile": "postcss -o theme/style.css css/index.css",
     "css:lint": "stylelint --config .stylelintrc \"css/**/*.css\"",
+    "jest": "jest",
+    "jest:watch": "jest --watch",
     "js": "run-s js:*",
     "js:compile": "rollup --config rollup.config.js",
     "js:lint": "eslint js/",
-    "lint": "npm run css:lint && npm run js:lint",
     "serve": "browser-sync start --config .browser-sync.js",
     "start": "run-p watch serve",
-    "watch": "npm-watch"
+    "test": "npm run css:lint && npm run js:lint && npm run jest",
+    "watch": "run-p watch:*",
+    "watch:css": "nodemon -q --watch css -e css --exec npm run css",
+    "watch:js": "nodemon -q --watch js -e js --exec npm run js"
   },
-  "author": "Dan Head <me@danielhead.com>",
-  "license": "MIT",
   "devDependencies": {
-    "browser-sync": "^2.23.6",
-    "eslint": "^4.17.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^22.4.3",
+    "browser-sync": "^2.23.7",
+    "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-import": "^2.11.0",
+    "jest": "^22.4.3",
+    "nodemon": "^1.17.3",
     "npm-run-all": "^4.1.2",
-    "npm-watch": "^0.3.0",
     "stylelint": "^8.4.0",
     "stylelint-config-standard": "^18.0.0",
     "stylelint-selector-bem-pattern": "^2.0.0"
   },
   "dependencies": {
-    "@babel/cli": "^7.0.0-beta.40",
-    "@babel/core": "^7.0.0-beta.40",
-    "@babel/preset-env": "^7.0.0-beta.40",
+    "@babel/cli": "^7.0.0-beta.44",
+    "@babel/core": "^7.0.0-beta.44",
+    "@babel/preset-env": "^7.0.0-beta.44",
     "autoprefixer": "^7.2.5",
     "cssnano": "^3.10.0",
-    "normalize.css": "^7.0.0",
+    "normalize.css": "^8.0.0",
+    "postcss-banner": "^3.0.0",
     "postcss-cli": "^4.1.1",
     "postcss-custom-media": "^6.0.0",
     "postcss-custom-properties": "^6.2.0",
     "postcss-import": "^11.0.0",
-    "rollup": "^0.55.5",
-    "rollup-plugin-babel": "^4.0.0-beta.2",
+    "rollup": "^0.58.1",
+    "rollup-plugin-babel": "^4.0.0-beta.4",
     "rollup-plugin-uglify": "^3.0.0"
   },
-  "watch": {
-    "css": {
-      "patterns": [
-        "css"
-      ],
-      "extensions": "css"
-    },
-    "js": {
-      "patterns": [
-        "js"
-      ],
-      "extensions": "js"
-    }
+  "browserslist": [
+    "Chrome >= 58",
+    "Firefox >= 52",
+    "Edge >= 12",
+    "Explorer >= 11",
+    "iOS >= 10",
+    "Safari >= 10",
+    "Android >= 62",
+    "Opera >= 44"
+  ],
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "js/**/*.js"
+    ],
+    "roots": [
+      "js"
+    ]
   }
 }

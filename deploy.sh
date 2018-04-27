@@ -7,7 +7,7 @@ hash rsync 2>/dev/null || { echo >&2 "Error: rsync is not installed. Aborting.";
 
 # Deploy theme with rsync
 rsync -e "ssh -o StrictHostKeyChecking=no" -avzuh --progress \
-  theme $SSH_USER@$SSH_IP:~/windycoys_theme
+  theme/* $SSH_USER@$SSH_IP:~/windycoys_theme
 
 #Test curl is installed and Cloudflare ENV variables are set
 hash curl 2>/dev/null || { echo >&2 "Error: curl is not installed. Aborting."; exit 1; }

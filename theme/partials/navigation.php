@@ -1,4 +1,10 @@
-<nav class="Nav">
+<nav class="Nav" aria-label="Main Navigation">
+  <button class="Menu">
+    <span class="Menu-line"></span>
+    <span class="Menu-line"></span>
+    <span class="Menu-line"></span>
+    <span class="Menu-text">Open menu</span>
+  </button>
   <div class="Nav-content">
     <h2 class="Nav-title">WindyCOYS</h2>
     <ul class="Nav-list">

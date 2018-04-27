@@ -35,6 +35,5 @@
     <?php get_template_part('partials/footer') ?>
   </section>
 </main>
-<?php get_template_part('partials/menu') ?>
-<?php get_template_part('partials/nav') ?>
+<?php get_template_part('partials/navigation') ?>
 <?php get_footer() ?>
