@@ -56,6 +56,7 @@ export default class Navigation {
   }
 
   openNav() {
+    this.lastActiveElement = document.activeElement;
     this.state = 'visible';
     this.menu.hideMenu();
     this.container.classList.add(STATES.open);
@@ -68,5 +69,8 @@ export default class Navigation {
     this.menu.showMenu();
     this.container.classList.remove(STATES.open);
     this.container.setAttribute('aria-hidden', true);
+    if (this.lastActiveElement) {
+      this.lastActiveElement.focus();
+    }
   }
 }

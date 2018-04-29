@@ -126,12 +126,15 @@ describe('Navigation close button', () => {
 describe('Navigation focus behaviour', () => {
   let first;
   let last;
+  let menu;
 
   beforeEach(() => {
-    nav.init();
-    nav.openNav();
+    menu = nav.container.querySelector('.Menu');
     first = nav.container.querySelector('.Nav-link');
     last = nav.container.querySelector('.Nav-close');
+    menu.focus();
+    nav.init();
+    nav.openNav();
   });
 
   it('Should apply focus to .Nav-titleLink when opened', () => {
@@ -154,5 +157,11 @@ describe('Navigation focus behaviour', () => {
     event.keyCode = 9;
     first.dispatchEvent(event);
     expect(document.activeElement).toBe(last);
+  });
+
+  test('Focus is restored to last active element when Navigation is closed', () => {
+    first.focus();
+    nav.closeNav();
+    expect(document.activeElement).toBe(menu);
   });
 });
