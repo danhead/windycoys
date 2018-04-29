@@ -8,7 +8,7 @@
   <div class="Nav-content">
     <h2 class="Nav-title">
       <a class="Nav-titleLink" href="<?php get_site_url() ?>/" aria-label="Navigation title" tabindex="-1">
-        WindyCOYS
+        <?php bloginfo('name') ?>
       </a>
     </h2>
     <ul class="Nav-list" role="menubar">

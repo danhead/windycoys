@@ -12,6 +12,7 @@
 @import "icon";
 
 :root {
+  --colorBlack: #000;
   --colorNearBlack: #333;
   --colorDarkBlue: #201f42;
   --colorLightBlue: #1b8eff;

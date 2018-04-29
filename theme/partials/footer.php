@@ -1,3 +1,3 @@
 <footer class="Footer">
-  <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
+  <p class="Footer-text">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
 </footer>
