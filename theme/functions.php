@@ -5,8 +5,8 @@ class Windycoys_Walker extends Walker_Nav_Menu {
     $title = $item->post_title;
     $uri = get_site_url() . '/' . $item->post_name;
 
-    $output .= '<li class="Nav-listItem">';
-    $output .= '<a class="Nav-link" href="' . $uri .'">';
+    $output .= '<li class="Nav-listItem" role="none">';
+    $output .= '<a class="Nav-link" href="' . $uri .'" role="menuitem">';
     $output .= $title . '</a></li>';
   }
 }

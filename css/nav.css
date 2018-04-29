@@ -42,6 +42,14 @@
   margin-right: 62px;
 }
 
+.Nav-titleLink,
+.Nav-titleLink:active,
+.Nav-titleLink:focus,
+.Nav-titleLink:hover,
+.Nav-titleLink:visited {
+  color: #fff;
+}
+
 .Nav-close {
   background-color: transparent;
   border: none;
@@ -52,7 +60,15 @@
   position: absolute;
   right: 15px;
   top: 15px;
+  transition: filter var(--Nav-transitionDuration) ease-out;
   width: 32px;
+}
+
+.Nav-close:active,
+.Nav-close:focus,
+.Nav-close:hover {
+  filter: drop-shadow(0 0 2px #fff);
+  outline: 0;
 }
 
 .Nav-closeBar {

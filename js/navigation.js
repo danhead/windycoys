@@ -12,19 +12,19 @@ export default class Navigation {
   }
 
   init() {
+    if (!this.state) return false;
     this.container.setAttribute('aria-hidden', true);
-    this.container.querySelector('.Nav-list').setAttribute('role', 'menubar');
-    this.container.querySelectorAll('.Nav-listItem').forEach((item) => {
-      // Override implied listitem role
-      item.setAttribute('role', 'none');
-    });
-    this.container.querySelectorAll('.Nav-link').forEach((link) => {
-      link.setAttribute('role', 'menuitem');
-    });
-    this.attachEvents();
+    this.attachClickEvents();
+    this.attachKeyEvents();
+    return true;
   }
 
-  attachEvents() {
+  attachClickEvents() {
+    this.container.addEventListener('click', (e) => {
+      if (this.container === e.target) {
+        this.closeNav();
+      }
+    });
     this.menu.container.addEventListener('click', () => {
       this.openNav();
     });
@@ -33,11 +33,34 @@ export default class Navigation {
     });
   }
 
+  attachKeyEvents() {
+    const first = this.container.querySelector('.Nav-link');
+    const last = this.container.querySelector('.Nav-close');
+    this.container.addEventListener('keydown', (e) => {
+      if (e.keyCode === 27) {
+        this.closeNav();
+      }
+    });
+    first.addEventListener('keydown', (e) => {
+      if (e.shiftKey && e.keyCode === 9) {
+        e.preventDefault();
+        last.focus();
+      }
+    });
+    last.addEventListener('keydown', (e) => {
+      if (!e.shiftKey && e.keyCode === 9) {
+        e.preventDefault();
+        first.focus();
+      }
+    });
+  }
+
   openNav() {
     this.state = 'visible';
     this.menu.hideMenu();
     this.container.classList.add(STATES.open);
     this.container.setAttribute('aria-hidden', false);
+    this.container.querySelector('.Nav-titleLink').focus();
   }
 
   closeNav() {

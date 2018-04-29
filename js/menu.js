@@ -12,12 +12,14 @@ export default class Menu {
   }
 
   init() {
+    if (!this.state) return false;
     this.container.setAttribute('aria-haspopup', true);
     this.container.setAttribute('aria-expanded', false);
     this.attachEvents();
     setTimeout(() => {
       this.showMenu();
     }, 1000);
+    return true;
   }
 
   attachEvents() {
