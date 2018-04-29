@@ -116,6 +116,10 @@
   display: none;
 }
 
+.Article [class*="wp-caption"] {
+  width: auto !important;
+}
+
 @media (--viewportLg) {
   .Article .twitter-tweet,
   .Article .wp-caption {
