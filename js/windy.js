@@ -9,7 +9,7 @@ const windy = {
 export default function init() {
   document.querySelectorAll('img').forEach((image) => {
     const img = new Image(image);
-    img.fadeIn();
+    img.start();
     windy.images.push(img);
   });
   windy.menu = new Menu({

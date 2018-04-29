@@ -3,16 +3,20 @@ export default class Image {
     this.image = image;
   }
 
-  showImage() {
+  fadeIn() {
     this.image.style.opacity = 1;
   }
 
-  fadeIn() {
+  start() {
     this.image.style.opacity = 0;
-    this.attachLoadedEvent();
+    if (this.image.complete) {
+      this.fadeIn();
+    } else {
+      this.attachLoadedEvent();
+    }
   }
 
   attachLoadedEvent() {
-    this.image.addEventListener('load', () => this.showImage());
+    this.image.addEventListener('load', () => this.fadeIn());
   }
 }
