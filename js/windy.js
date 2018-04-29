@@ -1,9 +1,17 @@
 import Menu from './menu';
 import Navigation from './navigation';
+import Image from './image';
 
-const windy = {};
+const windy = {
+  images: [],
+};
 
 export default function init() {
+  document.querySelectorAll('img').forEach((image) => {
+    const img = new Image(image);
+    img.fadeIn();
+    windy.images.push(img);
+  });
   windy.menu = new Menu({
     container: document.querySelector('.Menu'),
   });
