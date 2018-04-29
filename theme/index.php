@@ -5,7 +5,7 @@
   </section>
   <?php while ( have_posts() ) : the_post(); $index++; ?>
   <section class="Grid-article">
-    <article class="Article<?php echo ($index === 1 ? ' is-first' : '') ?>">
+    <article class="Article">
       <div class="Article-date">
         <svg class="Icon">
           <use href="#icon-calendar"></use>
@@ -24,7 +24,7 @@
       </div>
     </article>
   </section>
-  <section class="Grid-metadata">
+  <section class="Grid-metadata<?php echo ($index === 1 ? ' is-first' : '') ?>">
     <?php get_template_part('partials/metadata') ?>
   </section>
   <?php endwhile; ?>

@@ -24,8 +24,13 @@
 @media (--viewportLg) {
   .Grid {
     grid-template-columns: 224px 1fr;
+    grid-template-rows: 60px 134px;
     grid-gap: var(--spaceMd);
     padding: 0 var(--spaceMd);
+  }
+
+  .Grid-logo {
+    grid-row: span 2;
   }
 
   .Grid-banner {
@@ -36,10 +41,16 @@
 
   .Grid-article {
     grid-column-start: 2;
+    grid-row: span 2;
   }
 
   .Grid-metadata {
     grid-column-start: 1;
+    grid-row: span 2;
+  }
+
+  .Grid-metadata.is-first {
+    grid-row: span 1;
   }
 
   .Grid-footer {

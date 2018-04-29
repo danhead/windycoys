@@ -4,11 +4,6 @@
   .Article {
     border-bottom: 1px solid var(--colorLightGrey);
   }
-
-  /** Pull up first article */
-  .Article.is-first {
-    margin-top: -166px;
-  }
 }
 
 .Article-title {
