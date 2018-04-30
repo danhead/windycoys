@@ -9,7 +9,12 @@
   </div>
   <div class="Metadata-comments">
     <a class="Metadata-commentsLink" href="<?php the_permalink() ?>">
-      <?php comments_number(); ?>
+      <svg class="Icon">
+        <use href="#icon-comments"></use>
+      </svg>
+      <span class="Metadata-commentsText">
+        <?php comments_number(); ?>
+      </span>
     </a>
   </div>
   <div class="Metadata-categories">
