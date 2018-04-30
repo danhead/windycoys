@@ -21,6 +21,7 @@ function windycoys_nav() {
 
 function windycoys_the_tags() {
   $tags = get_the_tags();
+  if (!$tags) return false;
   // Suppress NewsNow tag
   foreach($tags as $key=>$tag) {
     if($tag->name === "newsnow") {
