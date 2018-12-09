@@ -13,10 +13,10 @@ export default function init() {
     windy.images.push(img);
   });
   windy.menu = new Menu({
-    container: document.querySelector('.Menu'),
+    container: document.querySelector('.menu'),
   });
   windy.navigation = new Navigation({
-    container: document.querySelector('.Nav'),
+    container: document.querySelector('.nav'),
     menu: windy.menu,
   });
   windy.menu.init();

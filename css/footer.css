@@ -1,10 +1,8 @@
-/** @define Footer */
-
-.Footer {
+.footer {
   text-align: center;
 }
 
-.Footer-text {
+.footer__text {
   font-size: 14px;
-  margin-bottom: var(--spaceSm);
+  margin-bottom: var(--space-sm);
 }

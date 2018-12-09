@@ -1,10 +1,8 @@
-/** @define Logo */
-
-.Logo {
+.logo {
   width: 100%;
 }
 
-.Logo-link {
+.logo__link {
   display: block;
   margin: 0 auto;
   max-width: 320px;
@@ -12,8 +10,8 @@
   position: relative;
 }
 
-.Logo-link::before {
-  background-image: var(--windySVG);
+.logo__link:before {
+  background-image: var(--windy-svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 92%;
@@ -23,7 +21,7 @@
   width: 100%;
 }
 
-.Logo-image {
+.logo__image {
   bottom: 0;
   display: block;
   filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.5));
@@ -33,24 +31,11 @@
   right: 0;
   top: 0;
   transition:
-    filter var(--transitionMd) ease-in,
-    opacity var(--transitionMd) ease-in;
+    filter var(--transition-md) ease-in,
+    opacity var(--transition-md) ease-in;
   width: 100%;
 }
 
-.Logo-link:focus .Logo-image {
-  filter: drop-shadow(6px 4px 4px var(--colorLightBlue));
+.logo__link:focus .logo__image {
+  filter: drop-shadow(6px 4px 4px var(--color-light-blue));
 }
-
-/*
-@media (--viewportLg) {
-  .Logo {
-    grid-column: span 2;
-    justify-content: left;
-  }
-
-  .Logo-image {
-    max-width: 224px;
-  }
-}
-*/

@@ -28,14 +28,14 @@ export default class Navigation {
     this.menu.container.addEventListener('click', () => {
       this.openNav();
     });
-    this.container.querySelector('.Nav-close').addEventListener('click', () => {
+    this.container.querySelector('.nav__close').addEventListener('click', () => {
       this.closeNav();
     });
   }
 
   attachKeyEvents() {
-    const first = this.container.querySelector('.Nav-link');
-    const last = this.container.querySelector('.Nav-close');
+    const first = this.container.querySelector('.nav__link');
+    const last = this.container.querySelector('.nav__close');
     this.container.addEventListener('keydown', (e) => {
       if (e.keyCode === 27) {
         this.closeNav();
@@ -61,7 +61,7 @@ export default class Navigation {
     this.menu.hideMenu();
     this.container.classList.add(STATES.open);
     this.container.setAttribute('aria-hidden', false);
-    this.container.querySelector('.Nav-titleLink').focus();
+    this.container.querySelector('.nav__title-link').focus();
   }
 
   closeNav() {

@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "npm run css:compile && npm run js:compile",
-    "css": "run-p css:*",
+    "css": "run-p -c css:*",
     "css:compile": "postcss -o theme/style.css css/index.css",
     "css:lint": "stylelint --config .stylelintrc \"css/**/*.css\"",
     "jest": "jest",
@@ -27,49 +27,42 @@
   },
   "devDependencies": {
     "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^22.4.3",
-    "browser-sync": "^2.24.1",
+    "babel-jest": "^22.4.4",
+    "browser-sync": "^2.26.3",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.11.0",
-    "jest": "^22.4.3",
-    "nodemon": "^1.17.3",
-    "npm-run-all": "^4.1.2",
+    "eslint-plugin-import": "^2.14.0",
+    "jest": "^22.4.4",
+    "nodemon": "^1.18.7",
+    "npm-run-all": "^4.1.5",
     "pre-commit": "^1.2.2",
     "stylelint": "^8.4.0",
-    "stylelint-config-standard": "^18.0.0",
-    "stylelint-selector-bem-pattern": "^2.0.0"
+    "stylelint-config-standard": "^18.0.0"
   },
   "dependencies": {
-    "@babel/cli": "^7.0.0-beta.46",
-    "@babel/core": "^7.0.0-beta.46",
-    "@babel/preset-env": "^7.0.0-beta.46",
-    "autoprefixer": "^7.2.5",
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
     "cssnano": "^3.10.0",
-    "normalize.css": "^8.0.0",
     "postcss-banner": "^3.0.0",
     "postcss-cli": "^4.1.1",
-    "postcss-custom-media": "^6.0.0",
-    "postcss-custom-properties": "^6.2.0",
     "postcss-import": "^11.0.0",
+    "postcss-normalize": "^7.0.1",
+    "postcss-preset-env": "^6.4.0",
     "rollup": "^0.58.2",
-    "rollup-plugin-babel": "^4.0.0-beta.4",
+    "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-uglify": "^3.0.0"
   },
   "pre-commit": [
     "test"
   ],
   "browserslist": [
-    "Chrome >= 58",
-    "Firefox >= 52",
-    "Edge >= 12",
-    "Explorer >= 11",
-    "iOS >= 10",
-    "Safari >= 10",
-    "Android >= 62",
-    "Opera >= 44"
+    "last 1 version",
+    "not dead",
+    "> 2% in GB"
   ],
   "jest": {
+    "testURL": "http://localhost:3000",
     "collectCoverage": true,
     "collectCoverageFrom": [
       "js/**/*.js"

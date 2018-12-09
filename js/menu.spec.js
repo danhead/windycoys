@@ -3,11 +3,11 @@ import Menu from './menu';
 jest.useFakeTimers();
 
 const menuHtml = `
-<button class="Menu">
-  <span class="Menu-line"></span>
-  <span class="Menu-line"></span>
-  <span class="Menu-line"></span>
-  <span class="Menu-text">Open menu</span>
+<button class="menu">
+  <span class="menu__line"></span>
+  <span class="menu__line"></span>
+  <span class="menu__line"></span>
+  <span class="menu__text">Open menu</span>
 </button>`;
 
 describe('Menu button', () => {
@@ -16,7 +16,7 @@ describe('Menu button', () => {
   beforeEach(() => {
     document.body.innerHTML = menuHtml;
     menu = new Menu({
-      container: document.querySelector('.Menu'),
+      container: document.querySelector('.menu'),
     });
   });
 
@@ -70,7 +70,7 @@ describe('Menu button', () => {
     expect(menu.container.classList.contains('is-minimized')).toBe(true);
   });
 
-  test('The state should not change  on scroll if it is hidden', () => {
+  test('The state should not change on scroll if it is hidden', () => {
     menu.init();
     menu.hideMenu();
     menu.updateState(10, 0);

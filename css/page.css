@@ -1,60 +1,57 @@
-/** @define Grid */
-
-.Grid {
+.page {
   display: grid;
   grid-auto-flow: dense;
-  grid-gap: var(--spaceSm);
+  grid-gap: var(--space-sm);
   grid-template-columns: 1fr;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spaceSm);
+  margin: 0 var(--space-sm);
+  padding: 0;
 }
 
-.Grid-logo {
+.page__logo {
   display: flex;
   font-size: 0;
   justify-content: center;
 }
 
-.Grid-banner {
+.page__banner {
   display: none;
   position: relative;
 }
 
-@media (--viewportLg) {
-  .Grid {
+@media (--viewport-lg) {
+  .page {
     grid-template-columns: 224px 1fr;
     grid-template-rows: 60px 134px;
-    grid-gap: var(--spaceMd);
-    padding: 0 var(--spaceMd);
+    grid-gap: var(--space-md);
+    padding: 0 var(--space-md);
   }
 
-  .Grid-logo {
+  .page__logo {
     grid-row: span 2;
   }
 
-  .Grid-banner {
+  .page__banner {
     display: block;
     grid-column-start: 2;
     grid-row-start: 1;
   }
 
-  .Grid-article {
+  .page__article {
     grid-column-start: 2;
     grid-row: span 2;
   }
 
-  .Grid-metadata {
+  .page__metadata {
     grid-column-start: 1;
     grid-row: span 2;
   }
 
-  .Grid-metadata.is-first {
+  .page__metadata.is-first {
     grid-row: span 1;
   }
 
-  .Grid-footer {
+  .page__footer {
     grid-column: 1 / -1;
   }
 }
-

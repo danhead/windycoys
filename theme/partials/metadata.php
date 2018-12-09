@@ -1,41 +1,40 @@
-<section class="Metadata">
-  <div class="Metadata-date">
-    <svg class="Icon">
+<section class="metadata">
+  <div class="metadata__date">
+    <svg class="icon">
       <use href="#icon-calendar"></use>
     </svg>
-    <span class="Metadata-dateText">
+    <span class="metadata__date-text">
       <?php the_time(get_option('date_format')) ?>
     </span>
   </div>
-  <div class="Metadata-comments">
-    <a class="Metadata-commentsLink" href="<?php the_permalink() ?>">
-      <svg class="Icon">
+  <div class="metadata__comments">
+    <a class="metadata__comments-link" href="<?php the_permalink() ?>">
+      <svg class="icon">
         <use href="#icon-comments"></use>
       </svg>
-      <span class="Metadata-commentsText">
+      <span class="metadata__comments-text">
         <?php comments_number(); ?>
       </span>
     </a>
   </div>
-  <div class="Metadata-categories">
-    <svg class="Icon">
+  <div class="metadata__categories">
+    <svg class="icon">
       <use href="#icon-hash"></use>
     </svg>
-    <span class="Metadata-categoriesText">
+    <span class="metadata__categories-text">
       <?php windycoys_the_tags() ?>
     </span>
   </div>
-  <div class="Metadata-share">
-    <a class="Metadata-shareLink" href="#">
-      <svg class="Icon Icon--facebook">
+  <div class="metadata__share">
+    <a class="metadata__share-link" href="#" aria-label="Facebook">
+      <svg class="icon icon--facebook">
         <use href="#icon-facebook"></use>
       </svg>
     </a>
-    <a class="Metadata-shareLink" href="<?php windycoys_share_twitter_url() ?>">
-      <svg class="Icon Icon--twitter">
+    <a class="metadata__share-link" href="<?php windycoys_share_twitter_url() ?>" aria-label="Twitter">
+      <svg class="icon icon--twitter">
         <use href="#icon-twitter"></use>
       </svg>
     </a>
   </div>
 </section>
-

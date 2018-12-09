@@ -1,29 +1,27 @@
-/** @define Icon */
-
-.Icon {
+.icon {
   display: inline-block;
   height: 32px;
   width: 32px;
 }
 
-.Icon--small {
+.icon--small {
   height: 24px;
   width: 24px;
 }
 
-.Icon--large {
+.icon--large {
   height: 48px;
   width: 48px;
 }
 
-.Icon--facebook {
-  color: var(--colorFacebook);
+.icon--facebook {
+  color: var(--color-facebook);
 }
 
-.Icon--twitter {
-  color: var(--colorTwitter);
+.icon--twitter {
+  color: var(--color-twitter);
 }
 
-.Icon--rss {
-  color: var(--colorRss);
+.icon--rss {
+  color: var(--color-rss);
 }

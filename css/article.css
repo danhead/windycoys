@@ -1,51 +1,49 @@
-/** @define Article; weak */
-
-@media (--viewportLg) {
-  .Article {
-    border-bottom: 1px solid var(--colorLightGrey);
+@media (--viewport-lg) {
+  .article {
+    border-bottom: 1px solid var(--color-light-grey);
   }
 }
 
-.Article-title {
-  font-family: var(--headingFontFamily);
-  color: var(--colorDarkBlue);
-  margin-bottom: var(--spaceSm);
+.article__title {
+  font-family: var(--heading-font-family);
+  color: var(--color-dark-blue);
+  margin-bottom: var(--space-sm);
 }
 
-.Article-title a {
+.article__title a {
   color: inherit;
 }
 
-@media (--viewportLg) {
-  .Article-title {
-    margin-bottom: var(--spaceMd);
+@media (--viewport-lg) {
+  .article__title {
+    margin-bottom: var(--space-md);
   }
 }
 
-.Article-date {
-  color: var(--colorGrey);
-  margin-bottom: var(--spaceSm);
+.article__date {
+  color: var(--color-grey);
+  margin-bottom: var(--space-sm);
 }
 
-@media (--viewportLg) {
-  .Article-date {
+@media (--viewport-lg) {
+  .article__date {
     display: none;
   }
 }
 
-.Article-dateText {
+.article__date-text {
   line-height: 2;
   margin-left: 10px;
   vertical-align: top;
 }
 
-.Article p {
-  margin-bottom: var(--spaceSm);
+.article p {
+  margin-bottom: var(--space-sm);
 }
 
-@media (--viewportLg) {
-  .Article p {
-    margin-bottom: var(--spaceMd);
+@media (--viewport-lg) {
+  .article p {
+    margin-bottom: var(--space-md);
   }
 }
 
@@ -53,14 +51,13 @@
  * Link styles
  */
 
-.Article-content a {
-  color: var(--colorLightBlue);
+.article__content a {
+  color: var(--color-light-blue);
   position: relative;
-  transition: text-shadow var(--transitionMd) ease-out;
 }
 
-.Article-content a::after {
-  background-color: var(--colorLightBlue);
+.article__content a:after {
+  background-color: var(--color-light-blue);
   bottom: -1px;
   content: '';
   left: 0;
@@ -68,25 +65,25 @@
   opacity: 0;
   position: absolute;
   right: 0;
-  transition: opacity var(--transitionMd) ease-out;
+  transition: opacity var(--transition-md) ease-out;
 }
 
-.Article-content a img {
+.article__content a img {
   transition:
-    box-shadow var(--transitionMd) ease-out,
-    filter var(--transitionMd) ease-out;
+    box-shadow var(--transition-md) ease-out,
+    filter var(--transition-md) ease-out;
 }
 
 /**
  * Focus states
  */
 
-.Article-content a:focus {
-  text-shadow: 1px 1px 1px var(--colorLightBlue);
+.article__content a:focus:after {
+  opacity: 1;
 }
 
-.Article-content a:focus img {
-  box-shadow: 0 0 12px var(--colorLightBlue);
+.article__content a:focus img {
+  box-shadow: 0 0 12px var(--color-light-blue);
   filter: brightness(125%);
 }
 
@@ -94,7 +91,7 @@
  * Hover states
  */
 
-.Article-content a:hover::after {
+.article__content a:hover:after {
   opacity: 1;
 }
 
@@ -102,34 +99,64 @@
  * Wordpress overrides
  */
 
-.Article .twitter-tweet,
-.Article .wp-caption {
+.article .twitter-tweet,
+.article .wp-caption {
   background-color: #fff;
-  border: 1px solid var(--colorLightGrey);
+  border: 1px solid var(--color-light-grey);
   border-radius: 4px;
-  margin: 0 0 var(--spaceSm);
-  padding: var(--spaceSm);
+  margin: 0 0 var(--space-sm);
+  padding: var(--space-sm);
   text-align: center;
 }
 
-.Article .wp-caption a::after {
+.article .wp-caption a:after {
   display: none;
 }
 
-.Article [class*="wp-caption"] {
+.article [class*="wp-caption"] {
   width: auto !important;
 }
 
-@media (--viewportLg) {
-  .Article .twitter-tweet,
-  .Article .wp-caption {
-    margin: 0 0 var(--spaceMd);
-    padding: var(--spaceMd);
+@media (--viewport-lg) {
+  .article .twitter-tweet,
+  .article .wp-caption {
+    margin: 0 0 var(--space-md);
+    padding: var(--space-md);
   }
 }
 
-.Article .wp-caption-text {
-  font-family: var(--headingFontFamily);
-  margin: var(--spaceSm) 0 0;
+.article .wp-caption-text {
+  font-family: var(--heading-font-family);
+  margin: var(--space-sm) 0 0;
 }
 
+.article table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  display: block;
+  overflow-x: auto;
+  height: auto !important;
+  max-width: 85vw;
+  white-space: nowrap;
+  margin-bottom: var(--space-md);
+  width: auto !important;
+}
+
+@media (--viewport-lg) {
+  .article table {
+    max-width: 100%;
+  }
+}
+
+.article th,
+.article tr,
+.article td {
+  border-width: 0 0 1px;
+  border-style: solid;
+  border-color: var(--color-dark-blue);
+  padding: 5px;
+}
+
+.article th {
+  border-width: 0 0 2px;
+}

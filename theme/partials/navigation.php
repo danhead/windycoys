@@ -1,41 +1,41 @@
-<nav class="Nav" aria-label="Main Navigation">
-  <button class="Menu">
-    <span class="Menu-line"></span>
-    <span class="Menu-line"></span>
-    <span class="Menu-line"></span>
-    <span class="Menu-text">Open menu</span>
+<nav class="nav" aria-label="Main Navigation">
+  <button class="menu">
+    <span class="menu__line"></span>
+    <span class="menu__line"></span>
+    <span class="menu__line"></span>
+    <span class="menu__text">Open menu</span>
   </button>
-  <div class="Nav-content">
-    <h2 class="Nav-title">
-      <a class="Nav-titleLink" href="<?php get_site_url() ?>/" aria-label="Navigation title" tabindex="-1">
+  <div class="nav__content">
+    <h2 class="nav__title">
+      <a class="nav__title-link" href="<?php get_site_url() ?>/" aria-label="Navigation title" tabindex="-1">
         <?php bloginfo('name') ?>
       </a>
     </h2>
-    <ul class="Nav-list" role="menubar">
-      <li class="Nav-listItem" role="none">
-        <a class="Nav-link" href="<?php get_site_url() ?>/" role="menuitem">Home</a>
+    <ul class="nav__list" role="menubar">
+      <li class="nav__list-item" role="none">
+        <a class="nav__link" href="<?php get_site_url() ?>/" role="menuitem">Home</a>
         <?php windycoys_nav() ?>
       </li>
     </ul>
-    <div class="Nav-social">
-      <a class="Nav-socialLink" href="https://www.facebook.com/WindyCOYS/">
-        <svg class="Icon Icon--large">
+    <div class="nav__social">
+      <a class="nav__social-link" href="https://www.facebook.com/WindyCOYS/">
+        <svg class="icon icon--large">
           <use href="#icon-facebook"></use>
         </svg>
       </a>
-      <a class="Nav-socialLink" href="https://twitter.com/windycoys/">
-        <svg class="Icon Icon--large">
+      <a class="nav__social-link" href="https://twitter.com/windycoys/">
+        <svg class="icon icon--large">
           <use href="#icon-twitter"></use>
         </svg>
       </a>
     </div>
-    <div class="Nav-search">
+    <div class="nav__search">
       <?php get_search_form() ?>
     </div>
-    <button class="Nav-close">
-      <span class="Nav-closeBar"></span>
-      <span class="Nav-closeBar"></span>
-      <span class="Nav-closeText">Close menu</span>
+    <button class="nav__close">
+      <span class="nav__close-bar"></span>
+      <span class="nav__close-bar"></span>
+      <span class="nav__close-text">Close menu</span>
     </button>
   </div>
 </nav>

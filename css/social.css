@@ -1,11 +1,19 @@
-/** @define Social */
-
-.Social {
+.social {
   position: absolute;
-  right: var(--spaceSm);
-  top: var(--spaceSm);
+  right: var(--space-sm);
+  top: var(--space-sm);
 }
 
-.Social-link {
+.social__link {
   display: inline-block;
+  transition:
+    filter var(--transition-md) ease-out,
+    transform var(--transition-md) ease-out;
 }
+
+.social__link:focus,
+.social__link:hover {
+  filter: saturate(1.5) contrast(1.5);
+  transform: scale(1.2);
+}
+

@@ -1,28 +1,26 @@
-/** @define Search */
-
-.Search {
+.search {
   display: flex;
 }
 
-.Search-label {
+.search__label {
   left: -10000px;
   position: absolute;
   top: -10000px;
 }
 
-.Search-input {
+.search__input {
   border: none;
   border-radius: 0;
-  color: var(--colorNearBlack);
-  font-family: var(--headingFontFamily);
+  color: var(--color-near-black);
+  font-family: var(--heading-font-family);
   max-width: 200px;
   padding: 10px;
 }
 
-.Search-submit {
-  background-color: var(--colorLightBlue);
+.search__submit {
+  background-color: var(--color-light-blue);
   border: none;
   color: #fff;
-  font-family: var(--headingFontFamily);
+  font-family: var(--heading-font-family);
   min-width: 100px;
 }

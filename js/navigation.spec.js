@@ -1,22 +1,22 @@
 import Navigation from './navigation';
 
 const navHtml = `<a href="/test">Test link</a>
-<nav class="Nav">
-  <button class="Menu">Menu</button>
-  <div class="Nav-content">
-    <h2 class="Nav-title">
-      <a class="Nav-titleLink" href="/">WindyCOYS</a>
+<nav class="nav">
+  <button class="menu">Menu</button>
+  <div class="nav__content">
+    <h2 class="nav__title">
+      <a class="nav__title-link" href="/">WindyCOYS</a>
     </h2>
-    <ul class="Nav-list">
-      <li class="Nav-listItem">
-        <a class="Nav-link" href="/">Home</a>
+    <ul class="nav__list">
+      <li class="nav__list-item">
+        <a class="nav__link" href="/">Home</a>
       </li>
-      <li class="Nav-listItem">
-        <a class="Nav-link" href="/about">About</a>
+      <li class="nav__list-item">
+        <a class="nav__link" href="/about">About</a>
       </li>
     </ul>
   </div>
-  <button class="Nav-close">close</button>
+  <button class="nav__close">close</button>
 </nav>
 <a href="/another-test">Another test link</a>`;
 
@@ -26,12 +26,12 @@ beforeEach(() => {
   document.body.innerHTML = navHtml;
   // Mock Menu
   const menu = {
-    container: document.querySelector('.Menu'),
+    container: document.querySelector('.menu'),
     showMenu: jest.fn(),
     hideMenu: jest.fn(),
   };
   nav = new Navigation({
-    container: document.querySelector('.Nav'),
+    container: document.querySelector('.nav'),
     menu,
   });
 });
@@ -49,7 +49,7 @@ describe('Navigation', () => {
 
   it('Should fail to initialise if the menu is not provided', () => {
     const noMenu = new Navigation({
-      container: document.querySelector('.Nav'),
+      container: document.querySelector('.nav'),
     });
     noMenu.init();
     expect(noMenu.state).toBeUndefined();
@@ -60,7 +60,7 @@ describe('Navigation', () => {
     expect(nav.container.classList.contains('is-open')).toBe(false);
   });
 
-  it('Should close when the .Nav element is clicked', () => {
+  it('Should close when the .nav element is clicked', () => {
     nav.init();
     nav.openNav();
     const event = new Event('click');
@@ -77,11 +77,11 @@ describe('Navigation', () => {
     expect(nav.state).toBe('hidden');
   });
 
-  it('Should not close when the .Nav-content element is clicked', () => {
+  it('Should not close when the .nav__content element is clicked', () => {
     nav.init();
     nav.openNav();
     const event = new Event('click');
-    nav.container.querySelector('.Nav-content').dispatchEvent(event);
+    nav.container.querySelector('.nav__content').dispatchEvent(event);
     expect(nav.state).toBe('visible');
   });
 
@@ -118,7 +118,7 @@ describe('Navigation close button', () => {
     nav.init();
     nav.openNav();
     const event = new Event('click');
-    nav.container.querySelector('.Nav-close').dispatchEvent(event);
+    nav.container.querySelector('.nav__close').dispatchEvent(event);
     expect(nav.state).toBe('hidden');
   });
 });
@@ -129,16 +129,16 @@ describe('Navigation focus behaviour', () => {
   let menu;
 
   beforeEach(() => {
-    menu = nav.container.querySelector('.Menu');
-    first = nav.container.querySelector('.Nav-link');
-    last = nav.container.querySelector('.Nav-close');
+    menu = nav.container.querySelector('.menu');
+    first = nav.container.querySelector('.nav__link');
+    last = nav.container.querySelector('.nav__close');
     menu.focus();
     nav.init();
     nav.openNav();
   });
 
-  it('Should apply focus to .Nav-titleLink when opened', () => {
-    const link = nav.container.querySelector('.Nav-titleLink');
+  it('Should apply focus to .nav__title-link when opened', () => {
+    const link = nav.container.querySelector('.nav__title-link');
     expect(document.activeElement).toBe(link);
   });
 

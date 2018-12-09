@@ -18,9 +18,15 @@ module.exports = ctx => ({
   map: ctx.env !== 'production',
   plugins: {
     'postcss-import': {},
-    'postcss-custom-media': {},
-    'postcss-custom-properties': {},
-    autoprefixer: {},
+    'postcss-normalize': {},
+    'postcss-preset-env': {
+      stage: 0,
+      features: {
+        'custom-properties': {
+          preserve: false,
+        },
+      },
+    },
     cssnano: ctx.env === 'production' ? {} : false,
     'postcss-banner': {
       banner,

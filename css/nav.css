@@ -1,10 +1,8 @@
-/** @define Nav */
-
 :root {
-  --Nav-transitionDuration: var(--transitionMd);
+  --nav-transition-duration: var(--transition-md);
 }
 
-.Nav::after {
+.nav:after {
   background-color: rgba(0, 0, 0, 0.5);
   bottom: 0;
   content: '';
@@ -13,44 +11,49 @@
   position: fixed;
   right: 0;
   transition:
-    opacity var(--Nav-transitionDuration) ease-out,
-    visibility var(--Nav-transitionDuration) ease-out;
+    opacity var(--nav-transition-duration) ease-out,
+    visibility var(--nav-transition-duration) ease-out;
   top: 0;
   visibility: hidden;
   z-index: 5;
 }
 
-.Nav-content {
-  background-color: var(--colorDarkBlue);
+.nav.is-open:after {
+  visibility: visible;
+  opacity: 1;
+}
+
+.nav__content {
+  background-color: var(--color-dark-blue);
   bottom: 0;
   box-shadow: 6px 0 4px rgba(0, 0, 0, 0.25);
   color: #fff;
   display: flex;
   flex-direction: column;
   left: 0;
-  padding: var(--spaceSm);
+  padding: var(--space-sm);
   position: fixed;
   top: 0;
   transform: translateX(-100%);
-  transition: transform var(--Nav-transitionDuration) ease-out;
+  transition: transform var(--nav-transition-duration) ease-out;
   z-index: 10;
 }
 
-.Nav-title {
-  font-family: var(--headingFontFamily);
+.nav__title {
+  font-family: var(--heading-font-family);
   font-size: 2.5rem;
   margin-right: 62px;
 }
 
-.Nav-titleLink,
-.Nav-titleLink:active,
-.Nav-titleLink:focus,
-.Nav-titleLink:hover,
-.Nav-titleLink:visited {
+.nav__title-link,
+.nav__title-link:active,
+.nav__title-link:focus,
+.nav__title-link:hover,
+.nav__title-link:visited {
   color: #fff;
 }
 
-.Nav-close {
+.nav__close {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -60,101 +63,96 @@
   position: absolute;
   right: 15px;
   top: 15px;
-  transition: filter var(--Nav-transitionDuration) ease-out;
+  transition: filter var(--nav-transition-duration) ease-out;
   width: 32px;
 }
 
-.Nav-close:active,
-.Nav-close:focus,
-.Nav-close:hover {
+.nav__close:active,
+.nav__close:focus,
+.nav__close:hover {
   filter: drop-shadow(0 0 2px #fff);
   outline: 0;
 }
 
-.Nav-closeBar {
+.nav__close-bar {
   background-color: #fff;
   border-radius: 2px;
   height: 4px;
   left: 4px;
   position: absolute;
-  transition: transform var(--Nav-transitionDuration) ease-out var(--Nav-transitionDuration);
+  transition: transform var(--nav-transition-duration) ease-out var(--nav-transitionDuration);
   top: 14px;
   width: 24px;
 }
 
-.Nav-closeText {
+.nav__close-text {
   left: -10000px;
   position: absolute;
   top: -10000px;
 }
 
 /**
- * Nav List
+ * nav List
  */
 
-.Nav-list {
+.nav__list {
   flex-grow: 1;
-  font-family: var(--headingFontFamily);
+  font-family: var(--heading-font-family);
   font-size: 1.5rem;
-  margin: var(--spaceMd) 0 0 var(--spaceMd);
+  margin: var(--spaceMd) 0 0 var(--space-md);
 }
 
-.Nav--subList {
+.nav__list--sub-list {
   margin-top: 0;
 }
 
-.Nav.is-open::after {
-  visibility: visible;
-  opacity: 1;
-}
-
-.Nav-link,
-.Nav-link:active,
-.Nav-link:focus,
-.Nav-link:hover,
-.Nav-link:visited {
+.nav__link,
+.nav__link:active,
+.nav__link:focus,
+.nav__link:hover,
+.nav__link:visited {
   color: #fff;
   display: inline-block;
-  margin-bottom: var(--spaceSm);
-  transition: text-shadow var(--Nav-transitionDuration) ease-out;
+  margin-bottom: var(--space-sm);
+  transition: text-shadow var(--nav-transition-duration) ease-out;
 }
 
-.Nav-link:focus,
-.Nav-link:hover {
+.nav__link:focus,
+.nav__link:hover {
   text-shadow: 0 0 2px #fff;
 }
 
 /**
- * Nav Social
+ * nav Social
  */
 
-.Nav-social {
+.nav__social {
   margin-bottom: var(--spaceSm);
 }
 
-.Nav-socialLink,
-.Nav-socialLink:active,
-.Nav-socialLink:focus,
-.Nav-socialLink:hover,
-.Nav-socialLink:visited {
+.nav__social-link,
+.nav__social-link:active,
+.nav__social-link:focus,
+.nav__social-link:hover,
+.nav__social-link:visited {
+  display: inline-block;
   color: #fff;
-  transition: filter var(--Nav-transitionDuration) ease-out;
+  transition: filter var(--nav-transition-duration) ease-out;
 }
 
-.Nav-socialLink:focus,
-.Nav-socialLink:hover {
+.nav__social-link:focus,
+.nav__social-link:hover {
   filter: drop-shadow(0 0 2px #fff);
 }
 
-.Nav.is-open .Nav-content {
+.nav.is-open .nav__content {
   transform: translateX(0);
 }
 
-.Nav.is-open .Nav-closeBar:nth-of-type(1) {
+.nav.is-open .nav__close-bar:nth-of-type(1) {
   transform: rotate(45deg);
 }
 
-.Nav.is-open .Nav-closeBar:nth-of-type(2) {
+.nav.is-open .nav__close-bar:nth-of-type(2) {
   transform: rotate(-45deg);
 }
-
