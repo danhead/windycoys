@@ -109,6 +109,10 @@
   text-align: center;
 }
 
+.article .wp-caption a {
+  display: inline-block;
+}
+
 .article .wp-caption a:after {
   display: none;
 }

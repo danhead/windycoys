@@ -7,6 +7,18 @@
       <?php the_time(get_option('date_format')) ?>
     </span>
   </div>
+  <?php if (is_user_logged_in()): ?>
+  <div class="metadata__editor">
+    <a class="metadata__editor-link" href="<?php echo get_edit_post_link() ?>">
+      <svg class="icon">
+        <use href="#icon-edit"></use>
+      </svg>
+      <span class="metadata__editor-text">
+        Edit post
+      </span>
+    </a>
+  </div>
+  <?php endif; ?>
   <div class="metadata__comments">
     <a class="metadata__comments-link" href="<?php the_permalink() ?>">
       <svg class="icon">
