@@ -18,6 +18,10 @@
   z-index: 5;
 }
 
+.logged-in .menu {
+  top: 37px;
+}
+
 .menu__line {
   background-color: #fff;
   border-radius: 2px;

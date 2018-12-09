@@ -1,4 +1,4 @@
-<nav class="nav" aria-label="Main Navigation">
+<nav class="nav<?php echo is_user_logged_in() ? ' logged-in' : '' ?>" aria-label="Main Navigation">
   <button class="menu">
     <span class="menu__line"></span>
     <span class="menu__line"></span>
