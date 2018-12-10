@@ -10,6 +10,9 @@
 @import "search";
 @import "article";
 @import "footer";
+@import "comments";
+@import "comment";
+@import "avatar";
 
 :root {
   --color-black: #000;
@@ -21,6 +24,7 @@
   --color-facebook: #3e5a98;
   --color-twitter: #1da1f2;
   --color-rss: #ee802f;
+  --space-xs: 10px;
   --space-sm: 20px;
   --space-md: 30px;
   --space-lg: 60px;

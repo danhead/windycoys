@@ -4,6 +4,11 @@
   width: 32px;
 }
 
+.icon--extra-small {
+  height: 16px;
+  width: 16px;
+}
+
 .icon--small {
   height: 24px;
   width: 24px;

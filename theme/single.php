@@ -15,12 +15,13 @@
         </span>
       </div>
       <h1 class="article__title">
-        <a href="<?php the_permalink(); ?>">
-          <?php the_title(); ?>
-        </a>
+        <?php the_title(); ?>
       </h1>
       <div class="article__content">
         <?php the_content(__('Continue reading <span class="meta-nav">&raquo;</span>', 'windycoys')); ?>
+      </div>
+      <div class="article__comments">
+        <?php comments_template() ?>
       </div>
     </article>
   </section>

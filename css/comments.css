@@ -1,0 +1,20 @@
+.comments__head {
+  border-bottom: 1px solid var(--color-light-grey);
+  margin-bottom: var(--space-md);
+}
+
+.comments__title {
+  margin-bottom: var(--space-sm);
+}
+
+.comments__item {
+  margin-bottom: var(--space-md);
+}
+
+.comments__item--depth-1 {
+  margin-left: var(--space-md);
+}
+
+.comments__item--depth-2 {
+  margin-left: calc(var(--space-md) * 2);
+}

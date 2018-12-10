@@ -20,7 +20,7 @@
   </div>
   <?php endif; ?>
   <div class="metadata__comments">
-    <a class="metadata__comments-link" href="<?php the_permalink() ?>">
+    <a class="metadata__comments-link" href="<?php the_permalink() ?>#comments">
       <svg class="icon">
         <use href="#icon-comments"></use>
       </svg>
