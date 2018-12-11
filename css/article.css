@@ -48,6 +48,56 @@
 }
 
 /**
+ * Heading styles
+ */
+
+.article__content h1 {
+  font-family: var(--heading-font-family);
+  font-size: 1.8rem;
+  margin-bottom: var(--space-sm);
+}
+
+.article__content h2 {
+  font-family: var(--heading-font-family);
+  font-size: 1.6rem;
+  margin-bottom: var(--space-sm);
+}
+
+.article__content h3 {
+  font-family: var(--heading-font-family);
+  font-size: 1.4rem;
+  margin-bottom: var(--space-sm);
+}
+
+.article__content h4,
+.article__content h5,
+.article__content h6 {
+  font-family: var(--heading-font-family);
+  font-size: 1.2rem;
+  margin-bottom: var(--space-sm);
+}
+
+/**
+ * List styles
+ */
+
+.article__content li {
+  position: relative;
+  padding: 0 0 var(--space-xs) var(--space-sm);
+}
+
+.article__content li:before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 10px;
+  background-color: var(--color-dark-blue);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+/**
  * Link styles
  */
 
