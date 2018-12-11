@@ -51,7 +51,7 @@ function format_link($link) {
   </nav>
   <?php if ($current < $total) : ?>
     <div class="pagination__next">
-      <a class="pagination__link" href="<?php echo get_next_url($base_url, $current) ?> aria-label="Next page">
+      <a class="pagination__link" href="<?php echo get_next_url($base_url, $current) ?>" aria-label="Next page">
         <svg class="icon icon--small">
           <use href="#icon-chevron-right"></use>
         </svg>
