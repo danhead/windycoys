@@ -12,13 +12,16 @@
 @import "footer";
 @import "comments";
 @import "comment";
+@import "comment-respond";
 @import "avatar";
+@import "link";
 
 :root {
   --color-black: #000;
   --color-near-black: #333;
   --color-dark-blue: #201f42;
   --color-light-blue: #1574d2;
+  --color-pale-blue: #e9f4ff;
   --color-grey: #757575;
   --color-light-grey: #e0e0e0;
   --color-facebook: #3e5a98;

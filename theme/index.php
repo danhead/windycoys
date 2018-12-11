@@ -26,9 +26,6 @@
   </section>
   <section class="page__metadata<?php echo ($index === 1 ? ' is-first' : '') ?>">
     <?php get_template_part('partials/metadata') ?>
-    <div class="page__advert">
-      <?php get_template_part('partials/ad_wide_skyscraper') ?>
-    </div>
   </section>
   <?php endwhile; ?>
   <section class="page__banner">

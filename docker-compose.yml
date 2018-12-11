@@ -3,7 +3,7 @@ wordpress:
     - WORDPRESS_DB_HOST=db
     - WORDPRESS_DB_PASSWORD=password
     - WORDPRESS_DB_USER=windycoys
-  image: 'wordpress:4.9.5-php5.6-apache'
+  image: 'wordpress:5.0.0-php5.6-apache'
   links:
     - db
   ports:
