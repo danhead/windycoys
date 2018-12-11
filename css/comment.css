@@ -28,6 +28,10 @@
   margin-bottom: var(--space-sm);
 }
 
+.comment__reply.is-hidden {
+  display: none;
+}
+
 .comment__reply:focus,
 .comment__reply:hover {
   color: var(--color-light-blue);

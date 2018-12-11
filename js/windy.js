@@ -1,6 +1,7 @@
 import Menu from './menu';
 import Navigation from './navigation';
 import Image from './image';
+import ReplyToComment from './reply-to-comment';
 
 const windy = {
   images: [],
@@ -21,4 +22,8 @@ export default function init() {
   });
   windy.menu.init();
   windy.navigation.init();
+  windy.comments = new ReplyToComment({
+    form: document.querySelector('.comments__foot'),
+    links: document.querySelectorAll('.comment__reply'),
+  });
 }

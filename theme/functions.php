@@ -1,8 +1,10 @@
 <?php
 
 class Windycoys_Walker_Comment extends Walker_Comment {
-  function start_el(&$output, $comment, $depth = 0, $args = array(), $id = 0) {
+  function start_el(&$output, $comment, $depth = 0) {
     $id = $comment->comment_ID;
+    $post_id = $comment->comment_post_ID;
+    $reply_link = get_permalink($post_id) . '?replytocom='.$id.'#respond';
     $author_email = $comment->comment_author_email;
     $author = $comment->comment_author;
     $avatar = get_avatar($comment, 128);
@@ -19,10 +21,11 @@ class Windycoys_Walker_Comment extends Walker_Comment {
     $output .= '</div></div>';
     $output .= '<div class="comment__body">'.$content.'</div>';
     $output .= '<div class="comment__foot">';
-    $output .= '<a class="comment__reply" href="'.get_comment_reply_link().'">';
+    $output .= '<a class="comment__reply" data-comment-author="'.$author.'" data-comment-id="'.$id.'" href="'.$reply_link.'">';
     $output .= '<span class="comment__reply-icon">';
     $output .= '<svg class="icon icon--extra-small"><use href="#icon-reply"></use></svg></span>';
     $output .= '<span class="comment__reply-text">Reply</span></a>';
+    $output .= '<div class="comment__inline-reply"></div>';
     $output .= '</div></div></li>';
   }
 }

@@ -4,12 +4,17 @@
   padding-bottom: var(--space-sm);
 }
 
+.comment-respond__title-text {
+  margin-right: var(--space-xs);
+}
+
 .comment-respond__text {
   font-size: 14px;
 }
 
 .comment-respond__item {
   margin-bottom: var(--space-sm);
+  max-width: 360px;
 }
 
 .comment-respond__label {
@@ -21,6 +26,7 @@
   background-color: #fff;
   border: 1px solid var(--color-near-black);
   padding: var(--space-xs);
+  width: 100%;
 }
 
 .comment-respond__input:focus {
@@ -37,4 +43,31 @@
   font-family: var(--heading-font-family);
   min-width: 100px;
   padding: var(--space-xs);
+}
+
+.comment-respond__cancel {
+  font-size: 12px;
+}
+
+.comment-respond__cancel a,
+.comment-respond__cancel a:visited {
+  position: relative;
+  color: var(--color-light-blue);
+}
+
+.comment-respond__cancel a:after {
+  background-color: var(--color-light-blue);
+  bottom: -1px;
+  content: '';
+  left: 0;
+  height: 2px;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  transition: opacity var(--transition-md) ease-out;
+}
+
+.comment-respond__cancel a:focus:after,
+.comment-respond__cancel a:hover:after {
+  opacity: 1;
 }
