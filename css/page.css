@@ -19,6 +19,11 @@
   position: relative;
 }
 
+.page__pagination {
+  display: flex;
+  justify-content: center;
+}
+
 @media (--viewport-lg) {
   .page {
     grid-template-columns: 224px 1fr;
@@ -51,6 +56,7 @@
     grid-row: span 1;
   }
 
+  .page__pagination,
   .page__footer {
     grid-column: 1 / -1;
   }

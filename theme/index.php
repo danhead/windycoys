@@ -28,6 +28,9 @@
     <?php get_template_part('partials/metadata') ?>
   </section>
   <?php endwhile; ?>
+  <section class="page__pagination">
+    <?php get_template_part('partials/pagination') ?>
+  </section>
   <section class="page__banner">
     <?php get_template_part('partials/banner') ?>
   </section>
