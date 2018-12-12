@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?>>
   <head>
     <meta charset="<?php bloginfo('charset'); ?>">
-    <title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' by'; } ?> <?php bloginfo('name'); ?></title>
+    <title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' &laquo; '; } ?> <?php bloginfo('name'); ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#4b88b6">
     <meta name="description" content="<?php bloginfo('description'); ?>">

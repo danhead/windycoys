@@ -9,6 +9,7 @@
 @import "metadata";
 @import "search";
 @import "article";
+@import "content";
 @import "footer";
 @import "comments";
 @import "comment";
@@ -16,6 +17,8 @@
 @import "avatar";
 @import "link";
 @import "pagination";
+@import "title";
+@import "archive";
 
 :root {
   --color-black: #000;

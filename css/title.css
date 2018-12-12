@@ -1,0 +1,16 @@
+.title {
+  font-family: var(--heading-font-family);
+  color: var(--color-dark-blue);
+  margin-bottom: var(--space-sm);
+}
+
+.title a {
+  color: inherit;
+}
+
+@media (--viewport-lg) {
+  .title {
+    margin-bottom: var(--space-md);
+  }
+}
+

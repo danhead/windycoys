@@ -14,12 +14,12 @@
           <?php the_time(get_option('date_format')) ?>
         </span>
       </div>
-      <h1 class="article__title">
-        <a href="<?php the_permalink(); ?>">
-          <?php the_title(); ?>
-        </a>
-      </h1>
       <div class="article__content">
+        <h1 class="title">
+          <a href="<?php the_permalink(); ?>">
+            <?php the_title(); ?>
+          </a>
+        </h1>
         <?php the_content(__('Continue reading <span class="meta-nav">&raquo;</span>', 'windycoys')); ?>
       </div>
     </article>

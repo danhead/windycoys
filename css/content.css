@@ -1,0 +1,6 @@
+.content {
+  border-bottom: 1px solid var(--color-light-grey);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-md);
+}
+

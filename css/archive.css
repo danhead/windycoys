@@ -1,0 +1,19 @@
+.archive__list {
+  margin-bottom: var(--space-sm);
+}
+
+.archive__list--sub-list {
+  margin-left: var(--space-sm);
+}
+
+.archive__heading {
+  font-family: var(--heading-font-family);
+  color: var(--color-dark-blue);
+  margin-bottom: var(--space-xs);
+}
+
+.archive__date {
+  display: inline-block;
+  font-style: italic;
+  min-width: 40px;
+}
