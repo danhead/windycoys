@@ -76,3 +76,11 @@ function windycoys_share_twitter_url() {
   $link = get_the_permalink();
   echo $url . urlencode($title . ': ' . $link . ' by @WindyCOYS');
 }
+
+function windycoys_search_posts_per_page($query) {
+  if ($query->is_search) {
+    $query->set( 'posts_per_page', '10' );
+  }
+  return $query;
+}
+add_filter('pre_get_posts', 'windycoys_search_posts_per_page');

@@ -10,14 +10,26 @@ $links = paginate_links(array(
 ));
 
 function get_previous_url($base_url, $page) {
-  return $base_url . ($page - 1);
+  $qs = $_SERVER['QUERY_STRING'];
+  $url = $base_url . ($page - 1);
+  if ($qs) {
+    $url .= '/?' . $qs;
+  }
+  return $url;
 }
 
 function get_next_url($base_url, $page) {
+  $qs = $_SERVER['QUERY_STRING'];
+  $url = $base_url;
   if ($page === 0) {
-    return $base_url . '2';
+    $url .= '2';
+  } else {
+    $url .= ($page + 1);
   }
-  return $base_url . ($page + 1);
+  if ($qs) {
+    $url .= '/?' . $qs;
+  }
+  return $url;
 }
 function format_link($link) {
   if (strpos($link, 'page-numbers dots')) {

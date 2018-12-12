@@ -1,4 +1,4 @@
-<form id="searchform" role="search" method="get" action="<?php get_site_url()?>">
+<form id="searchform" role="search" method="get" action="<?php echo get_site_url()?>">
   <div class="search">
     <label class="search__label" for="searchinput">
       Search

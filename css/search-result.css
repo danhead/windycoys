@@ -1,0 +1,28 @@
+.search-result {
+  margin-bottom: var(--space-sm);
+}
+
+.search-result__head,
+.search-result__body,
+.search-result__title {
+  margin-bottom: var(--space-xs);
+}
+
+.search-result__metadata {
+  color: var(--color-grey);
+  font-size: 12px;
+}
+
+.search-result__icon,
+.search-result__text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.search-result__icon {
+  height: 16px;
+}
+
+.search-result__text {
+  margin: 0 15px 0 5px;
+}
