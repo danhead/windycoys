@@ -4,13 +4,22 @@
   margin-bottom: var(--space-sm);
 }
 
-.title a {
-  color: inherit;
-}
-
 @media (--viewport-lg) {
   .title {
     margin-bottom: var(--space-md);
   }
 }
 
+.title a {
+  color: inherit;
+}
+
+.title__icon,
+.title__text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.title__text {
+  text-transform: capitalize;
+}

@@ -19,7 +19,7 @@
 @import "pagination";
 @import "title";
 @import "archive";
-@import "search-result";
+@import "excerpt";
 
 :root {
   --color-black: #000;

@@ -1,7 +1,4 @@
-<?php
-global $wp_query;
-get_header();
-?>
+<?php get_header() ?>
 <main class="page">
   <section class="page__logo">
     <?php get_template_part('partials/logo') ?>
@@ -9,10 +6,14 @@ get_header();
   <section class="page__content">
     <div class="content">
       <h1 class="title">
-        <?php
-          $query = $_GET['s'];
-          echo $wp_query->found_posts.' results matching "' . $query . '" found.';
-        ?>
+        <span class="title__icon">
+          <svg class="icon icon--large" aria-hidden="true">
+            <use href="#icon-hash"></use>
+          </svg>
+        </span>
+        <span class="title__text">
+          <?php echo single_tag_title() ?>
+        </span>
       </h1>
       <ol>
       <?php if (have_posts()): while (have_posts()) : the_post(); ?>

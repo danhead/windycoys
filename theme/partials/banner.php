@@ -1,16 +1,16 @@
 <div class="social">
-  <a class="social__link" href="https://www.facebook.com/WindyCOYS/">
-    <svg class="icon icon--facebook">
+  <a class="social__link" href="https://www.facebook.com/WindyCOYS/" aria-label="WindyCOYS on Facebook">
+    <svg class="icon icon--facebook" aria-hidden="true">
       <use href="#icon-facebook"></use>
     </svg>
   </a>
-  <a class="social__link" href="https://twitter.com/windycoys/">
-    <svg class="icon icon--twitter">
+  <a class="social__link" href="https://twitter.com/windycoys/" aria-label="WindyCOYS on Twitter">
+    <svg class="icon icon--twitter" aria-hidden="true">
       <use href="#icon-twitter"></use>
     </svg>
   </a>
-  <a class="social__link" href="/feed">
-    <svg class="icon icon--rss">
+  <a class="social__link" href="/feed" aria-label="WindyCOYS RSS Feed">
+    <svg class="icon icon--rss" aria-hidden="true">
       <use href="#icon-rss"></use>
     </svg>
   </a>

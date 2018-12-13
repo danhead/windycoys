@@ -1,28 +1,28 @@
-.search-result {
+.excerpt {
   margin-bottom: var(--space-sm);
 }
 
-.search-result__head,
-.search-result__body,
-.search-result__title {
+.excerpt__head,
+.excerpt__body,
+.excerpt__title {
   margin-bottom: var(--space-xs);
 }
 
-.search-result__metadata {
+.excerpt__metadata {
   color: var(--color-grey);
   font-size: 12px;
 }
 
-.search-result__icon,
-.search-result__text {
+.excerpt__icon,
+.excerpt__text {
   display: inline-block;
   vertical-align: middle;
 }
 
-.search-result__icon {
+.excerpt__icon {
   height: 16px;
 }
 
-.search-result__text {
+.excerpt__text {
   margin: 0 15px 0 5px;
 }
