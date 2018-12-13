@@ -2,7 +2,11 @@
   text-align: center;
 }
 
+.footer__head,
+.footer__body {
+  margin-bottom: var(--space-sm);
+}
+
 .footer__text {
   font-size: 14px;
-  margin-bottom: var(--space-sm);
 }
