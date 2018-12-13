@@ -49,12 +49,13 @@
   transition:
     filter var(--transition-md) ease-out,
     transform var(--transition-md) ease-out;
+  transform-origin: center bottom;
 }
 
 .metadata__share-link:focus,
 .metadata__share-link:hover {
   filter: saturate(1.5) contrast(1.5);
-  transform: scale(1.2);
+  transform: scale(1.3);
 }
 
 /**

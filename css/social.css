@@ -9,11 +9,12 @@
   transition:
     filter var(--transition-md) ease-out,
     transform var(--transition-md) ease-out;
+  transform-origin: center bottom;
 }
 
 .social__link:focus,
 .social__link:hover {
   filter: saturate(1.5) contrast(1.5);
-  transform: scale(1.2);
+  transform: scale(1.3);
 }
 
