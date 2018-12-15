@@ -4,7 +4,7 @@
     <?php get_template_part('partials/logo') ?>
   </section>
   <?php if (have_posts()): while (have_posts()) : the_post(); ?>
-  <section class="page__article">
+  <section class="page__article is-first">
     <article class="article">
       <div class="article__date">
         <svg class="icon">
@@ -25,14 +25,14 @@
       </div>
     </article>
   </section>
-  <section class="page__metadata is-first">
+  <section class="page__metadata">
     <?php get_template_part('partials/metadata') ?>
   </section>
   <?php endwhile; ?>
   <?php else: ?>
-  <section class="page__article">
+  <section class="page__article is-first">
     <article class="article">
-      <h1 class="article__title">Sorry, there is no article to display</h1>
+      <h1 class="title">Sorry, there is no article to display</h1>
       <div class="article__content">
         <a class="link" href="<?php get_site_url() ?>/">Go back home</a>
       </div>

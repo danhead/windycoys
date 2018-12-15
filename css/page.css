@@ -27,7 +27,8 @@
 @media (--viewport-lg) {
   .page {
     grid-template-columns: 224px 1fr;
-    grid-template-rows: 60px 134px;
+    grid-template-rows: 60px 134px 1fr;
+    grid-auto-rows: auto;
     grid-gap: var(--space-md);
     padding: 0 var(--space-md);
   }
@@ -45,16 +46,15 @@
   .page__content,
   .page__article {
     grid-column-start: 2;
+  }
+
+  .page__content,
+  .page__article.is-first {
     grid-row: span 2;
   }
 
   .page__metadata {
     grid-column-start: 1;
-    grid-row: span 2;
-  }
-
-  .page__metadata.is-first {
-    grid-row: span 1;
   }
 
   .page__pagination,

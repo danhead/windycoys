@@ -4,7 +4,7 @@
     <?php get_template_part('partials/logo') ?>
   </section>
   <?php while ( have_posts() ) : the_post(); $index++; ?>
-  <section class="page__article">
+  <section class="page__article<?php echo ($index === 1 ? ' is-first' : '') ?>">
     <article class="article">
       <div class="article__date">
         <svg class="icon">
@@ -24,7 +24,7 @@
       </div>
     </article>
   </section>
-  <section class="page__metadata<?php echo ($index === 1 ? ' is-first' : '') ?>">
+  <section class="page__metadata">
     <?php get_template_part('partials/metadata') ?>
   </section>
   <?php endwhile; ?>

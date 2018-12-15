@@ -56,13 +56,11 @@ get_header();
     <?php get_template_part('partials/pagination') ?>
   </section>
   <?php else: ?>
-  <section class="page__article">
-    <article class="article">
-      <h1 class="article__title">Sorry, no results found.</h1>
-      <div class="article__content">
-        <a class="link" href="<?php echo get_site_url() ?>/">Go back home</a>
-      </div>
-    </article>
+  <section class="page__content">
+    <div class="content">
+      <h1 class="title">Sorry, no results found.</h1>
+      <a class="link" href="<?php echo get_site_url() ?>/">Go back home</a>
+    </div>
   </section>
   <?php endif; ?>
   <section class="page__banner">

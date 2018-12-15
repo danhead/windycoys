@@ -4,27 +4,22 @@
     <?php get_template_part('partials/logo') ?>
   </section>
   <?php if (have_posts()): while (have_posts()) : the_post(); ?>
-  <section class="page__article">
-    <article class="article">
-      <div class="article__content">
-        <h1 class="title">
-          <a href="<?php the_permalink(); ?>">
-            <?php the_title(); ?>
-          </a>
-        </h1>
-        <?php the_content(__('Continue reading <span class="meta-nav">&raquo;</span>', 'windycoys')); ?>
+  <section class="page__content">
+    <div class="content">
+      <h1 class="title">
+        <?php the_title(); ?>
+      </h1>
+      <?php the_content(); ?>
       </div>
-    </article>
+    </div>
   </section>
   <?php endwhile; ?>
   <?php else: ?>
-  <section class="page__article">
-    <article class="article">
-      <h1 class="article__title">Sorry, there is no article to display</h1>
-      <div class="article__content">
-        <a class="link" href="<?php echo get_site_url() ?>/">Go back home</a>
-      </div>
-    </article>
+  <section class="page__content">
+    <div class="content">
+      <h1 class="title">Sorry, there is no article to display</h1>
+      <a class="link" href="<?php echo get_site_url() ?>/">Go back home</a>
+    </div>
   </section>
   <?php endif; ?>
   <section class="page__banner">
