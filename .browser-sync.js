@@ -4,4 +4,5 @@ module.exports = {
     'theme/**/*',
   ],
   watchTask: true,
+  open: false,
 };

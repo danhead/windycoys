@@ -39,4 +39,4 @@ coverage/
 # Distribution assets
 theme/bundle.js
 theme/style.css
-
+theme/.timestamp

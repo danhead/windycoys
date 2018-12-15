@@ -1,5 +1,4 @@
 <?php
-
 class Windycoys_Walker_Comment extends Walker_Comment {
   function start_el(&$output, $comment, $depth = 0) {
     $id = $comment->comment_ID;
@@ -84,3 +83,11 @@ function windycoys_search_posts_per_page($query) {
   return $query;
 }
 add_filter('pre_get_posts', 'windycoys_search_posts_per_page');
+
+function windycoys_get_deploy_timestamp() {
+  if (file_exists(__DIR__ . '/.timestamp')) {
+    $timestamp = file_get_contents(__DIR__ . '/.timestamp');
+    return $timestamp;
+  }
+  return false;
+}

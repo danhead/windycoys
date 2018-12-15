@@ -9,7 +9,7 @@
     "url": "https://github.com/danhead/windycoys"
   },
   "scripts": {
-    "build": "npm run css:compile && npm run js:compile",
+    "build": "run-s css:compile js:compile",
     "css": "run-p -c css:*",
     "css:compile": "postcss -o theme/style.css css/index.css",
     "css:lint": "stylelint --config .stylelintrc \"css/**/*.css\"",
@@ -20,30 +20,28 @@
     "js:lint": "eslint js/",
     "serve": "browser-sync start --config .browser-sync.js",
     "start": "run-p watch serve",
-    "test": "npm run css:lint && npm run js:lint && npm run jest",
+    "test": "run-s css:lint js:lint jest",
     "watch": "run-p watch:*",
     "watch:css": "nodemon -q --watch css -e css --exec npm run css",
     "watch:js": "nodemon -q --watch js -e js --exec npm run js"
   },
   "devDependencies": {
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^22.4.4",
     "browser-sync": "^2.26.3",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "jest": "^22.4.4",
     "nodemon": "^1.18.7",
-    "npm-run-all": "^4.1.5",
-    "pre-commit": "^1.2.2",
-    "stylelint": "^8.4.0",
-    "stylelint-config-standard": "^18.0.0"
+    "pre-commit": "^1.2.2"
   },
   "dependencies": {
     "@babel/cli": "^7.2.0",
     "@babel/core": "^7.2.0",
     "@babel/preset-env": "^7.2.0",
-    "cssnano": "^3.10.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^22.4.4",
+    "cssnano": "^4.1.7",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "jest": "^22.4.4",
+    "npm-run-all": "^4.1.5",
     "postcss-banner": "^3.0.0",
     "postcss-cli": "^4.1.1",
     "postcss-import": "^11.0.0",
@@ -51,7 +49,9 @@
     "postcss-preset-env": "^6.4.0",
     "rollup": "^0.58.2",
     "rollup-plugin-babel": "^4.0.3",
-    "rollup-plugin-uglify": "^3.0.0"
+    "rollup-plugin-uglify": "^3.0.0",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^18.0.0"
   },
   "pre-commit": [
     "test"

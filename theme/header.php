@@ -1,3 +1,10 @@
+<?php
+$css_url = get_template_directory_uri() . '/style.css';
+$deploy_timestamp = windycoys_get_deploy_timestamp();
+if ($deploy_timestamp) {
+  $css_url .= '?t=' . $deploy_timestamp;
+}
+?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
   <head>
@@ -7,7 +14,7 @@
     <meta name="theme-color" content="#4b88b6">
     <meta name="description" content="<?php bloginfo('description'); ?>">
     <?php wp_head(); ?>
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
+    <link rel="stylesheet" href="<?php echo $css_url ?>">
     <link href="//fonts.googleapis.com/css?family=Open+Sans|Raleway:700" rel="stylesheet">
   </head>
   <body>
