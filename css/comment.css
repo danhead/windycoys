@@ -32,6 +32,10 @@
   display: none;
 }
 
+.comment__reply {
+  transition: color var(--transition-md) ease-out;
+}
+
 .comment__reply:focus,
 .comment__reply:hover {
   color: var(--color-light-blue);
@@ -48,21 +52,10 @@
   position: relative;
   font-size: 12px;
   vertical-align: middle;
+  transition: box-shadow var(--transition-md) ease-out;
 }
 
-.comment__reply-text:after {
-  background-color: var(--color-light-blue);
-  bottom: -1px;
-  content: '';
-  left: 0;
-  height: 2px;
-  opacity: 0;
-  position: absolute;
-  right: 0;
-  transition: opacity var(--transition-md) ease-out;
-}
-
-.comment__reply:focus .comment__reply-text:after,
-.comment__reply:hover .comment__reply-text:after {
-  opacity: 1;
+.comment__reply:focus .comment__reply-text,
+.comment__reply:hover .comment__reply-text {
+  box-shadow: var(--link-focus);
 }

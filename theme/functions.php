@@ -60,7 +60,7 @@ function windycoys_the_tags() {
   }
   if ($tags) {
     foreach($tags as $key=>$tag) {
-      echo '<a class="metadata__categories-link" href="' .
+      echo '<a class="metadata__tag-link" href="' .
         home_url() . '/tag/' . $tag->name . '" rel="tag">' .
         $tag->name . '</a>';
       if ($key < count($tags) - 1) {

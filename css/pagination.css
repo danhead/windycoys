@@ -39,7 +39,6 @@
 .pagination__link:focus,
 .pagination__link:visited {
   display: block;
-  position: relative;
   color: var(--color-light-blue);
   transition: transform var(--transition-md) ease-out;
 }

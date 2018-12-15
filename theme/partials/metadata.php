@@ -1,43 +1,51 @@
 <section class="metadata">
-  <div class="metadata__date">
-    <svg class="icon" aria-hidden="true">
-      <use href="#icon-calendar"></use>
-    </svg>
-    <span class="metadata__date-text">
+  <div class="metadata__item metadata__item--light">
+    <span class="metadata__icon">
+      <svg class="icon" aria-hidden="true">
+        <use href="#icon-calendar"></use>
+      </svg>
+    </span>
+    <span class="metadata__text">
       <?php the_time(get_option('date_format')) ?>
     </span>
   </div>
   <?php if (is_user_logged_in()): ?>
-  <div class="metadata__editor">
-    <a class="metadata__editor-link" href="<?php echo get_edit_post_link() ?>">
-      <svg class="icon" aria-hidden="true">
-        <use href="#icon-edit"></use>
-      </svg>
-      <span class="metadata__editor-text">
+  <div class="metadata__item">
+    <a class="metadata__link" href="<?php echo get_edit_post_link() ?>">
+      <span class="metadata__icon">
+        <svg class="icon" aria-hidden="true">
+          <use href="#icon-edit"></use>
+        </svg>
+      </span>
+      <span class="metadata__text">
         Edit post
       </span>
     </a>
   </div>
   <?php endif; ?>
-  <div class="metadata__comments">
-    <a class="metadata__comments-link" href="<?php the_permalink() ?>#comments">
-    <svg class="icon" aria-hidden="true">
-        <use href="#icon-comments"></use>
-      </svg>
-      <span class="metadata__comments-text">
+  <div class="metadata__item">
+    <a class="metadata__link" href="<?php the_permalink() ?>#comments">
+      <span class="metadata__icon">
+        <svg class="icon" aria-hidden="true">
+          <use href="#icon-comments"></use>
+        </svg>
+      </span>
+      <span class="metadata__text">
         <?php comments_number(); ?>
       </span>
     </a>
   </div>
-  <div class="metadata__categories">
-    <svg class="icon" aria-hidden="true">
-      <use href="#icon-hash"></use>
-    </svg>
-    <span class="metadata__categories-text">
+  <div class="metadata__item">
+    <span class="metadata__icon">
+      <svg class="icon" aria-hidden="true">
+        <use href="#icon-hash"></use>
+      </svg>
+    </span>
+    <span class="metadata__text">
       <?php windycoys_the_tags() ?>
     </span>
   </div>
-  <div class="metadata__share">
+  <div class="metadata__item">
     <a class="metadata__share-link" href="#" aria-label="Facebook">
       <svg class="icon icon--facebook" aria-hidden="true">
         <use href="#icon-facebook"></use>
