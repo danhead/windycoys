@@ -26,6 +26,9 @@ jobs:
           name: Build CSS and JavaScript
           command: npm run build
       - run:
+          name: Generate timestamp
+          command: bash build/generate_timestamp.sh
+      - run:
           name: Deploy theme
           command: bash build/deploy.sh
       - run:
