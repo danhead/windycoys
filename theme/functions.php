@@ -22,7 +22,7 @@ class Windycoys_Walker_Comment extends Walker_Comment {
     $output .= '<div class="comment__foot">';
     $output .= '<a class="comment__reply" data-comment-author="'.$author.'" data-comment-id="'.$id.'" href="'.$reply_link.'">';
     $output .= '<span class="comment__reply-icon">';
-    $output .= '<svg class="icon icon--extra-small"><use href="#icon-reply"></use></svg></span>';
+    $output .= '<svg class="icon icon--extra-small"><use xlink:href="#icon-reply"></use></svg></span>';
     $output .= '<span class="comment__reply-text">Reply</span></a>';
     $output .= '<div class="comment__inline-reply"></div>';
     $output .= '</div></div></li>';

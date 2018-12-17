@@ -37,6 +37,7 @@ coverage/
 .env
 
 # Distribution assets
+theme/images
 theme/bundle.js
 theme/style.css
 theme/.timestamp

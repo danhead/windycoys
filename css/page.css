@@ -4,7 +4,7 @@
   grid-gap: var(--space-sm);
   grid-template-columns: 1fr;
   max-width: 1200px;
-  margin: 0 var(--space-sm);
+  margin: var(--space-sm) var(--space-sm) 0;
   padding: 0;
 }
 

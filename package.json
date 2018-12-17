@@ -9,10 +9,11 @@
     "url": "https://github.com/danhead/windycoys"
   },
   "scripts": {
-    "build": "run-s css:compile js:compile",
+    "build": "run-s images css:compile js:compile",
     "css": "run-p -c css:*",
     "css:compile": "postcss -o theme/style.css css/index.css",
     "css:lint": "stylelint --config .stylelintrc \"css/**/*.css\"",
+    "images": "node build/imagemin.js",
     "jest": "jest",
     "jest:watch": "jest --watch",
     "js": "run-s js:*",
@@ -23,6 +24,7 @@
     "test": "run-s css:lint js:lint jest",
     "watch": "run-p watch:*",
     "watch:css": "nodemon -q --watch css -e css --exec npm run css",
+    "watch:images": "nodemon -q --watch images -e png,jpg,gif --exec npm run images",
     "watch:js": "nodemon -q --watch js -e js --exec npm run js"
   },
   "devDependencies": {
@@ -40,6 +42,10 @@
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.14.0",
+    "imagemin": "^6.0.0",
+    "imagemin-gifsicle": "^6.0.1",
+    "imagemin-jpegtran": "^6.0.0",
+    "imagemin-pngquant": "^6.0.0",
     "jest": "^22.4.4",
     "npm-run-all": "^4.1.5",
     "postcss-banner": "^3.0.0",

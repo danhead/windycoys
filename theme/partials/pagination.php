@@ -46,7 +46,7 @@ function format_link($link) {
     <div class="pagination__previous">
       <a class="pagination__link" href="<?php echo get_previous_url($base_url, $current) ?>" aria-label="Previous page">
         <svg class="icon icon--small">
-          <use href="#icon-chevron-left"></use>
+          <use xlink:href="#icon-chevron-left"></use>
         </svg>
       </a>
     </div>
@@ -65,7 +65,7 @@ function format_link($link) {
     <div class="pagination__next">
       <a class="pagination__link" href="<?php echo get_next_url($base_url, $current) ?>" aria-label="Next page">
         <svg class="icon icon--small">
-          <use href="#icon-chevron-right"></use>
+          <use xlink:href="#icon-chevron-right"></use>
         </svg>
       </a>
     </div>

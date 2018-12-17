@@ -2,7 +2,7 @@
   <div class="metadata__item metadata__item--light">
     <span class="metadata__icon">
       <svg class="icon" aria-hidden="true">
-        <use href="#icon-calendar"></use>
+        <use xlink:href="#icon-calendar"></use>
       </svg>
     </span>
     <span class="metadata__text">
@@ -14,7 +14,7 @@
     <a class="metadata__link" href="<?php echo get_edit_post_link() ?>">
       <span class="metadata__icon">
         <svg class="icon" aria-hidden="true">
-          <use href="#icon-edit"></use>
+          <use xlink:href="#icon-edit"></use>
         </svg>
       </span>
       <span class="metadata__text">
@@ -27,7 +27,7 @@
     <a class="metadata__link" href="<?php the_permalink() ?>#comments">
       <span class="metadata__icon">
         <svg class="icon" aria-hidden="true">
-          <use href="#icon-comments"></use>
+          <use xlink:href="#icon-comments"></use>
         </svg>
       </span>
       <span class="metadata__text">
@@ -38,7 +38,7 @@
   <div class="metadata__item">
     <span class="metadata__icon">
       <svg class="icon" aria-hidden="true">
-        <use href="#icon-hash"></use>
+        <use xlink:href="#icon-hash"></use>
       </svg>
     </span>
     <span class="metadata__text">
@@ -48,12 +48,12 @@
   <div class="metadata__item">
     <a class="metadata__share-link" href="#" aria-label="Facebook">
       <svg class="icon icon--facebook" aria-hidden="true">
-        <use href="#icon-facebook"></use>
+        <use xlink:href="#icon-facebook"></use>
       </svg>
     </a>
     <a class="metadata__share-link" href="<?php windycoys_share_twitter_url() ?>" aria-label="Twitter">
       <svg class="icon icon--twitter" aria-hidden="true">
-        <use href="#icon-twitter"></use>
+        <use xlink:href="#icon-twitter"></use>
       </svg>
     </a>
   </div>

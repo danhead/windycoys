@@ -8,7 +8,7 @@
       <h1 class="title">
         <span class="title__icon">
           <svg class="icon icon--large" aria-hidden="true">
-            <use href="#icon-hash"></use>
+            <use xlink:href="#icon-hash"></use>
           </svg>
         </span>
         <span class="title__text">

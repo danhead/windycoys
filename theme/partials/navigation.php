@@ -20,12 +20,12 @@
     <div class="nav__social">
       <a class="nav__social-link" href="https://www.facebook.com/WindyCOYS/">
         <svg class="icon icon--large">
-          <use href="#icon-facebook"></use>
+          <use xlink:href="#icon-facebook"></use>
         </svg>
       </a>
       <a class="nav__social-link" href="https://twitter.com/windycoys/">
         <svg class="icon icon--large">
-          <use href="#icon-twitter"></use>
+          <use xlink:href="#icon-twitter"></use>
         </svg>
       </a>
     </div>
