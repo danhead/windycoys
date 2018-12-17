@@ -7,15 +7,22 @@
   margin: 0 auto;
   max-width: 320px;
   position: relative;
+  border-radius: 50%;
+  transition: box-shadow var(--transition-fs) ease-out;
+}
+
+.logo__link:focus {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 6px var(--color-light-blue);
 }
 
 .logo__link:before {
   background-image: var(--windy-svg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 92%;
+  background-size: 100%;
   content: "";
   display: block;
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.5));
   padding-bottom: 100%;
   width: 100%;
 }
@@ -23,18 +30,11 @@
 .logo__image {
   bottom: 0;
   display: block;
-  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.5));
   height: 100%;
   left: 0;
   position: absolute;
   right: 0;
   top: 0;
-  transition:
-    filter var(--transition-md) ease-in,
-    opacity var(--transition-md) ease-in;
+  transition: opacity var(--transition-sl) ease-out;
   width: 100%;
-}
-
-.logo__link:focus .logo__image {
-  filter: drop-shadow(6px 4px 4px var(--color-light-blue));
 }
