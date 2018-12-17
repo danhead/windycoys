@@ -15,6 +15,7 @@ $manifest = get_template_directory_uri() . '/manifest.json';
     <meta name="theme-color" content="#201f42">
     <meta name="description" content="<?php bloginfo('description'); ?>">
     <?php wp_head(); ?>
+    <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri() ?>/images/icon_48.png">
     <link rel="manifest" href="<?php echo $manifest ?>">
     <link rel="stylesheet" href="<?php echo $css_url ?>">
     <link href="//fonts.googleapis.com/css?family=Open+Sans|Raleway:700" rel="stylesheet">
