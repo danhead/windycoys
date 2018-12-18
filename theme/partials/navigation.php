@@ -7,8 +7,13 @@
   </button>
   <div class="nav__content">
     <h2 class="nav__title">
-      <a class="nav__title-link" href="<?php get_site_url() ?>/" aria-label="Navigation title" tabindex="-1">
-        <?php bloginfo('name') ?>
+      <a class="nav__title-link" href="<?php get_site_url() ?>/" aria-label="Back Home" tabindex="-1">
+        <span class="nav__title-link-icon">
+          <svg class="icon icon--extra-large">
+            <use xlink:href="#icon-windy"></use>
+          </svg>
+        </span>
+        <img src="<?php echo get_template_directory_uri(); ?>/images/icon.png" alt="WindyCOYS logo" class="nav__title-link-image" data-load-transition="false">
       </a>
     </h2>
     <ul class="nav__list" role="menubar">

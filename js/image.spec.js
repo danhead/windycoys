@@ -1,13 +1,18 @@
 import Image from './image';
 
-const imageHtml = '<img src="foo.jpg"></img>';
+const imageHtml = `
+<img class="image" src="foo.jpg"></img>
+<img class="disabled-image" data-load-transition="false" src="foo.jpg"></img>
+`;
 
 describe('Image', () => {
   let image;
+  let disabledImage;
 
   beforeEach(() => {
     document.body.innerHTML = imageHtml;
-    image = document.querySelector('img');
+    image = document.querySelector('.image');
+    disabledImage = document.querySelector('.disabled-image');
   });
 
   it('Should initialize', () => {
@@ -52,6 +57,13 @@ describe('Image', () => {
     });
     img.start();
     expect(img.attachLoadedEvent).toHaveBeenCalledTimes(1);
+  });
+
+  test('start should do nothing if data-load-transition=false', () => {
+    const img = new Image(disabledImage);
+    img.attachLoadedEvent = jest.fn();
+    img.start();
+    expect(img.attachLoadedEvent).toHaveBeenCalledTimes(0);
   });
 });
 

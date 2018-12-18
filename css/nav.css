@@ -37,6 +37,7 @@
   transform: translateX(-100%);
   transition: transform var(--nav-transition-duration) ease-out;
   z-index: 10;
+  overflow-y: auto;
 }
 
 .logged-in .nav__content {
@@ -49,12 +50,30 @@
   margin-right: 62px;
 }
 
+.nav__title-link {
+  display: block;
+  position: relative;
+}
+
 .nav__title-link,
-.nav__title-link:active,
-.nav__title-link:focus,
 .nav__title-link:hover,
+.nav__title-link:focus,
 .nav__title-link:visited {
   color: #fff;
+}
+
+.nav__title-link-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 72px;
+  height: 72px;
+  opacity: 0;
+  transition: opacity var(--nav-transition-duration) ease-out;
+}
+
+.nav__title-link:hover .nav__title-link-image {
+  opacity: 1;
 }
 
 .nav__close {
@@ -67,15 +86,19 @@
   position: absolute;
   right: 15px;
   top: 15px;
-  transition: filter var(--nav-transition-duration) ease-out;
+  transition:
+    box-shadow var(--nav-transition-duration) ease-out,
+    filter var(--nav-transition-duration) ease-out;
   width: 32px;
 }
 
-.nav__close:active,
-.nav__close:focus,
+.nav__close:focus {
+  box-shadow: 0 3px 0 0 #fff;
+  outline: 0;
+}
+
 .nav__close:hover {
   filter: drop-shadow(0 0 2px #fff);
-  outline: 0;
 }
 
 .nav__close-bar {
@@ -103,11 +126,10 @@
   flex-grow: 1;
   font-family: var(--heading-font-family);
   font-size: 1.5rem;
-  margin: var(--spaceMd) 0 0 var(--space-md);
 }
 
 .nav__list--sub-list {
-  margin-top: 0;
+  margin: 0 0 0 var(--space-sm);
 }
 
 .nav__link,
@@ -117,13 +139,18 @@
 .nav__link:visited {
   color: #fff;
   display: inline-block;
-  margin-bottom: var(--space-sm);
-  transition: text-shadow var(--nav-transition-duration) ease-out;
+  margin-bottom: var(--space-xs);
+  transition:
+    box-shadow var(--nav-transition-duration) ease-out,
+    text-shadow var(--nav-transition-duration) ease-out;
 }
 
-.nav__link:focus,
 .nav__link:hover {
   text-shadow: 0 0 2px #fff;
+}
+
+.nav__link:focus {
+  box-shadow: 0 3px 0 0 #fff;
 }
 
 /**
@@ -131,7 +158,7 @@
  */
 
 .nav__social {
-  margin-bottom: var(--spaceSm);
+  margin-bottom: var(--space-xs);
 }
 
 .nav__social-link,
@@ -141,10 +168,15 @@
 .nav__social-link:visited {
   display: inline-block;
   color: #fff;
-  transition: filter var(--nav-transition-duration) ease-out;
+  transition:
+    box-shadow var(--nav-transition-duration) ease-out,
+    filter var(--nav-transition-duration) ease-out;
 }
 
-.nav__social-link:focus,
+.nav__social-link:focus {
+  box-shadow: 0 3px 0 0 #fff;
+}
+
 .nav__social-link:hover {
   filter: drop-shadow(0 0 2px #fff);
 }

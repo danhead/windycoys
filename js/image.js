@@ -1,6 +1,7 @@
 export default class Image {
   constructor(image) {
     this.image = image;
+    this.dataset = image.dataset;
   }
 
   fadeIn() {
@@ -8,6 +9,9 @@ export default class Image {
   }
 
   start() {
+    if (this.dataset.loadTransition === 'false') {
+      return;
+    }
     this.image.style.opacity = 0;
     if (this.image.complete) {
       this.fadeIn();
