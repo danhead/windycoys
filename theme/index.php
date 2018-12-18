@@ -20,7 +20,9 @@
             <?php the_title(); ?>
           </a>
         </h1>
-        <?php the_content(__('Continue reading <span class="meta-nav">&raquo;</span>', 'windycoys')); ?>
+        <div class="content">
+          <?php the_content(__('Continue reading <span class="meta-nav">&raquo;</span>', 'windycoys')); ?>
+        </div>
       </div>
     </article>
   </section>

@@ -10,7 +10,9 @@
           <?php the_title(); ?>
         </a>
       </h1>
-      <?php the_content(); ?>
+      <div class="content">
+        <?php the_content(); ?>
+      </div>
       <?php get_template_part('partials/archive') ?>
     </div>
   </section>
