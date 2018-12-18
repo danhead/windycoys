@@ -121,14 +121,17 @@
  * Wordpress overrides
  */
 
-.article .twitter-tweet,
+.article .twitter-tweet {
+  width: auto !important;
+}
+
 .article .wp-caption {
   background-color: #fff;
   border: 1px solid var(--color-light-grey);
   border-radius: 4px;
+  display: inline-block;
   margin: 0 0 var(--space-sm);
   padding: var(--space-sm);
-  text-align: center;
 }
 
 .article .wp-caption a {
@@ -137,10 +140,6 @@
 
 .article .wp-caption a:after {
   display: none;
-}
-
-.article [class*="wp-caption"] {
-  width: auto !important;
 }
 
 @media (--viewport-lg) {
