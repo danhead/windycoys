@@ -69,11 +69,11 @@ function windycoys_the_tags() {
   }
 }
 
-function windycoys_share_twitter_url() {
+function windycoys_get_twitter_share_url() {
   $url = 'https://twitter.com/intent/tweet?text=';
   $title = get_the_title();
   $link = get_the_permalink();
-  echo $url . urlencode($title . ': ' . $link . ' by @WindyCOYS');
+  return $url . urlencode($title . ' : ' . $link);
 }
 
 function windycoys_search_posts_per_page($query) {

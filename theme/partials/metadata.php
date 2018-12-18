@@ -46,15 +46,29 @@
     </span>
   </div>
   <div class="metadata__item">
-    <a class="metadata__share-link" href="#" aria-label="Facebook">
-      <svg class="icon icon--facebook" aria-hidden="true">
-        <use xlink:href="#icon-facebook"></use>
-      </svg>
-    </a>
-    <a class="metadata__share-link" href="<?php windycoys_share_twitter_url() ?>" aria-label="Twitter">
-      <svg class="icon icon--twitter" aria-hidden="true">
-        <use xlink:href="#icon-twitter"></use>
-      </svg>
+    <div
+      class="fb-share-button"
+      data-href="<?php echo get_the_permalink() ?>"
+      data-layout="box_count"
+      data-size="small"
+      data-mobile-iframe="false"
+    >
+      <a
+        target="_blank"
+        href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
+        class="fb-xfbml-parse-ignore"
+      >
+        Share
+      </a>
+    </div>
+  </div>
+  <div class="metadata__item">
+    <a
+      class="twitter-share-button"
+      href="<?php echo windycoys_get_twitter_share_url() ?>"
+      data-url="<?php echo get_the_permalink() ?>"
+    >
+      Tweet
     </a>
   </div>
 </section>

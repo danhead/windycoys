@@ -14,13 +14,18 @@ $manifest = get_template_directory_uri() . '/manifest.json';
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#201f42">
     <meta name="description" content="<?php bloginfo('description'); ?>">
+    <meta property="og:title" content="<?php if(is_single()) { single_post_title(); } else { bloginfo("name"); } ?>"/>
+    <meta property="og:type" content="blog"/>
+    <meta property="og:url" content="https://<?php echo $_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"]; ?>"/>
+    <meta property="og:image" content="<?php echo get_template_directory_uri() ?>/images/icon.png"/>
+    <meta property="og:site_name" content="WindyCOYS"/>
+    <meta property="fb:admins" content="Windy84"/>
+    <meta property="og:description" content="<?php bloginfo('description'); ?>"/>
     <?php wp_head(); ?>
+    <link rel="me" href="https://twitter.com/WindyCOYS">
     <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri() ?>/images/icon_48.png">
     <link rel="manifest" href="<?php echo $manifest ?>">
     <link rel="stylesheet" href="<?php echo $css_url ?>">
     <link href="//fonts.googleapis.com/css?family=Open+Sans|Raleway:700" rel="stylesheet">
   </head>
   <body>
-    <header>
-      <?php get_template_part('icons') ?>
-    </header>

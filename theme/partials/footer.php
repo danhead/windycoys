@@ -7,5 +7,6 @@
       <img src="<?php echo get_template_directory_uri() ?>/images/newsnow_sw.gif" alt="As featured on NewsNow: Tottenham Hotspur news">
     </a>
   </div>
+  <?php get_template_part('icons') ?>
 </footer>
 <?php wp_footer() ?>
