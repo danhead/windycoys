@@ -44,7 +44,8 @@
   }
 
   .page__content,
-  .page__article {
+  .page__article,
+  .page__comments {
     grid-column-start: 2;
   }
 

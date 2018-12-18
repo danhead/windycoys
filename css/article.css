@@ -1,5 +1,10 @@
+.article {
+  margin-bottom: var(--space-sm);
+}
+
 @media (--viewport-lg) {
   .article {
+    margin-bottom: var(--space-md);
     border-bottom: 1px solid var(--color-light-grey);
   }
 }

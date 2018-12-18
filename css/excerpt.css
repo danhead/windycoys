@@ -2,6 +2,12 @@
   margin-bottom: var(--space-sm);
 }
 
+@media (--viewport-lg) {
+  .excerpt {
+    margin-bottom: var(--space-md);
+  }
+}
+
 .excerpt__head,
 .excerpt__body,
 .excerpt__title {

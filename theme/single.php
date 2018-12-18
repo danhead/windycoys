@@ -22,13 +22,13 @@
           <?php the_content(__('Continue reading <span class="meta-nav">&raquo;</span>', 'windycoys')); ?>
         </div>
       </div>
-      <div class="article__comments">
-        <?php comments_template() ?>
-      </div>
     </article>
   </section>
   <section class="page__metadata">
     <?php get_template_part('partials/metadata') ?>
+  </section>
+  <section class="page__comments">
+    <?php comments_template() ?>
   </section>
   <?php endwhile; ?>
   <?php else: ?>

@@ -38,7 +38,7 @@
   <div class="metadata__item">
     <span class="metadata__icon">
       <svg class="icon" aria-hidden="true">
-        <use xlink:href="#icon-hash"></use>
+        <use xlink:href="#icon-tag"></use>
       </svg>
     </span>
     <span class="metadata__text">

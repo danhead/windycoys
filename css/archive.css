@@ -2,6 +2,12 @@
   margin-bottom: var(--space-sm);
 }
 
+@media (--viewport-lg) {
+  .archive__list {
+    margin-bottom: var(--space-md);
+  }
+}
+
 .archive__list--sub-list {
   margin-left: var(--space-sm);
 }
