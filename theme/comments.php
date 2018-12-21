@@ -1,4 +1,6 @@
 <?php
+require get_template_directory() . '/classes/walker.comments.php';
+
 $form_settings = array(
   class_form => 'comment-respond__form',
   class_submit => 'comment-respond__submit',
@@ -35,12 +37,9 @@ $form_settings = array(
   <div class="comments__body">
     <ol class="comments__list">
       <?php
-        wp_list_comments(
-          array(
-            'walker' => new Windycoys_Walker_Comment(),
-            'style' => 'ol',
-          )
-        );
+        wp_list_comments(array(
+          walker => new Windycoys_Walker_Comments(),
+        ));
       ?>
     </ol>
   </div>

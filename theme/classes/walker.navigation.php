@@ -1,3 +1,5 @@
+<?php
+
 class Windycoys_Walker_Navigation extends Walker_Nav_Menu {
   function start_lvl(&$output, $depth = 0) {
     $output .= '<ul class="nav__list">';
@@ -23,3 +25,4 @@ class Windycoys_Walker_Navigation extends Walker_Nav_Menu {
   }
 }
 
+?>

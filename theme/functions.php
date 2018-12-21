@@ -1,33 +1,4 @@
 <?php
-class Windycoys_Walker_Comment extends Walker_Comment {
-  function start_el(&$output, $comment, $depth = 0) {
-    $id = $comment->comment_ID;
-    $post_id = $comment->comment_post_ID;
-    $reply_link = get_permalink($post_id) . '?replytocom='.$id.'#respond';
-    $author_email = $comment->comment_author_email;
-    $author = $comment->comment_author;
-    $avatar = get_avatar($comment, 128);
-    $date = get_comment_date('jS F, Y', $id).' at '.get_comment_date('H:i', $id);
-    $content = $comment->comment_content;
-    $comment_depth = $depth > 0 ? ' comments__item--depth-'.$depth : '';
-    $output .= '<li class="comments__item'.$comment_depth.'">';
-    $output .= '<div class="comment">';
-    $output .= '<div class="comment__head">';
-    $output .= '<div class="comment__avatar">'.$avatar.'</div>';
-    $output .= '<div class="comment__metadata">';
-    $output .= '<span class="comment__author">'.$author.'</span>';
-    $output .= '<span class="comment__date">'.$date.'</span>';
-    $output .= '</div></div>';
-    $output .= '<div class="comment__body">'.$content.'</div>';
-    $output .= '<div class="comment__foot">';
-    $output .= '<a class="comment__reply" data-comment-author="'.$author.'" data-comment-id="'.$id.'" href="'.$reply_link.'">';
-    $output .= '<span class="comment__reply-icon">';
-    $output .= '<svg class="icon icon--extra-small"><use xlink:href="#icon-reply"></use></svg></span>';
-    $output .= '<span class="comment__reply-text">Reply</span></a>';
-    $output .= '<div class="comment__inline-reply"></div>';
-    $output .= '</div></div></li>';
-  }
-}
 
 function windycoys_the_tags() {
   $tags = get_the_tags();
