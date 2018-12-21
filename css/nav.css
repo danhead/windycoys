@@ -118,18 +118,21 @@
   top: -10000px;
 }
 
+.nav__menu {
+  flex-grow: 1;
+}
+
 /**
  * nav List
  */
 
 .nav__list {
-  flex-grow: 1;
   font-family: var(--heading-font-family);
   font-size: 1.5rem;
 }
 
-.nav__list--sub-list {
-  margin: 0 0 0 var(--space-sm);
+.nav__list .nav__list {
+  margin-left: var(--space-sm);
 }
 
 .nav__link,

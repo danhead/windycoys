@@ -29,25 +29,6 @@ class Windycoys_Walker_Comment extends Walker_Comment {
   }
 }
 
-class Windycoys_Walker_Nav extends Walker_Nav_Menu {
-  function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
-    $title = $item->post_title;
-    $uri = get_site_url() . '/' . $item->post_name;
-
-    $output .= '<li class="nav__item" role="none">';
-    $output .= '<a class="nav__link" href="' . $uri .'" role="menuitem">';
-    $output .= $title . '</a></li>';
-  }
-}
-
-function windycoys_nav() {
-  wp_nav_menu(array(
-    'container' => 'ul',
-    'menu_class' => 'nav__list nav__list--sub-list',
-    'walker' => new Windycoys_Walker_Nav()
-  ));
-}
-
 function windycoys_the_tags() {
   $tags = get_the_tags();
   if (!$tags) return false;
