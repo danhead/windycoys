@@ -44,6 +44,10 @@
   top: 32px;
 }
 
+.nav__body {
+  flex-grow: 1;
+}
+
 .nav__title {
   font-family: var(--heading-font-family);
   font-size: 2.5rem;
@@ -116,10 +120,6 @@
   left: -10000px;
   position: absolute;
   top: -10000px;
-}
-
-.nav__menu {
-  flex-grow: 1;
 }
 
 /**
