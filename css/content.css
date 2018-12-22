@@ -28,7 +28,7 @@
   margin-bottom: var(--space-sm);
 }
 
-@media (--viewport-lg) {
+@media (--viewport-md) {
   .content p {
     margin-bottom: var(--space-md);
   }
@@ -99,7 +99,7 @@
   display: none;
 }
 
-@media (--viewport-lg) {
+@media (--viewport-md) {
   .content .twitter-tweet,
   .content .wp-caption {
     margin: 0 0 var(--space-md);
@@ -124,7 +124,7 @@
   width: auto !important;
 }
 
-@media (--viewport-lg) {
+@media (--viewport-md) {
   .content table {
     max-width: 100%;
   }

@@ -4,7 +4,7 @@
   margin-bottom: var(--space-sm);
 }
 
-@media (--viewport-lg) {
+@media (--viewport-md) {
   .title {
     margin-bottom: var(--space-md);
   }

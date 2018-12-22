@@ -1,7 +1,5 @@
 .social {
-  position: absolute;
-  right: var(--space-sm);
-  top: var(--space-sm);
+  text-align: right;
 }
 
 .social__link {

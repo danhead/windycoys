@@ -1,7 +1,7 @@
 .metadata {
   display: flex;
   flex-flow: row wrap;
-  font-size: 14px;
+  font-size: 12px;
   margin-bottom: var(--space-sm);
   border-bottom: 1px solid var(--color-light-grey);
 }
@@ -13,11 +13,16 @@
   color: var(--color-dark-blue);
 }
 
+@media (--viewport-md) {
+  .metadata {
+    margin-bottom: var(--space-md);
+  }
+}
+
 @media (--viewport-lg) {
   .metadata {
     flex-flow: column wrap;
     border-bottom: none;
-    margin-bottom: var(--space-md);
   }
 
   .metadata__item {
@@ -31,7 +36,7 @@
   margin-bottom: var(--space-sm);
 }
 
-@media (--viewport-lg) {
+@media (--viewport-md) {
   .metadata__item--light {
     display: block;
   }
@@ -43,7 +48,7 @@
 }
 
 .metadata__text {
-  margin-left: 10px;
+  margin-left: var(--space-xs);
   text-transform: capitalize;
   transition: box-shadow var(--transition-md) ease-out;
   vertical-align: middle;

@@ -34,14 +34,20 @@
   padding: var(--space-sm);
   position: fixed;
   top: 0;
-  transform: translateX(-100%);
+  transform: translateX(-110%);
   transition: transform var(--nav-transition-duration) ease-out;
   z-index: 10;
   overflow-y: auto;
 }
 
 .logged-in .nav__content {
-  top: 32px;
+  top: 46px;
+}
+
+@media (--viewport-wordpress-admin-bar) {
+  .logged-in .nav__content {
+    top: 32px;
+  }
 }
 
 .nav__body {

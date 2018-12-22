@@ -2,9 +2,14 @@
   margin-bottom: var(--space-sm);
 }
 
-@media (--viewport-lg) {
+@media (--viewport-md) {
   .article {
     margin-bottom: var(--space-md);
+  }
+}
+
+@media (--viewport-lg) {
+  .article {
     border-bottom: 1px solid var(--color-light-grey);
   }
 }
@@ -14,7 +19,7 @@
   margin-bottom: var(--space-sm);
 }
 
-@media (--viewport-lg) {
+@media (--viewport-md) {
   .article__date {
     display: none;
   }

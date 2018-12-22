@@ -15,7 +15,7 @@
   margin-left: var(--space-sm);
 }
 
-@media (--viewport-lg) {
+@media (--viewport-md) {
   .comments__list--sub-list {
     margin-left: var(--space-md);
   }
