@@ -36,11 +36,11 @@
     <h2 class="title">Podcasts</h2>
     <div class="page__columns">
       <div class="page__cell">
-        <?php $podcast = windycoys_get_podcast_meta('tfc') ?>
+        <?php $podcast = windycoys_get_podcast_meta('xin') ?>
         <?php get_template_part('partials/podcast') ?>
       </div>
       <div class="page__cell">
-        <?php $podcast = windycoys_get_podcast_meta('xin') ?>
+        <?php $podcast = windycoys_get_podcast_meta('tfc') ?>
         <?php get_template_part('partials/podcast') ?>
       </div>
     </div>

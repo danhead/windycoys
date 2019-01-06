@@ -121,11 +121,12 @@ function windycoys_get_podcast_meta($id) {
   $item = $rss->channel->item;
   $date = strtotime((String) $item->pubDate);
   return array(
+    id => $id,
     from_cache => $res['from_cache'],
     podcast_title => (String) $rss->channel->title,
     podcast_description => (String) $rss->channel->description,
-    podcast_url => (String) $rss->channel->image->url,
     podcast_episodes => windycoys_get_episodes_url($id),
+    artwork_url => (String) $rss->channel->image->url,
     title => (String) $item->title,
     description => (String) $item->description,
     image => (String) $item->image['href'],

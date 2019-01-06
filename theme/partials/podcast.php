@@ -1,18 +1,18 @@
 <?php
 global $podcast;
+$artwork = get_template_directory_uri().'/images/'.$podcast['id'].'.png';
 ?>
 <div class="excerpt">
   <div class="excerpt__head">
-    <h3 class="excerpt__title">
-      <a class="link" href="<?php echo $podcast['podcast_episodes'] ?>">
-        <?php echo $podcast['podcast_title'] ?>
-      </a>
-    </h3>
-    <h4 class="excerpt__subtitle">
+    <img
+      class="excerpt__image"
+      title="<?php echo $podcast['podcast_title'] ?>"
+      src="<?php echo $artwork ?>">
+    <h3 class="excerpt__subtitle">
       <a class="link" href="<?php echo $podcast['url'] ?>">
         <?php echo $podcast['title'] ?>
       </a>
-    </h4>
+    </h3>
   </div>
   <div class="excerpt__body">
     <?php echo $podcast['description'] ?>

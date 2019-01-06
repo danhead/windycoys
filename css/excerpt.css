@@ -62,3 +62,7 @@
   margin-bottom: var(--space-sm);
   background-color: var(--color-light-blue);
 }
+
+.excerpt__image {
+  height: 200px;
+}
