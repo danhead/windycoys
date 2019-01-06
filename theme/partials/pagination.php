@@ -40,6 +40,7 @@ function format_link($link) {
   return $link;
 }
 
+if (count($links) > 1) :
 ?>
 <div class="pagination">
   <?php if ($current > 1) : ?>
@@ -71,3 +72,4 @@ function format_link($link) {
     </div>
   <?php endif; ?>
 </div>
+<?php endif; ?>

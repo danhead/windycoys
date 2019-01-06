@@ -4,10 +4,8 @@
     <?php get_template_part('partials/logo') ?>
   </section>
   <section class="page__content">
-    <div class="content">
-      <h1 class="title">404 - Page not found</h1>
-      <a class="link" href="<?php echo get_site_url() ?>/">Go back home</a>
-    </div>
+    <h1 class="title">404 - Page not found</h1>
+    <a class="link" href="<?php echo get_site_url() ?>/">Go back home</a>
   </section>
   <section class="page__banner">
     <?php get_template_part('partials/banner') ?>

@@ -4,17 +4,15 @@
     <?php get_template_part('partials/logo') ?>
   </section>
   <section class="page__content">
+    <h1 class="title">
+      <a href="<?php the_permalink(); ?>">
+        <?php the_title(); ?>
+      </a>
+    </h1>
     <div class="content">
-      <h1 class="title">
-        <a href="<?php the_permalink(); ?>">
-          <?php the_title(); ?>
-        </a>
-      </h1>
-      <div class="content">
-        <?php the_content(); ?>
-      </div>
-      <?php get_template_part('partials/archive') ?>
+      <?php the_content(); ?>
     </div>
+    <?php get_template_part('partials/archive') ?>
   </section>
   <section class="page__banner">
     <?php get_template_part('partials/banner') ?>

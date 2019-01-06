@@ -5,21 +5,18 @@
   </section>
   <?php if (have_posts()): while (have_posts()) : the_post(); ?>
   <section class="page__content">
+    <h1 class="title">
+      <?php the_title(); ?>
+    </h1>
     <div class="content">
-      <h1 class="title">
-        <?php the_title(); ?>
-      </h1>
       <?php the_content(); ?>
-      </div>
     </div>
   </section>
   <?php endwhile; ?>
   <?php else: ?>
   <section class="page__content">
-    <div class="content">
-      <h1 class="title">Sorry, there is no article to display</h1>
-      <a class="link" href="<?php echo get_site_url() ?>/">Go back home</a>
-    </div>
+    <h1 class="title">Sorry, there is no article to display</h1>
+    <a class="link" href="<?php echo get_site_url() ?>/">Go back home</a>
   </section>
   <?php endif; ?>
   <section class="page__banner">

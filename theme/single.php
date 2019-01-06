@@ -32,13 +32,9 @@
   </section>
   <?php endwhile; ?>
   <?php else: ?>
-  <section class="page__article is-first">
-    <article class="article">
-      <h1 class="title">Sorry, there is no article to display</h1>
-      <div class="article__content">
-        <a class="link" href="<?php get_site_url() ?>/">Go back home</a>
-      </div>
-    </article>
+  <section class="page__content">
+    <h1 class="title">Sorry, there is no article to display</h1>
+    <a class="link" href="<?php echo get_site_url() ?>/">Go back home</a>
   </section>
   <?php endif; ?>
   <section class="page__banner">

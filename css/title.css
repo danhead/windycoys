@@ -1,11 +1,13 @@
 .title {
   font-family: var(--heading-font-family);
+  font-size: 1.8rem;
   color: var(--color-dark-blue);
   margin-bottom: var(--space-sm);
 }
 
 @media (--viewport-md) {
   .title {
+    font-size: 2.4rem;
     margin-bottom: var(--space-md);
   }
 }

@@ -4,17 +4,17 @@
     <?php get_template_part('partials/logo') ?>
   </section>
   <section class="page__content">
+    <h1 class="title">
+      <span class="title__icon">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-tag"></use>
+        </svg>
+      </span>
+      <span class="title__text">
+        <?php echo single_tag_title() ?>
+      </span>
+    </h1>
     <div class="content">
-      <h1 class="title">
-        <span class="title__icon">
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-tag"></use>
-          </svg>
-        </span>
-        <span class="title__text">
-          <?php echo single_tag_title() ?>
-        </span>
-      </h1>
       <ol>
       <?php if (have_posts()): while (have_posts()) : the_post(); ?>
       <?php $username = get_the_author_meta('nickname') ?>
@@ -58,8 +58,8 @@
   </section>
   <?php else: ?>
   <section class="page__content">
+    <h1 class="title">Sorry, no results found.</h1>
     <div class="content">
-      <h1 class="title">Sorry, no results found.</h1>
       <a class="link" href="<?php echo get_site_url() ?>/">Go back home</a>
     </div>
   </section>
