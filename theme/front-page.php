@@ -3,10 +3,9 @@
   <section class="page__logo">
     <?php get_template_part('partials/logo') ?>
   </section>
-  <section class="page__content page__content--2col">
-    <div class="page__content-item page__content-item--full-width">
-      <h2 class="title">Latest articles</h2>
-    </div>
+  <section class="page__content">
+    <h2 class="title">Latest articles</h2>
+    <div class="page__columns">
     <?php
       $posts = get_posts(array(
         numberposts => 4,
@@ -17,19 +16,23 @@
         $month = date('F', $date);
         $day = date('jS', $date);
         $date = get_the_date('jS F, Y', $post->ID).' at '.get_the_date('H:i', $post->ID);
+        $content = (strlen($post->post_excerpt) === 0) ?
+          strip_tags(substr($post->post_content, 0, 200)).'...' :
+          $post->post_excerpt;
         $excerpt = array(
           title => $post->post_title,
           url => get_permalink($post->ID),
-          content => $post->post_excerpt,
+          content => $content,
           author => get_the_author_meta('nickname', $post->post_author),
           comments => $post->comment_count,
           date => $date,
         );
-        echo '<div class="page__content-item">';
+        echo '<div class="page__cell">';
         get_template_part('partials/excerpt');
         echo '</div>';
       }
     ?>
+    </div>
   </section>
   <section class="page__banner">
     <?php get_template_part('partials/banner') ?>
