@@ -17,7 +17,7 @@
         $day = date('jS', $date);
         $date = get_the_date('jS F, Y', $post->ID).' at '.get_the_date('H:i', $post->ID);
         $content = (strlen($post->post_excerpt) === 0) ?
-          strip_tags(substr($post->post_content, 0, 200)).'...' :
+          strip_tags(substr($post->post_content, 0, 200)).'[...]' :
           $post->post_excerpt;
         $excerpt = array(
           title => $post->post_title,
@@ -32,6 +32,17 @@
         echo '</div>';
       }
     ?>
+    </div>
+    <h2 class="title">Podcasts</h2>
+    <div class="page__columns">
+      <div class="page__cell">
+        <?php $podcast = windycoys_get_podcast_meta('tfc') ?>
+        <?php get_template_part('partials/podcast') ?>
+      </div>
+      <div class="page__cell">
+        <?php $podcast = windycoys_get_podcast_meta('xin') ?>
+        <?php get_template_part('partials/podcast') ?>
+      </div>
     </div>
   </section>
   <section class="page__banner">

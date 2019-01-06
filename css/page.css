@@ -90,11 +90,13 @@
   .page__columns {
     display: flex;
     flex-flow: row wrap;
+    margin: 0 calc(var(--space-md) / 2 * -1);
   }
 
   .page__cell {
     display: flex;
     flex-flow: column nowrap;
     flex: 1 0 50%;
+    padding: 0 calc(var(--space-md) / 2);
   }
 }
