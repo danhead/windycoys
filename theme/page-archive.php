@@ -1,6 +1,6 @@
 <?php get_header(); the_post(); ?>
 <main class="page">
-  <section class="page__logo">
+  <section class="page__logo is-fixed">
     <?php get_template_part('partials/logo') ?>
   </section>
   <section class="page__content">

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <main class="page">
-  <section class="page__logo">
+  <section class="page__logo is-fixed">
     <?php get_template_part('partials/logo') ?>
   </section>
   <?php if (have_posts()): while (have_posts()) : the_post(); ?>
@@ -24,7 +24,7 @@
       </div>
     </article>
   </section>
-  <section class="page__metadata">
+  <section class="page__metadata is-fixed">
     <?php get_template_part('partials/metadata') ?>
   </section>
   <section class="page__comments">

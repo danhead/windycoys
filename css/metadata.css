@@ -25,6 +25,10 @@
     border-bottom: none;
   }
 
+  .is-fixed .metadata {
+    position: fixed;
+  }
+
   .metadata__item {
     margin-right: 0;
   }
@@ -36,7 +40,7 @@
   margin-bottom: var(--space-sm);
 }
 
-@media (--viewport-md) {
+@media (--viewport-lg) {
   .metadata__item--light {
     display: block;
   }

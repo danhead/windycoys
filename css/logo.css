@@ -2,6 +2,20 @@
   width: 100%;
 }
 
+@media (--viewport-lg) {
+  .is-fixed .logo {
+    position: fixed;
+    width: 168px;
+    z-index: 10;
+  }
+}
+
+@media (--viewport-xl) {
+  .is-fixed .logo {
+    width: 224px;
+  }
+}
+
 .logo__link {
   display: block;
   margin: 0 auto;

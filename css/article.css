@@ -19,7 +19,7 @@
   margin-bottom: var(--space-sm);
 }
 
-@media (--viewport-md) {
+@media (--viewport-lg) {
   .article__date {
     display: none;
   }
