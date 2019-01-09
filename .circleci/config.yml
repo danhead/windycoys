@@ -1,48 +1,76 @@
+defaults: &defaults
+  working_directory: ~/tmp/windycoys
+  docker:
+    - image: circleci/node:10.15
+
 version: 2
 jobs:
-  test:
-    docker:
-      - image: circleci/node:10.0.0
+  install:
+    <<: *defaults
     steps:
+      - attach_workspace:
+          at: ~/tmp/windycoys
       - checkout
       - run:
           name: Install dependencies
           command: npm install
+      - persist_to_workspace:
+          root: .
+          paths: .
+  test:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/tmp/windycoys
       - run:
           name: Run tests
           command: npm test
-  build-latest:
-    docker:
-      - image: circleci/node:10.0.0
+  build:
+    <<: *defaults
     steps:
-      - checkout
-      - run:
-          name: Install rsync
-          command: sudo apt install -y rsync
-      - run:
-          name: Install dependencies
-          command: npm install
+      - attach_workspace:
+          at: ~/tmp/windycoys
       - run:
           name: Build CSS and JavaScript
           command: npm run build
       - run:
           name: Generate timestamp
           command: bash build/generate_timestamp.sh
+      - persist_to_workspace:
+          root: .
+          paths: .
+  deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/tmp/windycoys
+      - run:
+          name: Install rsync
+          command: sudo apt install -y rsync
       - run:
           name: Deploy theme
           command: bash build/deploy.sh
       - run:
           name: Purge Cloudflare cache
           command: bash build/purge_cache.sh
+
 workflows:
   version: 2
-  build-latest:
+  test-deploy:
     jobs:
-      - test
-      - build-latest:
+      - install
+      - test:
           requires:
+            - install
+      - build:
+          requires:
+            - install
+      - deploy:
+          requires:
+            - build
             - test
           filters:
             branches:
               only:
                 - master
+                - develop
