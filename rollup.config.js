@@ -16,7 +16,7 @@ module.exports = {
     sourcemap: !production && 'inline',
     banner: `/**!
  * Theme Name: WindyCOYS
- * Theme URI: https://windycoys.com/about
+* Theme URI: https://github.com/danhead/windycoys/
  * Author: ${pkg.author}
  * Author URI: https://danielhead.com
  * Description: Theme for windycoys.com

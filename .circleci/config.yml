@@ -27,6 +27,8 @@ jobs:
           command: npm test
   build:
     <<: *defaults
+    environment:
+      NODE_ENV: production
     steps:
       - attach_workspace:
           at: ~/tmp/windycoys

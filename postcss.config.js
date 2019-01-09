@@ -4,7 +4,7 @@ const pkg = require(resolve(__dirname, 'package.json'));
 const year = new Date().getFullYear();
 
 const banner = `Theme Name: WindyCOYS
-Theme URI: https://windycoys.com/about
+Theme URI: https://github.com/danhead/windycoys/
 Author: ${pkg.author}
 Author URI: https://danielhead.com
 Description: Theme for windycoys.com
