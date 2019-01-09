@@ -7,14 +7,7 @@ const year = new Date().getFullYear();
 
 const production = process.env.NODE_ENV === 'production';
 
-module.exports = {
-  input: resolve(__dirname, 'js/index.js'),
-  output: {
-    file: resolve(__dirname, 'theme/bundle.js'),
-    format: 'umd',
-    name: 'windy',
-    sourcemap: !production && 'inline',
-    banner: `/**!
+const banner = `/**!
  * Theme Name: WindyCOYS
 * Theme URI: https://github.com/danhead/windycoys/
  * Author: ${pkg.author}
@@ -24,12 +17,25 @@ module.exports = {
  * Copyright: (c) ${year} ${pkg.author}
  * License: MIT
  * License URI: https://choosealicense.com/licenses/mit/
- */`,
+ */`;
+
+module.exports = {
+  input: resolve(__dirname, 'js/index.js'),
+  output: {
+    file: resolve(__dirname, 'theme/bundle.js'),
+    format: 'umd',
+    name: 'windy',
+    sourcemap: !production && 'inline',
+    banner,
   },
   plugins: [
     babel({
       exclude: 'node_modules/**',
     }),
-    production && uglify(),
+    production && uglify({
+      output: {
+        preamble: banner,
+      },
+    }),
   ].filter(Boolean),
 };
