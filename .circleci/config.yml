@@ -3,6 +3,23 @@ defaults: &defaults
   docker:
     - image: circleci/node:10.15
 
+semver-tags: &semver-tags
+  filters:
+    tags:
+      only: /^v.*/
+    branches:
+      ignore: /.*/
+develop: &develop
+  filters:
+    branches:
+      only: develop
+other-branches: &other-branches
+  filters:
+    branches:
+      ignore:
+        - master
+        - develop
+
 version: 2
 jobs:
   install:
@@ -41,7 +58,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths: .
-  deploy:
+  deploy-prod:
     <<: *defaults
     steps:
       - attach_workspace:
@@ -51,28 +68,63 @@ jobs:
           command: sudo apt install -y rsync
       - run:
           name: Deploy theme
-          command: bash build/deploy.sh
+          command: bash build/deploy.sh prod
+      - run:
+          name: Purge Cloudflare cache
+          command: bash build/purge_cache.sh
+  deploy-develop:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/tmp/windycoys
+      - run:
+          name: Install rsync
+          command: sudo apt install -y rsync
+      - run:
+          name: Deploy theme
+          command: bash build/deploy.sh develop
       - run:
           name: Purge Cloudflare cache
           command: bash build/purge_cache.sh
 
 workflows:
   version: 2
-  test-deploy:
+  test:
     jobs:
-      - install
+      - install: *other-branches
       - test:
+          <<: *other-branches
+          requires:
+            - install
+  develop:
+    jobs:
+      - install: *develop
+      - test:
+          <<: *develop
           requires:
             - install
       - build:
+          <<: *develop
           requires:
             - install
-      - deploy:
+      - deploy-develop:
+          <<: *develop
           requires:
-            - build
             - test
-          filters:
-            branches:
-              only:
-                - master
-                - develop
+            - build
+  prod:
+    jobs:
+      - install: *semver-tags
+      - test:
+          <<: *semver-tags
+          requires:
+            - install
+      - build:
+          <<: *semver-tags
+          requires:
+            - install
+      - deploy-prod:
+          <<: *semver-tags
+          requires:
+            - test
+            - build
