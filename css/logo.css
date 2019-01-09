@@ -2,7 +2,7 @@
   width: 100%;
 }
 
-@media (--viewport-lg) {
+@media (--viewport-lg) and (min-height: 540px) {
   .is-fixed .logo {
     position: fixed;
     width: 168px;
@@ -10,7 +10,7 @@
   }
 }
 
-@media (--viewport-xl) {
+@media (--viewport-xl) and (min-height: 540px) {
   .is-fixed .logo {
     width: 224px;
   }

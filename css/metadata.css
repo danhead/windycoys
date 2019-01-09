@@ -25,12 +25,14 @@
     border-bottom: none;
   }
 
-  .is-fixed .metadata {
-    position: fixed;
-  }
-
   .metadata__item {
     margin-right: 0;
+  }
+}
+
+@media (--viewport-lg) and (min-height: 540px) {
+  .is-fixed .metadata {
+    position: fixed;
   }
 }
 
