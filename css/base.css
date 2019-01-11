@@ -1,18 +1,7 @@
 html {
   box-sizing: border-box;
   line-height: 1.5;
-}
-
-@media screen and (min-width: 50rem) {
-  html {
-    font-size: 2vw;
-  }
-}
-
-@media screen and (min-width: 62.5rem) {
-  html {
-    font-size: 1.25rem;
-  }
+  font-size: 1.125rem;
 }
 
 body {

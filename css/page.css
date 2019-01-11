@@ -71,7 +71,7 @@
 @media (--viewport-lg) {
   .page {
     grid-template-columns: 168px 1fr;
-    grid-template-rows: 32px 106px 1fr;
+    grid-template-rows: 32px 100px 1fr;
   }
 
   .page__logo {
@@ -92,7 +92,7 @@
 @media (--viewport-xl) {
   .page {
     grid-template-columns: 224px 1fr;
-    grid-template-rows: 32px 162px 1fr;
+    grid-template-rows: 32px 156px 1fr;
   }
 
   .page__columns {
