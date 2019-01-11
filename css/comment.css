@@ -2,12 +2,6 @@
   margin-bottom: var(--space-sm);
 }
 
-@media (--viewport-md) {
-  .comment {
-    margin-bottom: var(--space-md);
-  }
-}
-
 .comment__head {
   display: flex;
   margin-bottom: var(--space-sm);

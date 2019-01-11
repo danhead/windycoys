@@ -37,15 +37,9 @@
   margin-bottom: var(--space-sm);
 }
 
-@media (--viewport-md) {
-  .content p {
-    margin-bottom: var(--space-md);
-  }
-}
-
 .content ul li {
   position: relative;
-  padding: 0 0 var(--space-xs) var(--space-sm);
+  padding: 0 0 0 var(--space-sm);
 }
 
 .content ul li:before {

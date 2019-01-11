@@ -1,13 +1,6 @@
 .metadata {
   font-size: var(--size-body-extra-small);
-  margin-bottom: var(--space-sm);
   border-bottom: 1px solid var(--color-light-grey);
-}
-
-@media (--viewport-md) {
-  .metadata {
-    margin-bottom: var(--space-md);
-  }
 }
 
 @media (--viewport-lg) {
