@@ -11,12 +11,13 @@
   margin-bottom: var(--space-sm);
 }
 
-.comments__list--sub-list {
-  margin-left: var(--space-sm);
+.comments__list--sub-list .comments__item {
+  border-left: 2px solid var(--color-light-grey);
+  padding-left: var(--space-sm);
 }
 
 @media (--viewport-md) {
-  .comments__list--sub-list {
-    margin-left: var(--space-md);
+  .comments__list--sub-list .comments__item {
+    padding-left: var(--space-md);
   }
 }
