@@ -6,6 +6,7 @@
 .content h6 {
   font-family: var(--heading-font-family);
   margin-bottom: var(--space-sm);
+  color: var(--color-dark-blue);
 }
 
 .content h1 {

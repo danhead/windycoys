@@ -13,30 +13,36 @@ global $excerpt;
     <?php echo $excerpt['content'] ?>
   </div>
   <div class="excerpt__foot">
-    <p class="excerpt__metadata">
-      <span class="excerpt__icon">
-        <svg class="icon icon--extra-small" aria-hidden="true">
-          <use xlink:href="#icon-profile"></use>
-        </svg>
-      </span>
-      <span class="excerpt__text"><?php echo $excerpt['author'] ?></span>
-      <span class="excerpt__icon">
-        <svg class="icon icon--extra-small" aria-hidden="true">
-          <use xlink:href="#icon-calendar"></use>
-        </svg>
-      </span>
-      <span class="excerpt__text"><?php echo $excerpt['date'] ?></span>
-      <span class="excerpt__icon">
-        <svg class="icon icon--extra-small" aria-hidden="true">
-          <use xlink:href="#icon-comments"></use>
-        </svg>
-      </span>
-      <span class="excerpt__text">
-        <?php
-          $number = $excerpt['comments'];
-          echo $number === '1' ? '1 comment' : $number . ' comments';
-        ?>
-      </span>
-    </p>
+    <ul class="excerpt__list">
+      <li class="excerpt__list-item">
+        <span class="excerpt__icon">
+          <svg class="icon icon--extra-small" aria-hidden="true">
+            <use xlink:href="#icon-profile"></use>
+          </svg>
+        </span>
+        <span class="excerpt__text"><?php echo $excerpt['author'] ?></span>
+      </li>
+      <li class="excerpt__list-item">
+        <span class="excerpt__icon">
+          <svg class="icon icon--extra-small" aria-hidden="true">
+            <use xlink:href="#icon-calendar"></use>
+          </svg>
+        </span>
+        <span class="excerpt__text"><?php echo $excerpt['date'] ?></span>
+      </li>
+      <li class="excerpt__list-item">
+        <span class="excerpt__icon">
+          <svg class="icon icon--extra-small" aria-hidden="true">
+            <use xlink:href="#icon-comments"></use>
+          </svg>
+        </span>
+        <span class="excerpt__text">
+          <?php
+            $number = $excerpt['comments'];
+            echo $number === '1' ? '1 comment' : $number . ' comments';
+          ?>
+        </span>
+      </li>
+    </ul>
   </div>
 </div>
