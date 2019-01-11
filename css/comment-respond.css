@@ -9,12 +9,16 @@
 }
 
 .comment-respond__text {
-  font-size: 14px;
+  font-size: var(--size-body-small);
 }
 
 .comment-respond__item {
   margin-bottom: var(--space-sm);
   max-width: 360px;
+}
+
+.comment-respond__cancel {
+  font-size: var(--size-body-extra-small);
 }
 
 .comment-respond__label {
@@ -43,10 +47,6 @@
   font-family: var(--heading-font-family);
   min-width: 100px;
   padding: var(--space-xs);
-}
-
-.comment-respond__cancel {
-  font-size: 12px;
 }
 
 .comment-respond__cancel a,

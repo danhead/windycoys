@@ -31,7 +31,7 @@
 }
 
 .comment__date {
-  font-size: 12px;
+  font-size: var(--size-body-extra-small);
 }
 
 .comment__body {
@@ -60,7 +60,7 @@
 .comment__reply-text {
   display: inline-block;
   position: relative;
-  font-size: 12px;
+  font-size: var(--size-body-extra-small);
   vertical-align: middle;
   transition: box-shadow var(--transition-md) ease-out;
 }

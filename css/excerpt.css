@@ -28,18 +28,18 @@
   }
 }
 
-.excerpt__title {
-  font-size: 1.5rem;
+.excerpt__title,
+.excerpt__subtitle {
+  font-size: var(--size-heading-6);
 }
 
 .excerpt__subtitle {
-  font-size: 1.2rem;
   margin-top: var(--space-sm);
 }
 
 .excerpt__metadata {
   color: var(--color-grey);
-  font-size: 12px;
+  font-size: var(--size-body-extra-small);
   margin-bottom: var(--space-sm);
 }
 

@@ -32,11 +32,20 @@
   --color-facebook: #3e5a98;
   --color-twitter: #1da1f2;
   --color-rss: #ee802f;
-  --space-xxs: 5px;
-  --space-xs: 10px;
-  --space-sm: 20px;
-  --space-md: 30px;
-  --space-lg: 60px;
+  --space-xxs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --size-heading-1: 2rem;
+  --size-heading-2: 1.8rem;
+  --size-heading-3: 1.6rem;
+  --size-heading-4: 1.424rem;
+  --size-heading-5: 1.267rem;
+  --size-heading-6: 1.125rem;
+  --size-body: 1rem;
+  --size-body-small: 0.889rem;
+  --size-body-extra-small: 0.79rem;
   --transition-fs: 0.15s;
   --transition-md: 0.3s;
   --transition-sl: 0.6s;
@@ -46,8 +55,8 @@
   --link-focus: 0 3px 0 0 var(--color-light-blue);
 }
 
-@custom-media --viewport-sm (min-width: 480px);
-@custom-media --viewport-md (min-width: 640px);
-@custom-media --viewport-lg (min-width: 900px);
-@custom-media --viewport-xl (min-width: 1200px);
+@custom-media --viewport-sm (min-width: 30rem);
+@custom-media --viewport-md (min-width: 40rem);
+@custom-media --viewport-lg (min-width: 60rem);
+@custom-media --viewport-xl (min-width: 75rem);
 @custom-media --viewport-wordpress-admin-bar (min-width: 783px);

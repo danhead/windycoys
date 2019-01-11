@@ -128,7 +128,7 @@
 
 .nav__list {
   font-family: var(--heading-font-family);
-  font-size: 1.2rem;
+  font-size: var(--size-heading-6);
 }
 
 .nav__list .nav__list {

@@ -1,12 +1,9 @@
 .footer {
   text-align: center;
+  font-size: var(--size-body-extra-small);
 }
 
 .footer__head,
 .footer__body {
   margin-bottom: var(--space-sm);
-}
-
-.footer__text {
-  font-size: 14px;
 }

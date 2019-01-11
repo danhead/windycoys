@@ -1,27 +1,35 @@
-.content h1 {
-  font-family: var(--heading-font-family);
-  font-size: 1.8rem;
-  margin-bottom: var(--space-sm);
-}
-
-.content h2 {
-  font-family: var(--heading-font-family);
-  font-size: 1.6rem;
-  margin-bottom: var(--space-sm);
-}
-
-.content h3 {
-  font-family: var(--heading-font-family);
-  font-size: 1.4rem;
-  margin-bottom: var(--space-sm);
-}
-
+.content h1,
+.content h2,
+.content h3,
 .content h4,
 .content h5,
 .content h6 {
   font-family: var(--heading-font-family);
-  font-size: 1.2rem;
   margin-bottom: var(--space-sm);
+}
+
+.content h1 {
+  font-size: var(--size-heading-1);
+}
+
+.content h2 {
+  font-size: var(--size-heading-2);
+}
+
+.content h3 {
+  font-size: var(--size-heading-3);
+}
+
+.content h4 {
+  font-size: var(--size-heading-4);
+}
+
+.content h5 {
+  font-size: var(--size-heading-5);
+}
+
+.content h6 {
+  font-size: var(--size-heading-6);
 }
 
 .content p {

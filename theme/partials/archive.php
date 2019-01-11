@@ -35,7 +35,7 @@ foreach ($posts as $post) {
         <ol class="archive__list archive__list--sub-list">
           <?php foreach ($yearData as $month => $monthData) : ?>
             <li class="archive__item">
-              <h3 class="archive__heading">
+              <h3 class="archive__subheading">
                 <?php echo $month ?>
               </h3>
               <ol class="archive__list archive__list--sub-list">

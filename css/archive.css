@@ -12,10 +12,19 @@
   margin-left: var(--space-sm);
 }
 
-.archive__heading {
+.archive__heading,
+.archive__subheading {
   font-family: var(--heading-font-family);
   color: var(--color-dark-blue);
   margin-bottom: var(--space-xs);
+}
+
+.archive__heading {
+  font-size: var(--size-heading-2);
+}
+
+.archive__subheading {
+  font-size: var(--size-heading-3);
 }
 
 .archive__date {
