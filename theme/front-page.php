@@ -3,7 +3,7 @@
   <section class="page__logo is-fixed">
     <?php get_template_part('partials/logo') ?>
   </section>
-  <section class="page__content">
+  <section class="page__content page__content--centered-md">
     <h2 class="title">Latest articles</h2>
     <div class="page__columns">
     <?php
