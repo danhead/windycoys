@@ -92,7 +92,7 @@
 @media (--viewport-xl) {
   .page {
     grid-template-columns: 224px 1fr;
-    grid-template-rows: 56px 138px 1fr;
+    grid-template-rows: 32px 162px 1fr;
   }
 
   .page__columns {
