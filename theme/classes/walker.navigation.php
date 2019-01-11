@@ -1,15 +1,15 @@
 <?php
 
 class Windycoys_Walker_Navigation extends Walker_Nav_Menu {
-  function start_lvl(&$output, $depth = 0) {
+  function start_lvl(&$output, $depth = 0, $args = Array()) {
     $output .= '<ul class="nav__list">';
   }
 
-  function end_lvl(&$output) {
+  function end_lvl(&$output, $depth = 0, $args = Array()) {
     $output .= '</ul>';
   }
 
-  function start_el(&$output, $item) {
+  function start_el(&$output, $item, $depth = 0, $args = Array(), $id = 0) {
     $title = $item->title;
     $url = $item->url;
     if ($title && $url) {
@@ -20,7 +20,7 @@ class Windycoys_Walker_Navigation extends Walker_Nav_Menu {
     }
   }
 
-  function end_el(&$output) {
+  function end_el(&$output, $item, $depth = 0, $args = Array()) {
     $output .= '</li>';
   }
 }

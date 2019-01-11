@@ -1,15 +1,15 @@
 <?php
 
 class Windycoys_Walker_Comments extends Walker_Comment {
-  function start_lvl(&$output) {
+  function start_lvl(&$output, $depth = 0, $args = Array()) {
     $output .= '<ol class="comments__list comments__list--sub-list">';
   }
 
-  function end_lvl(&$output) {
+  function end_lvl(&$output, $depth = 0, $args = Array()) {
     $output .= '</ol>';
   }
 
-  function start_el(&$output, $comment) {
+  function start_el(&$output, $comment, $depth = 0 , $args = Array(), $id = 0) {
     $id = $comment->comment_ID;
     $post_id = $comment->comment_post_ID;
     $reply_link = get_permalink($post_id) . '?replytocom='.$id.'#respond';
@@ -41,7 +41,7 @@ class Windycoys_Walker_Comments extends Walker_Comment {
     $output .= '</div></div>';
   }
 
-  function end_el(&$output) {
+  function end_el(&$output, $comment, $depth = 0, $args = Array()) {
     $output .= '</li>';
   }
 }
