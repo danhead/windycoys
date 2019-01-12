@@ -8,11 +8,12 @@ const windy = {
 };
 
 export default function init() {
-  document.querySelectorAll('img').forEach((image) => {
-    const img = new Image(image);
-    img.start();
-    windy.images.push(img);
-  });
+  Array.prototype.slice.call(document.querySelectorAll('img'))
+    .forEach((image) => {
+      const img = new Image(image);
+      img.start();
+      windy.images.push(img);
+    });
   windy.menu = new Menu({
     container: document.querySelector('.menu'),
   });
