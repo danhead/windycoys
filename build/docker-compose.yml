@@ -3,20 +3,20 @@ wordpress:
     - WORDPRESS_DB_HOST=db
     - WORDPRESS_DB_PASSWORD=password
     - WORDPRESS_DB_USER=windycoys
-  image: 'wordpress:5.0.0-php5.6-apache'
+  image: 'wordpress:php7.0-apache'
   links:
     - db
   ports:
     - "80:80"
   volumes:
-    - ./.tmp/wp-content:/var/www/html/wp-content
-    - ./theme:/var/www/html/wp-content/themes/windycoys
+    - ../.tmp/wp-content:/var/www/html/wp-content
+    - ../theme:/var/www/html/wp-content/themes/windycoys
 db:
   environment:
     - MYSQL_DATABASE=wordpress
     - MYSQL_PASSWORD=password
     - MYSQL_ROOT_PASSWORD=password
     - MYSQL_USER=windycoys
-  image: 'mariadb:10.3.4'
+  image: 'mariadb:latest'
   volumes:
-    - ./.tmp/mysql:/var/lib/mysql
+    - ../.tmp/mysql:/var/lib/mysql

@@ -9,55 +9,54 @@ Built using:
 
 ## Requirements
 
-* Docker + Docker Compose
-* Node.js
+* [Docker](https://www.docker.com/products/docker-desktop/)
+* [Docker Compose](https://docs.docker.com/compose/install/)
+* [Node.js](https://nodejs.org/)
 
-## Building
+## Building the theme
 
-The CSS and JavaScript is built with the following command:
+The build script runs the following tasks:
+
+* **css:compile** - Process the CSS
+* **js:compile** - Compile the JavaScript to ES5
+* **images** - Minify images
+
+The CSS and JavaScript will be minified if the environment variable `NODE_ENV='production'`.
 
 ```
 npm run build
 ```
 
-*Note: Files will only be minified if NODE_ENV='production'*
-
 ## Developing
 
-Use `docker-compose` to start the Wordpress and MySQL containers:
+The `start` script will monitor CSS, JavaScript and images for changes and automatically compile them.
 
-```
-docker-compose -up
-```
-
-To build and watch the theme files for changes, run:
+It will also start Docker containers and proxy the connection through browser-sync.
 
 ```
 npm start
 ```
 
-*Note: You will either need to set up a host file entry to point
-`windycoys.local` to the container's IP or update `.browser-sync.json` to the
-container's IP*
-
-## Linting
-
 ### CSS
 
-CSS is linted with [stylelint](https://stylelint.io) using
-[stylelint-selector-bem-pattern](https://github.com/simonsmith/stylelint-selector-bem-pattern)
-
-```
-npm run css:lint
-```
+The CSS is compiled to `theme/style.css` using [postcss-preset-env](https://github.com/csstools/postcss-preset-env) which primarily used to resolve custom properties and add vendor prefixes. It is linted with [stylelint](https://stylelint.io) using [stylelint-selector-bem-pattern](https://github.com/simonsmith/stylelint-selector-bem-pattern).
 
 ### JavaScript
 
-JavaScript is linted with [eslint](https://eslint.org/) using
-[Airbnb's base config](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base)
+The JavaScript is transformed to ES5 and bundled to `theme/bundle.js`. It is linted with [eslint](https://eslint.org/) using [Airbnb's base config](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base).
+
+Tests are written with [Jest](https://jestjs.io/) and run with:
 
 ```
-npm run js:lint
+npm run jest
+```
+
+The tests are written in `*.spec.js` files along side the source code.
+
+To watch the files and automatically re-run the tests, use:
+
+```
+npm run jest:watch
 ```
 
 ## License

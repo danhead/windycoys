@@ -19,7 +19,7 @@
     "js": "run-s js:*",
     "js:compile": "rollup --config rollup.config.js",
     "js:lint": "eslint js/",
-    "serve": "browser-sync start --config .browser-sync.js",
+    "serve": "node build/serve.js",
     "start": "run-p watch serve",
     "test": "run-s css:lint js:lint jest",
     "watch": "run-p watch:*",
@@ -29,6 +29,8 @@
   },
   "devDependencies": {
     "browser-sync": "^2.26.3",
+    "docker-compose": "^0.9.3",
+    "mysql": "^2.16.0",
     "nodemon": "^1.18.7",
     "pre-commit": "^1.2.2"
   },
