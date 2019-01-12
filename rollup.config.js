@@ -1,6 +1,6 @@
 const { resolve } = require('path');
+const { uglify } = require('rollup-plugin-uglify');
 const babel = require('rollup-plugin-babel');
-const uglify = require('rollup-plugin-uglify');
 const pkg = require('./package.json');
 
 const year = new Date().getFullYear();

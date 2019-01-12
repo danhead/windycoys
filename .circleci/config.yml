@@ -106,11 +106,10 @@ workflows:
       - build:
           <<: *develop
           requires:
-            - install
+            - test
       - deploy-develop:
           <<: *develop
           requires:
-            - test
             - build
   prod:
     jobs:
@@ -122,9 +121,8 @@ workflows:
       - build:
           <<: *semver-tags
           requires:
-            - install
+            - test
       - deploy-prod:
           <<: *semver-tags
           requires:
-            - test
             - build

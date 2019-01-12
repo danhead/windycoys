@@ -33,8 +33,8 @@ export default class Menu {
     if (this.state !== 'hidden') {
       if (this.state !== 'visible' && currentY < lastY) {
         this.showMenu();
-      } else if (this.state !== 'minimized' && currentY >
-        lastY) {
+      } else if (this.state !== 'minimized' && currentY
+        > lastY) {
         this.minimizeMenu();
       }
     }
@@ -58,4 +58,3 @@ export default class Menu {
     this.container.classList.remove(STATES.visible);
   }
 }
-

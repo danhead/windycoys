@@ -66,4 +66,3 @@ describe('Image', () => {
     expect(img.attachLoadedEvent).toHaveBeenCalledTimes(0);
   });
 });
-

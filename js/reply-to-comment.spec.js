@@ -136,4 +136,3 @@ describe('ReplyToComment', () => {
     expect(inlineReply.innerHTML).toEqual('');
   });
 });
-

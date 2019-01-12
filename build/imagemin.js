@@ -8,7 +8,7 @@ const imageminJpegtran = require('imagemin-jpegtran');
 imagemin(['images/*.{png,jpg,gif}'], 'theme/images', {
   plugins: [
     imageminPngquant({
-      quality: '65-80',
+      quality: [0.65, 0.8],
     }),
     imageminGifsicle({
       optimizationLevel: 3,

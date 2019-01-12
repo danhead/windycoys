@@ -1,6 +1,33 @@
-# WindyCOYS Wordpress Theme
+<p align="center">
+  <img src="https://github.com/danhead/windycoys/raw/master/images/icon_144.png" title="WindyCOYS Logo">
+</p>
 
-A modern Wordpress theme written for [WindyCOYS.com](http://windycoys.com).
+<h1 align="center">Wordpress Theme</h1>
+
+<p align="center">
+  <a href="https://windycoys.com" title="WindyCOYS Blog">
+    <img src="https://img.shields.io/website-up-down-green-red/https/windycoys.com.svg?label=windycoys.com"></a>
+  <a href="https://github.com/danhead/windycoys/releases" title="Theme releases">
+    <img src="https://img.shields.io/github/tag/danhead/windycoys.svg?label=version" alt="Latest version"></a>
+  <a href="https://circleci.com/gh/danhead/windycoys" title="CircleCI jobs">
+    <img src="https://img.shields.io/circleci/project/github/danhead/windycoys.svg?logo=circleci" alt="Latest build status"></a>
+  <img src="https://img.shields.io/david/danhead/windycoys.svg" alt="Theme dependencies">
+  <a href="https://github.com/danhead/windycoys/issues" title="Github issues">
+    <img src="https://img.shields.io/github/issues/danhead/windycoys.svg?logo=github" alt="Theme issues"></a>
+  <a href="https://github.com/danhead/windycoys/blob/master/LICENSE" title="Theme license">
+    <img src="https://img.shields.io/github/license/danhead/windycoys.svg" alt="Theme license"></a>
+</p>
+
+<p align="center">
+  <a href="https://twitter.com/intent/follow?screen_name=windycoys" title="Follow WindyCOYS on Twitter">
+    <img src="https://img.shields.io/twitter/follow/windycoys.svg?style=social&logo=twitter" alt="Follow WindyCOYS on Twitter"></a>
+  <a href="https://twitter.com/intent/follow?screen_name=danhead" title="Follow Dan Head on Twitter">
+    <img src="https://img.shields.io/twitter/follow/danhead.svg?style=social&logo=twitter" alt="Follow Dan Head on Twitter"></a>
+</p>
+
+## About
+
+A modern Wordpress theme written for [WindyCOYS.com](https://windycoys.com).
 
 Built using:
 
