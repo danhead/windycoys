@@ -12,9 +12,18 @@
   font-size: var(--size-body-small);
 }
 
+.comment-respond__notes {
+  font-size: var(--size-body-extra-small);
+  margin-bottom: var(--space-sm);
+}
+
 .comment-respond__item {
   margin-bottom: var(--space-sm);
-  max-width: 360px;
+  max-width: 20rem;
+}
+
+.comment-respond__item--large {
+  max-width: 40rem;
 }
 
 .comment-respond__cancel {
@@ -45,7 +54,6 @@
   color: #fff;
   cursor: pointer;
   font-family: var(--heading-font-family);
-  min-width: 100px;
   padding: var(--space-xs);
 }
 
@@ -58,4 +66,12 @@
 .comment-respond__cancel a:focus,
 .comment-respond__cancel a:hover {
   box-shadow: var(--link-focus);
+}
+
+.comment-respond__checkbox {
+  margin-right: var(--space-sm);
+}
+
+.comment-respond__checkbox-label {
+  font-size: var(--size-body-extra-small);
 }
