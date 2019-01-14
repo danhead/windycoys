@@ -37,7 +37,13 @@
   margin-bottom: var(--space-sm);
 }
 
-.content ul li {
+.content ul,
+.content ol {
+  margin-bottom: var(--space-sm);
+}
+
+.content ul li,
+.content ol li {
   position: relative;
   padding: 0 0 var(--space-xs) var(--space-sm);
 }
