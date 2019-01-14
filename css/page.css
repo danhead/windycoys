@@ -1,7 +1,7 @@
 .page {
   display: grid;
   grid-auto-flow: dense;
-  grid-gap: var(--space-xs);
+  grid-gap: var(--space-sm);
   grid-template-columns: 1fr;
   max-width: 75rem;
   margin: var(--space-xs) var(--space-xs) 0;
@@ -29,9 +29,8 @@
 
 @media (--viewport-sm) {
   .page {
-    grid-template-columns: 112px 1fr;
-    grid-template-rows: 112px 1fr;
-    grid-gap: var(--space-sm);
+    grid-template-columns: var(--logo-size-sm) 1fr;
+    grid-template-rows: var(--logo-size-sm) 1fr;
     grid-auto-rows: auto;
     margin: var(--space-sm) var(--space-sm) 0;
   }
@@ -54,6 +53,8 @@
 
 @media (--viewport-md) {
   .page {
+    grid-template-columns: var(--logo-size-md) 1fr;
+    grid-template-rows: var(--logo-size-md) 1fr;
     grid-gap: var(--space-md);
     margin: var(--space-md) var(--space-md) 0;
   }
@@ -70,8 +71,8 @@
 
 @media (--viewport-lg) {
   .page {
-    grid-template-columns: 168px 1fr;
-    grid-template-rows: 32px 100px 1fr;
+    grid-template-columns: var(--logo-size-lg) 1fr;
+    grid-template-rows: 32px calc(var(--logo-size-lg) - var(--space-md) - 32px) 1fr;
   }
 
   .page__logo {
@@ -91,8 +92,8 @@
 
 @media (--viewport-xl) {
   .page {
-    grid-template-columns: 224px 1fr;
-    grid-template-rows: 32px 156px 1fr;
+    grid-template-columns: var(--logo-size-xl) 1fr;
+    grid-template-rows: 32px calc(var(--logo-size-xl) - var(--space-md) - 32px) 1fr;
   }
 
   .page__columns {

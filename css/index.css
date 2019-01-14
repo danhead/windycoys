@@ -48,6 +48,10 @@
   --size-body: 1rem;
   --size-body-small: 0.889rem;
   --size-body-extra-small: 0.79rem;
+  --logo-size-sm: 7rem;
+  --logo-size-md: 9rem;
+  --logo-size-lg: 10rem;
+  --logo-size-xl: 12rem;
   --transition-fs: 0.15s;
   --transition-md: 0.3s;
   --transition-sl: 0.6s;

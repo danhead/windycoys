@@ -2,24 +2,24 @@
   width: 100%;
 }
 
-@media (--viewport-lg) and (min-height: 540px) {
+@media (--viewport-lg) and (min-height: 34rem) {
   .is-fixed .logo {
     position: fixed;
-    width: 168px;
+    width: var(--logo-size-lg);
     z-index: 10;
   }
 }
 
-@media (--viewport-xl) and (min-height: 540px) {
+@media (--viewport-xl) and (min-height: 34rem) {
   .is-fixed .logo {
-    width: 224px;
+    width: var(--logo-size-xl);
   }
 }
 
 .logo__link {
   display: block;
   margin: 0 auto;
-  max-width: 320px;
+  max-width: 16rem;
   position: relative;
   border-radius: 50%;
   transition: box-shadow var(--transition-fs) ease-out;
