@@ -39,18 +39,19 @@
 
 .content ul li {
   position: relative;
-  padding: 0 0 0 var(--space-sm);
+  padding: 0 0 var(--space-xs) var(--space-sm);
 }
 
 .content ul li:before {
   content: '';
   position: absolute;
-  left: 4px;
-  top: 10px;
+  left: calc(var(--space-xxs) - (var(--bullet-size) / 2));
+  top: calc(var(--base-line-height) / 2 * 1rem);
   background-color: var(--color-dark-blue);
-  width: 6px;
-  height: 6px;
+  width: var(--bullet-size);
+  height: var(--bullet-size);
   border-radius: 50%;
+  transform: translateY(-50%);
 }
 
 .content a {
@@ -139,7 +140,7 @@
   border-width: 0 0 1px;
   border-style: solid;
   border-color: var(--color-dark-blue);
-  padding: 5px;
+  padding: var(--space-xs);
 }
 
 .content th {
