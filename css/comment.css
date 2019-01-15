@@ -13,8 +13,8 @@
   background-repeat: no-repeat;
   background-size: 100%;
   margin-right: var(--space-sm);
-  height: 64px;
-  width: 64px;
+  height: var(--icon-size-xl);
+  width: var(--icon-size-xl);
 }
 
 .comment__metadata {

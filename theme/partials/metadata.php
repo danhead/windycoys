@@ -2,7 +2,7 @@
   <ul class="metadata__list">
     <li class="metadata__list-item metadata__list-item--light">
       <span class="metadata__icon">
-        <svg class="icon" aria-hidden="true">
+        <svg class="icon icon--small" aria-hidden="true">
           <use xlink:href="#icon-calendar"></use>
         </svg>
       </span>
@@ -14,7 +14,7 @@
     <li class="metadata__list-item">
       <a class="metadata__link" href="<?php echo get_edit_post_link() ?>">
         <span class="metadata__icon">
-          <svg class="icon" aria-hidden="true">
+          <svg class="icon icon--small" aria-hidden="true">
             <use xlink:href="#icon-edit"></use>
           </svg>
         </span>
@@ -27,7 +27,7 @@
     <li class="metadata__list-item">
       <a class="metadata__link" href="<?php the_permalink() ?>#comments">
         <span class="metadata__icon">
-          <svg class="icon" aria-hidden="true">
+          <svg class="icon icon--small" aria-hidden="true">
             <use xlink:href="#icon-comments"></use>
           </svg>
         </span>
@@ -38,7 +38,7 @@
     </li>
     <li class="metadata__list-item">
       <span class="metadata__icon">
-        <svg class="icon" aria-hidden="true">
+        <svg class="icon icon--small" aria-hidden="true">
           <use xlink:href="#icon-tag"></use>
         </svg>
       </span>

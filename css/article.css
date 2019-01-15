@@ -16,7 +16,6 @@
 }
 
 .article__date-text {
-  line-height: 2;
-  margin-left: 10px;
+  margin-left: var(--space-xs);
   vertical-align: top;
 }

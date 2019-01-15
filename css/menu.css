@@ -4,37 +4,46 @@
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   display: block;
-  height: 48px;
-  left: 2px;
+  height: var(--menu-size);
+  left: var(--space-xxs);
   position: fixed;
-  top: 2px;
-  transform: translateX(-100px);
+  top: var(--space-xxs);
+  opacity: 0;
   transition:
     filter var(--transition-md) ease-out,
     opacity var(--transition-md) ease-out,
     transform var(--transition-md) ease-out;
-  width: 48px;
+  width: var(--menu-size);
   will-change: opacity, transition;
   z-index: 5;
 }
 
+@media (--viewport-xl) {
+  .menu {
+    height: var(--menu-size-xl);
+    width: var(--menu-size-xl);
+    left: 1vw;
+    top: 1vw;
+  }
+}
+
 .logged-in .menu {
-  top: 48px;
+  top: calc(var(--space-xxs) + 48px);
 }
 
 @media (--viewport-wordpress-admin-bar) {
   .logged-in .menu {
-    top: 34px;
+    top: calc(var(--space-xxs) + 34px);
   }
 }
 
 .menu__line {
   background-color: #fff;
-  border-radius: 2px;
-  height: 2px;
-  left: 12px;
+  border-radius: 4%;
+  height: 4%;
+  left: 25%;
   position: absolute;
-  right: 12px;
+  right: 25%;
   transform: translateY(-50%);
 }
 
@@ -57,12 +66,12 @@
 }
 
 .menu.is-visible {
-  transform: translateX(0);
+  opacity: 1;
 }
 
 .menu.is-minimized {
   opacity: 0.5;
-  transform: translateX(-12px) translateY(-12px);
+  transform: translate(calc(var(--space-sm) * -1), calc(var(--space-sm) * -1));
 }
 
 /**

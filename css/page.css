@@ -3,7 +3,7 @@
   grid-auto-flow: dense;
   grid-gap: var(--space-sm);
   grid-template-columns: 1fr;
-  max-width: 75rem;
+  max-width: 60rem;
   margin: var(--space-xs) var(--space-xs) 0;
 }
 
@@ -72,7 +72,7 @@
 @media (--viewport-lg) {
   .page {
     grid-template-columns: var(--logo-size-lg) 1fr;
-    grid-template-rows: 32px calc(var(--logo-size-lg) - var(--space-md) - 32px) 1fr;
+    grid-template-rows: var(--icon-size-md) calc(var(--logo-size-lg) - var(--space-md) - 32px) 1fr;
   }
 
   .page__logo {
@@ -93,7 +93,8 @@
 @media (--viewport-xl) {
   .page {
     grid-template-columns: var(--logo-size-xl) 1fr;
-    grid-template-rows: 32px calc(var(--logo-size-xl) - var(--space-md) - 32px) 1fr;
+    grid-template-rows: var(--icon-size-md) calc(var(--logo-size-xl) - var(--space-md) - var(--icon-size-md)) 1fr;
+    margin: var(--space-md) auto 0;
   }
 
   .page__columns {

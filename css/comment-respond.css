@@ -54,6 +54,7 @@
   color: #fff;
   cursor: pointer;
   font-family: var(--heading-font-family);
+  font-size: var(--size-body);
   padding: var(--space-xs);
 }
 

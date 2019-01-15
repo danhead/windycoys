@@ -52,6 +52,13 @@
   --logo-size-md: 9rem;
   --logo-size-lg: 10rem;
   --logo-size-xl: 12rem;
+  --icon-size-xs: 1rem;
+  --icon-size-sm: 1.5rem;
+  --icon-size-md: 2rem;
+  --icon-size-lg: 2.5rem;
+  --icon-size-xl: 4rem;
+  --menu-size: 3rem;
+  --menu-size-xl: 4rem;
   --transition-fs: 0.15s;
   --transition-md: 0.3s;
   --transition-sl: 0.6s;

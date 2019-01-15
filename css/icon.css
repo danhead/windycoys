@@ -1,27 +1,27 @@
 .icon {
   display: inline-block;
-  height: 32px;
-  width: 32px;
+  height: var(--icon-size-md);
+  width: var(--icon-size-md);
 }
 
 .icon--extra-small {
-  height: 16px;
-  width: 16px;
+  height: var(--icon-size-xs);
+  width: var(--icon-size-xs);
 }
 
 .icon--small {
-  height: 24px;
-  width: 24px;
+  height: var(--icon-size-sm);
+  width: var(--icon-size-sm);
 }
 
 .icon--large {
-  height: 48px;
-  width: 48px;
+  height: var(--icon-size-lg);
+  width: var(--icon-size-lg);
 }
 
 .icon--extra-large {
-  height: 72px;
-  width: 72px;
+  height: var(--icon-size-xl);
+  width: var(--icon-size-xl);
 }
 
 .icon--facebook {
