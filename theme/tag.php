@@ -35,13 +35,13 @@
               <p class="excerpt__metadata">
                 <span class="excerpt__icon">
                   <svg class="icon icon--extra-small" aria-hidden="true">
-                    <use href="#icon-profile"></use>
+                    <use xlink:href="#icon-profile"></use>
                   </svg>
                 </span>
                 <span class="excerpt__text"><?php echo $username ?></span>
                 <span class="excerpt__icon">
                   <svg class="icon icon--extra-small" aria-hidden="true">
-                    <use href="#icon-calendar"></use>
+                    <use xlink:href="#icon-calendar"></use>
                   </svg>
                 </span>
                 <span class="excerpt__text"><?php echo $date ?></span>

@@ -8,7 +8,7 @@
     <article class="article">
       <div class="article__date">
         <svg class="icon">
-          <use href="#icon-calendar"></use>
+          <use xlink:href="#icon-calendar"></use>
         </svg>
         <span class="article__date-text">
           <?php the_time(get_option('date_format')) ?>

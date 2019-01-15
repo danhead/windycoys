@@ -33,7 +33,7 @@ function get_next_url($base_url, $page) {
 }
 function format_link($link) {
   if (strpos($link, 'page-numbers dots')) {
-    return '<span class="pagination__dots"><svg class="icon icon--extra-small"><use href="#icon-ellipsis"></use></svg></span>';
+    return '<span class="pagination__dots"><svg class="icon icon--extra-small"><use xlink:href="#icon-ellipsis"></use></svg></span>';
   }
   $link = str_replace('page-numbers current', 'pagination__current', $link);
   $link = str_replace('page-numbers', 'link', $link);
