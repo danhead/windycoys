@@ -99,6 +99,7 @@
   display: inline-block;
   margin: 0 0 var(--space-sm);
   padding: var(--space-sm);
+  width: auto !important;
 }
 
 .content .wp-caption a {
