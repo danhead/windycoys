@@ -2,7 +2,7 @@
 
 class Windycoys_Walker_Navigation extends Walker_Nav_Menu {
   function start_lvl(&$output, $depth = 0, $args = Array()) {
-    $output .= '<ul class="nav__list">';
+    $output .= '<ul class="nav__list" role="menu">';
   }
 
   function end_lvl(&$output, $depth = 0, $args = Array()) {

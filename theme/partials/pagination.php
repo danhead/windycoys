@@ -52,8 +52,8 @@ if (count($links) > 1) :
       </a>
     </div>
   <?php endif; ?>
-  <nav class="pagination__content" aria-label="Pagination navigation">
-    <ul class="pagination__list" role="navigation">
+  <nav class="pagination__content" role="navigation" aria-label="Pagination navigation">
+    <ul class="pagination__list">
       <?php foreach($links as $link) { ?>
         <li class="pagination__item">
           <?php echo $key ?>

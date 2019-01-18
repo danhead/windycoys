@@ -1,4 +1,20 @@
-<?php require get_template_directory() . '/classes/walker.navigation.php' ?>
+<?php
+require get_template_directory() . '/classes/walker.navigation.php';
+
+$menu = wp_nav_menu(array(
+  'echo' => false,
+  'menu' => 'navigation',
+  'container_class' => 'nav__menu',
+  'menu_class' => 'nav__list',
+  'walker' => new Windycoys_Walker_Navigation(),
+));
+
+$menu = str_replace(
+  'ul id="menu-navigation" class="nav__list"',
+  'ul id="menu-navigation" class="nav__list" role="menubar"',
+  $menu
+);
+?>
 <nav class="nav<?php echo is_user_logged_in() ? ' logged-in' : '' ?>" aria-label="Main Navigation">
   <button class="menu">
     <span class="menu__line"></span>
@@ -20,21 +36,16 @@
       </h2>
     </div>
     <div class="nav__body">
-      <?php wp_nav_menu(array(
-        menu => 'navigation',
-        container_class => 'nav__menu',
-        menu_class => 'nav__list',
-        walker => new Windycoys_Walker_Navigation()
-      )); ?>
+      <?php echo $menu ?>
     </div>
     <div class="nav__foot">
       <div class="nav__social">
-        <a class="nav__social-link" href="https://www.facebook.com/WindyCOYS/">
+        <a class="nav__social-link" href="https://www.facebook.com/WindyCOYS/" aria-label="WindyCOYS on Facebook">
           <svg class="icon icon--large">
             <use xlink:href="#icon-facebook"></use>
           </svg>
         </a>
-        <a class="nav__social-link" href="https://twitter.com/windycoys/">
+        <a class="nav__social-link" href="https://twitter.com/windycoys/" aria-label="WindyCOYS on Twitter">
           <svg class="icon icon--large">
             <use xlink:href="#icon-twitter"></use>
           </svg>

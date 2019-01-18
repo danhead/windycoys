@@ -4,7 +4,7 @@
     <?php get_template_part('partials/logo') ?>
   </section>
   <section class="page__content page__content--centered-md">
-    <h2 class="title">Latest articles</h2>
+    <h1 class="title">Latest articles</h1>
     <div class="page__columns">
     <?php
       $posts = get_posts(array(
