@@ -1,5 +1,5 @@
 .avatar {
-  border-radius: 5px;
+  border-radius: var(--space-xxs);
   transition: filter var(--transition-md) ease-out;
 }
 

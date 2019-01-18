@@ -12,8 +12,9 @@
   border-radius: 0;
   color: var(--color-near-black);
   font-family: var(--heading-font-family);
-  max-width: 150px;
-  padding: 10px;
+  font-size: var(--size-body-small);
+  max-width: 8rem;
+  padding: var(--space-xs);
 }
 
 .search__submit {
@@ -21,5 +22,6 @@
   border: none;
   color: #fff;
   font-family: var(--heading-font-family);
-  min-width: 100px;
+  font-size: var(--size-body-small);
+  min-width: 5rem;
 }

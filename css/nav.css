@@ -26,7 +26,7 @@
 .nav__content {
   background-color: var(--color-dark-blue);
   bottom: 0;
-  box-shadow: 6px 0 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0.25rem 0 0.25rem rgba(0, 0, 0, 0.25);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -57,8 +57,8 @@
 .nav__title-link {
   display: inline-block;
   position: relative;
-  width: 72px;
-  height: 72px;
+  width: var(--icon-size-xl);
+  height: var(--icon-size-xl);
   border-radius: 50%;
   transition: box-shadow var(--transition-fs) ease-out;
 }
@@ -71,7 +71,7 @@
 }
 
 .nav__title-link:focus {
-  box-shadow: 0 0 0 2px var(--color-dark-blue), 0 0 0 4px #fff;
+  box-shadow: 0 0 0 0.1rem var(--color-dark-blue), 0 0 0 0.2rem #fff;
 }
 
 .nav__title-link-image {
@@ -85,41 +85,41 @@
   border: none;
   cursor: pointer;
   display: block;
-  height: 32px;
+  height: var(--icon-size-sm);
   padding: 0;
   position: absolute;
-  right: 15px;
-  top: 15px;
+  right: var(--space-sm);
+  top: var(--space-sm);
   transition:
     box-shadow var(--nav-transition-duration) ease-out,
     filter var(--nav-transition-duration) ease-out;
-  width: 32px;
+  width: var(--icon-size-sm);
 }
 
 .nav__close:focus {
-  box-shadow: 0 3px 0 0 #fff;
+  box-shadow: 0 0.1rem 0 0 #fff;
   outline: 0;
 }
 
 .nav__close:hover {
-  filter: drop-shadow(0 0 2px #fff);
+  filter: drop-shadow(0 0 0.1rem #fff);
 }
 
 .nav__close-bar {
   background-color: #fff;
-  border-radius: 2px;
-  height: 4px;
-  left: 4px;
+  border-radius: 8%;
+  height: 8%;
   position: absolute;
-  transition: transform var(--nav-transition-duration) ease-out var(--nav-transitionDuration);
-  top: 14px;
-  width: 24px;
+  left: 0;
+  transition: transform var(--nav-transition-duration) ease-out var(--nav-transition-duration);
+  transform: translateY(-50%);
+  top: 50%;
+  width: 100%;
 }
 
 .nav__close-text {
   left: -10000px;
   position: absolute;
-  top: -10000px;
 }
 
 /**
@@ -149,11 +149,11 @@
 }
 
 .nav__link:hover {
-  text-shadow: 0 0 2px #fff;
+  text-shadow: 0 0 0.1rem #fff;
 }
 
 .nav__link:focus {
-  box-shadow: 0 3px 0 0 #fff;
+  box-shadow: 0 0.1rem 0 0 #fff;
 }
 
 /**
@@ -177,11 +177,11 @@
 }
 
 .nav__social-link:focus {
-  box-shadow: 0 3px 0 0 #fff;
+  box-shadow: 0 0.1rem 0 0 #fff;
 }
 
 .nav__social-link:hover {
-  filter: drop-shadow(0 0 2px #fff);
+  filter: drop-shadow(0 0 0.1rem #fff);
 }
 
 .nav.is-open .nav__content {
@@ -189,9 +189,9 @@
 }
 
 .nav.is-open .nav__close-bar:nth-of-type(1) {
-  transform: rotate(45deg);
+  transform: translateY(-50%) rotate(45deg);
 }
 
 .nav.is-open .nav__close-bar:nth-of-type(2) {
-  transform: rotate(-45deg);
+  transform: translateY(-50%) rotate(-45deg);
 }

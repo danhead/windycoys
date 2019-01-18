@@ -76,7 +76,7 @@
 }
 
 .content a:focus img {
-  box-shadow: 0 0 0 2px #fff, 0 0 0 6px var(--color-light-blue);
+  box-shadow: var(--image-focus);
   filter: brightness(125%);
 }
 
@@ -95,7 +95,7 @@
 .content .wp-caption {
   background-color: #fff;
   border: 1px solid var(--color-light-grey);
-  border-radius: 4px;
+  border-radius: var(--space-xxs);
   display: inline-block;
   margin: 0 0 var(--space-sm);
   padding: var(--space-sm);

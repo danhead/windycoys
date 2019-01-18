@@ -22,16 +22,7 @@
 .pagination__current {
   font-weight: 700;
   position: relative;
-}
-
-.pagination__current:after {
-  background-color: var(--color-light-blue);
-  bottom: -1px;
-  content: '';
-  left: 0;
-  height: 2px;
-  position: absolute;
-  right: 0;
+  box-shadow: var(--link-focus);
 }
 
 .pagination__link,
