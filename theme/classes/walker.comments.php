@@ -21,7 +21,7 @@ class Windycoys_Walker_Comments extends Walker_Comment {
     $output .= '<li class="comments__item">';
     $output .= '<div class="comment">';
     $output .= '<div class="comment__head">';
-    $output .= sprintf('<div class="comment__avatar">%s</div>', $avatar);
+    $output .= sprintf('<div class="comment__avatar has-silhouette">%s</div>', $avatar);
     $output .= '<div class="comment__metadata">';
     $output .= sprintf('<span class="comment__author">%s</span>', $author);
     $output .= sprintf('<span class="comment__date">%s</span>', $date);

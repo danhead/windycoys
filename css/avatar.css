@@ -1,4 +1,6 @@
 .avatar {
+  position: absolute;
+  top: 0;
   border-radius: var(--space-xxs);
   transition: filter var(--transition-md) ease-out;
 }

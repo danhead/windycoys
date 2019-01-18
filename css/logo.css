@@ -18,11 +18,12 @@
 
 .logo__link {
   display: block;
+  position: relative;
   margin: 0 auto;
   max-width: 16rem;
-  position: relative;
   border-radius: 50%;
   transition: box-shadow var(--transition-fs) ease-out;
+  padding-bottom: 100%;
 }
 
 .logo__link:focus {
@@ -30,25 +31,15 @@
 }
 
 .logo__link:before {
-  background-image: var(--windy-svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  content: "";
-  display: block;
   filter: drop-shadow(0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.5));
-  padding-bottom: 100%;
-  width: 100%;
 }
 
 .logo__image {
   bottom: 0;
   display: block;
-  height: 100%;
   left: 0;
   position: absolute;
   right: 0;
   top: 0;
   transition: opacity var(--transition-sl) ease-out;
-  width: 100%;
 }

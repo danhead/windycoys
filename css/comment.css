@@ -8,12 +8,8 @@
 }
 
 .comment__avatar {
-  background-image: var(--windy-svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100%;
   margin-right: var(--space-sm);
-  height: var(--icon-size-xl);
+  padding-bottom: 100%;
   width: var(--icon-size-xl);
 }
 
