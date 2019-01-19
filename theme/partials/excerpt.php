@@ -31,17 +31,19 @@ global $excerpt;
         <span class="excerpt__text"><?php echo $excerpt['date'] ?></span>
       </li>
       <li class="excerpt__list-item">
-        <span class="excerpt__icon">
-          <svg class="icon icon--extra-small" aria-hidden="true">
-            <use xlink:href="#icon-comments"></use>
-          </svg>
-        </span>
-        <span class="excerpt__text">
-          <?php
-            $number = $excerpt['comments'];
-            echo $number === '1' ? '1 comment' : $number . ' comments';
-          ?>
-        </span>
+        <a class="excerpt__list-link" href="<?php the_permalink() ?>#comments">
+          <span class="excerpt__icon">
+            <svg class="icon icon--extra-small" aria-hidden="true">
+              <use xlink:href="#icon-comments"></use>
+            </svg>
+          </span>
+          <span class="excerpt__text">
+            <?php
+              $number = $excerpt['comments'];
+              echo $number === '1' ? '1 comment' : $number . ' comments';
+            ?>
+          </span>
+        </a>
       </li>
     </ul>
   </div>

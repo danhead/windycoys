@@ -39,10 +39,12 @@
 
 .excerpt__icon,
 .excerpt__text {
+  font-weight: 100;
   vertical-align: top;
 }
 
 .excerpt__text {
+  font-style: oblique;
   margin: 0 var(--space-sm) 0 var(--space-xxs);
 }
 
@@ -80,4 +82,23 @@
   right: 0;
   width: 0.1rem;
   background-color: var(--color-light-blue);
+}
+
+.excerpt__list-link {
+  color: inherit;
+  transition: color var(--transition-md) ease-out;
+}
+
+.excerpt__list-link:visited {
+  color: inherit;
+}
+
+.excerpt__list-link:hover,
+.excerpt__list-link:focus {
+  color: var(--color-light-blue);
+}
+
+.excerpt__list-link:hover .excerpt__text,
+.excerpt__list-link:focus .excerpt__text {
+  box-shadow: var(--link-focus);
 }

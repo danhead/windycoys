@@ -14,44 +14,23 @@
         <?php echo single_tag_title() ?>
       </span>
     </h1>
-    <div class="content">
-      <ol>
-      <?php if (have_posts()): while (have_posts()) : the_post(); ?>
-      <?php $username = get_the_author_meta('nickname') ?>
-      <?php $date = get_the_date(get_option('date_format'), $id).' at '.get_the_date(get_option('time_format'), $id) ?>
-        <li>
-          <div class="excerpt">
-            <div class="excerpt__head">
-              <div class="excerpt__title">
-                <a class="link" href="<?php the_permalink(); ?>">
-                  <?php the_title(); ?>
-                </a>
-              </div>
-            </div>
-            <div class="excerpt__body">
-              <?php echo the_excerpt() ?>
-            </div>
-            <div class="excerpt__foot">
-              <p class="excerpt__metadata">
-                <span class="excerpt__icon">
-                  <svg class="icon icon--extra-small" aria-hidden="true">
-                    <use xlink:href="#icon-profile"></use>
-                  </svg>
-                </span>
-                <span class="excerpt__text"><?php echo $username ?></span>
-                <span class="excerpt__icon">
-                  <svg class="icon icon--extra-small" aria-hidden="true">
-                    <use xlink:href="#icon-calendar"></use>
-                  </svg>
-                </span>
-                <span class="excerpt__text"><?php echo $date ?></span>
-              </p>
-            </div>
-          </div>
-        </li>
-      <?php endwhile; ?>
-      </ol>
-    </div>
+    <ol>
+    <?php if (have_posts()): while (have_posts()) : the_post(); ?>
+      <li>
+        <?php
+        $excerpt = array(
+          title => get_the_title(),
+          url => get_the_permalink(),
+          content => get_the_excerpt(),
+          author => get_the_author_meta('nickname'),
+          comments => get_comments_number(),
+          date => get_the_date(get_option('date_format'), $id) . ' at ' . get_the_date(get_option('time_format'), $id),
+        );
+        get_template_part('partials/excerpt');
+        ?>
+      </li>
+    <?php endwhile; ?>
+    </ol>
   </section>
   <section class="page__pagination">
     <?php get_template_part('partials/pagination') ?>
@@ -59,9 +38,7 @@
   <?php else: ?>
   <section class="page__content">
     <h1 class="title">Sorry, no results found.</h1>
-    <div class="content">
-      <a class="link" href="<?php echo get_site_url() ?>/">Go back home</a>
-    </div>
+    <a class="link" href="<?php echo get_site_url() ?>/">Go back home</a>
   </section>
   <?php endif; ?>
   <section class="page__banner">

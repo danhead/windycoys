@@ -56,6 +56,7 @@
 }
 
 .metadata__text {
+  font-style: oblique;
   margin-left: var(--space-xs);
   text-transform: capitalize;
   transition: box-shadow var(--transition-md) ease-out;

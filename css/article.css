@@ -15,7 +15,13 @@
   }
 }
 
+.article__date-icon {
+  vertical-align: middle;
+}
+
 .article__date-text {
-  margin-left: var(--space-xs);
-  vertical-align: top;
+  margin-left: var(--space-xxs);
+  vertical-align: middle;
+  font-style: oblique;
+  font-size: var(--size-body-small);
 }

@@ -22,6 +22,7 @@
 
 .comment__date {
   font-size: var(--size-body-extra-small);
+  font-style: oblique;
 }
 
 .comment__body {

@@ -7,9 +7,11 @@
   <section class="page__article is-first">
     <article class="article">
       <div class="article__date">
-        <svg class="icon icon--small">
-          <use xlink:href="#icon-calendar"></use>
-        </svg>
+        <span class="article__date-icon">
+          <svg class="icon icon--extra-small">
+            <use xlink:href="#icon-calendar"></use>
+          </svg>
+        </span>
         <span class="article__date-text">
           <?php the_time(get_option('date_format')) ?>
         </span>
