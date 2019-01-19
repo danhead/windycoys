@@ -16,7 +16,7 @@ class Windycoys_Walker_Comments extends Walker_Comment {
     $author_email = $comment->comment_author_email;
     $author = $comment->comment_author;
     $avatar = get_avatar($comment, 128);
-    $date = get_comment_date('jS F, Y', $id).' at '.get_comment_date('H:i', $id);
+    $date = get_comment_date(get_option('date_format'), $id).' at '.get_comment_date(get_option('time_format'), $id);
     $content = $comment->comment_content;
     $output .= '<li class="comments__item">';
     $output .= '<div class="comment">';

@@ -15,7 +15,7 @@
         $year = date('Y', $date);
         $month = date('F', $date);
         $day = date('jS', $date);
-        $date = get_the_date('jS F, Y', $post->ID).' at '.get_the_date('H:i', $post->ID);
+        $date = get_the_date(get_option('date_format'), $post->ID).' at '.get_the_date(get_option('time_format'), $post->ID);
         $content = (strlen($post->post_excerpt) === 0) ?
           strip_tags(substr($post->post_content, 0, 200)).'[...]' :
           $post->post_excerpt;

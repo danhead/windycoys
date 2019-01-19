@@ -130,7 +130,7 @@ function windycoys_get_podcast_meta($id) {
     title => (String) $item->title,
     description => (String) $item->description,
     image => (String) $item->image['href'],
-    date => date('jS F, Y', $date).' at '.date('H:i', $date),
+    date => date(get_option('date_format'), $date).' at '.date(get_option('time_format'), $date),
     length => (String) $item->duration,
     url => (String) $item->link,
     audio => (String) $item->enclosure['url'],

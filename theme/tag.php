@@ -18,7 +18,7 @@
       <ol>
       <?php if (have_posts()): while (have_posts()) : the_post(); ?>
       <?php $username = get_the_author_meta('nickname') ?>
-      <?php $date = get_the_date('jS F, Y', $id).' at '.get_the_date('H:i', $id) ?>
+      <?php $date = get_the_date(get_option('date_format'), $id).' at '.get_the_date(get_option('time_format'), $id) ?>
         <li>
           <div class="excerpt">
             <div class="excerpt__head">

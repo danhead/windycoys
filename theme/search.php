@@ -29,7 +29,7 @@ $results = $wp_query->found_posts;
             content => get_the_excerpt(),
             author => get_the_author_meta('nickname'),
             comments => get_comments_number(),
-            date => get_the_date('jS F, Y', $id) . ' at ' . get_the_date('H:i', $id),
+            date => get_the_date(get_option('date_format'), $id) . ' at ' . get_the_date(get_option('time_format'), $id),
           );
           get_template_part('partials/excerpt')
         ?>
