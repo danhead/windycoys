@@ -17,14 +17,16 @@
         $day = date('jS', $date);
         $date = get_the_date(get_option('date_format'), $post->ID).' at '.get_the_date(get_option('time_format'), $post->ID);
         $content = (strlen($post->post_excerpt) === 0) ?
-          strip_tags(substr($post->post_content, 0, 200)).'[...]' :
+          strip_tags(substr($post->post_content, 0, 200)).' [...]' :
           $post->post_excerpt;
+        $words = count(explode(" ", $post->post_content));
         $excerpt = array(
           title => $post->post_title,
           url => get_permalink($post->ID),
           content => $content,
           author => get_the_author_meta('nickname', $post->post_author),
           comments => $post->comment_count,
+          words => $words,
           date => $date,
         );
         echo '<div class="page__cell">';

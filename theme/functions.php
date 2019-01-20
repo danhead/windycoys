@@ -136,3 +136,9 @@ function windycoys_get_podcast_meta($id) {
     audio => (String) $item->enclosure['url'],
   );
 }
+
+function windycoys_get_read_time($words) {
+  $wpm = 250;
+  $mins = ceil($words / $wpm);
+  return $mins;
+}

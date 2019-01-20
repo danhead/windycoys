@@ -10,7 +10,12 @@ global $excerpt;
     </div>
   </div>
   <div class="excerpt__body">
-    <?php echo $excerpt['content'] ?>
+    <?php echo str_replace(
+      '[...]',
+      '<a class="link" href="' . $excerpt['url'] . '" aria-label="Read full article">'
+      . '<svg class="icon icon--extra-extra-small"><use xlink:href="#icon-arrow-double-right"></use></a>',
+      $excerpt['content']);
+    ?>
   </div>
   <div class="excerpt__foot">
     <ul class="excerpt__list">
@@ -22,6 +27,16 @@ global $excerpt;
         </span>
         <span class="excerpt__text"><?php echo $excerpt['author'] ?></span>
       </li>
+      <?php if ($excerpt['words']) : ?>
+      <li class="excerpt__list-item">
+        <span class="excerpt__icon">
+          <svg class="icon icon--extra-small" aria-hidden="true">
+            <use xlink:href="#icon-clock"></use>
+          </svg>
+        </span>
+        <span class="excerpt__text"><?php echo windycoys_get_read_time($excerpt['words']) ?> minute read</span>
+      </li>
+      <?php endif; ?>
       <li class="excerpt__list-item">
         <span class="excerpt__icon">
           <svg class="icon icon--extra-small" aria-hidden="true">

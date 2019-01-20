@@ -25,6 +25,7 @@
           author => get_the_author_meta('nickname'),
           comments => get_comments_number(),
           date => get_the_date(get_option('date_format'), $id) . ' at ' . get_the_date(get_option('time_format'), $id),
+          words => count(explode(" ", $post->post_content)),
         );
         get_template_part('partials/excerpt');
         ?>

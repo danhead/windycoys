@@ -4,6 +4,11 @@
   width: var(--icon-size-md);
 }
 
+.icon--extra-extra-small {
+  height: var(--icon-size-xxs);
+  width: var(--icon-size-xxs);
+}
+
 .icon--extra-small {
   height: var(--icon-size-xs);
   width: var(--icon-size-xs);
