@@ -7,7 +7,7 @@
   <section class="page__article<?php echo ($index === 1 ? ' is-first' : '') ?>">
     <article class="article">
       <div class="article__date">
-        <svg class="icon">
+        <svg class="icon icon--extra-small">
           <use xlink:href="#icon-calendar"></use>
         </svg>
         <span class="article__date-text">

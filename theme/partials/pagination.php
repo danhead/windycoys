@@ -1,5 +1,7 @@
 <?php
-$base_url = get_site_url().'/page/';
+global $wp;
+$url = home_url($wp->request);
+$base_url = substr($url, 0, strpos($url, "page/"));
 $current = get_query_var('paged');
 $total = $wp_query->max_num_pages;
 $links = paginate_links(array(
@@ -11,7 +13,7 @@ $links = paginate_links(array(
 
 function get_previous_url($base_url, $page) {
   $qs = $_SERVER['QUERY_STRING'];
-  $url = $base_url . ($page - 1);
+  $url = $base_url . 'page/' . ($page - 1);
   if ($qs) {
     $url .= '/?' . $qs;
   }
@@ -20,7 +22,7 @@ function get_previous_url($base_url, $page) {
 
 function get_next_url($base_url, $page) {
   $qs = $_SERVER['QUERY_STRING'];
-  $url = $base_url;
+  $url = $base_url . 'page/';
   if ($page === 0) {
     $url .= '2';
   } else {
@@ -56,7 +58,6 @@ if (count($links) > 1) :
     <ul class="pagination__list">
       <?php foreach($links as $link) { ?>
         <li class="pagination__item">
-          <?php echo $key ?>
           <?php echo format_link($link) ?>
         </li>
       <?php } ?>
