@@ -27,5 +27,8 @@ $manifest = get_template_directory_uri() . '/manifest.json';
     <link rel="manifest" href="<?php echo $manifest ?>">
     <link rel="stylesheet" href="<?php echo $css_url ?>">
     <link href="//fonts.googleapis.com/css?family=Open+Sans|Raleway:700" rel="stylesheet">
+    <?php if (windycoys_is_ie()) : ?>
+    <style type="text/css">.is-fixed .logo,.is-fixed .metadata{position: static;}</style>
+    <?php endif; ?>
   </head>
   <body>
