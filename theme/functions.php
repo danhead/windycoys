@@ -150,3 +150,22 @@ function windycoys_is_ie() {
   }
   return false;
 }
+
+function windycoys_jetpack_custom_image($media, $post_id, $args) {
+  if ($media) {
+    return $media;
+  } else {
+    $url = get_template_directory_uri() . '/images/icon.png';
+    $permalink = get_permalink($post_id);
+
+    return array(
+      array(
+        'type' => 'image',
+        'from' => 'custom_fallback',
+        'src' => esc_url($url),
+        'href' => $permalink,
+      )
+    );
+  }
+}
+add_filter('jetpack_images_get_images', 'windycoys_jetpack_custom_image', 10, 3);
