@@ -40,6 +40,7 @@
 .content ul,
 .content ol {
   margin-bottom: var(--space-sm);
+  padding-left: var(--space-sm);
 }
 
 .content ul li,
