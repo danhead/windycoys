@@ -15,18 +15,20 @@ imagemin(['images/*.{png,jpg,gif}'], 'theme/images', {
     }),
     imageminJpegtran(),
   ],
-}).then((files) => {
-  files.forEach((file) => {
-    const path = resolve(__dirname, '../', file.path);
-    writeFile(path, file.data, (error) => {
-      if (error) {
-        console.error(error);
-        process.exit(1);
-      }
-      console.log(`File written: ${path}`);
+})
+  .then((files) => {
+    files.forEach((file) => {
+      const path = resolve(__dirname, '../', file.path);
+      writeFile(path, file.data, (error) => {
+        if (error) {
+          process.stdout.write(`${error}\n`);
+          process.exit(1);
+        }
+        process.stdout.write(`File written: ${path}\n`);
+      });
     });
+  })
+  .catch((error) => {
+    process.stdout.write(`${error}\n`);
+    process.exit(1);
   });
-}).catch((error) => {
-  console.error(error);
-  process.exit(1);
-});

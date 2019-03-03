@@ -1,6 +1,6 @@
 const { resolve } = require('path');
 const { execSync } = require('child_process');
-const { exec, upAll, stop } = require('docker-compose');
+const { upAll, stop } = require('docker-compose');
 const browsersync = require('browser-sync');
 const mysql = require('mysql');
 
@@ -12,9 +12,7 @@ const dockerOptions = {
 };
 
 const browserSyncOptions = {
-  files: [
-    'theme/**/*',
-  ],
+  files: ['theme/**/*'],
   watchtask: true,
   open: false,
 };
@@ -29,7 +27,11 @@ process.env.COMPOSE_PROJECT_NAME = name;
 
 // Get IP address
 const getIpAddr = function getIpAddr(id) {
-  return execSync(`docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' ${id}`).toString('utf8').trim();
+  return execSync(
+    `docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' ${id}`,
+  )
+    .toString('utf8')
+    .trim();
 };
 
 // Update URIs in MYSQL database
@@ -42,7 +44,7 @@ const updateUriData = function updateUriData(wordpress, db) {
 
   con.query(query, (error) => {
     if (error) {
-      console.error('Error', error.sqlMessage);
+      process.stderr.write(`Error: ${error.sqlMessage}\n`);
       process.exit(1);
     }
   });
@@ -54,11 +56,11 @@ const updateUriData = function updateUriData(wordpress, db) {
 const exitHandler = function exitHandler() {
   stop(dockerOptions).then(
     () => {
-      console.log('\n');
+      process.stdout.write('\n');
       process.exit();
     },
     (err) => {
-      console.error('Error:', err.message);
+      process.stderr.write(`Error: ${err.message}\n`);
       process.exit(1);
     },
   );
@@ -73,7 +75,9 @@ process.on('uncaughtException', exitHandler.bind());
 // Start Docker containers
 upAll(dockerOptions).then(
   () => {
-    console.log('Docker containers launched, starting browser-sync...');
+    process.stdout.write(
+      'Docker containers launched, starting browser-sync...',
+    );
     const wordpress = getIpAddr(`${name}_wordpress_1`);
     const db = getIpAddr(`${name}_db_1`);
     if (wordpress && db) {
@@ -82,12 +86,14 @@ upAll(dockerOptions).then(
       browserSyncOptions.proxy = wordpress;
       bs.init(browserSyncOptions);
     } else {
-      console.error('Error', 'No IP address for Docker containers. Aborting.');
+      process.stderr.write(
+        'Error: No IP address for Docker containers. Aborting.\n',
+      );
       process.exit(1);
     }
   },
   (err) => {
-    console.error('Error', err.message);
+    console.error(`Error: ${err.message}\n`);
     process.exit(1);
   },
 );
