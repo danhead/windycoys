@@ -9,7 +9,7 @@ export default class Image {
   }
 
   start() {
-    if (this.dataset.loadTransition === 'false') {
+    if (this.dataset.loadTransition === "false") {
       return;
     }
     this.image.style.opacity = 0;
@@ -21,6 +21,6 @@ export default class Image {
   }
 
   attachLoadedEvent() {
-    this.image.addEventListener('load', () => this.fadeIn());
+    this.image.addEventListener("load", () => this.fadeIn());
   }
 }

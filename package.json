@@ -38,7 +38,9 @@
     "docker-compose": "^0.12.0",
     "eslint": "^5.15.0",
     "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-prettier": "^3.0.1",
     "husky": "^1.3.1",
     "imagemin": "^6.1.0",
     "imagemin-gifsicle": "^6.0.1",
@@ -54,11 +56,14 @@
     "postcss-import": "^12.0.1",
     "postcss-normalize": "^7.0.1",
     "postcss-preset-env": "^6.6.0",
+    "prettier": "^1.16.4",
     "rollup": "^1.4.0",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-uglify": "^6.0.2",
     "stylelint": "^9.10.1",
-    "stylelint-config-standard": "^18.2.0"
+    "stylelint-config-prettier": "^5.0.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-prettier": "^1.0.6"
   },
   "husky": {
     "hooks": {
@@ -67,15 +72,18 @@
   },
   "lint-staged": {
     "build/*.js": [
-      "eslint --fix build",
+      "eslint --fix",
+      "prettier --write",
       "git add"
     ],
     "css/*.css": [
-      "stylelint --fix css/*.css",
+      "stylelint --fix",
+      "prettier --write",
       "git add"
     ],
     "js/*.js": [
-      "eslint --fix js",
+      "eslint --fix",
+      "prettier --write",
       "jest",
       "git add"
     ]

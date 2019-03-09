@@ -4,8 +4,7 @@
 
 .social__link {
   display: inline-block;
-  transition:
-    filter var(--transition-fs) ease-out,
+  transition: filter var(--transition-fs) ease-out,
     transform var(--transition-fs) ease-out;
   transform-origin: center bottom;
 }

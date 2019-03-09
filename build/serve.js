@@ -1,10 +1,10 @@
-const { resolve } = require('path');
-const { execSync } = require('child_process');
-const { upAll, stop } = require('docker-compose');
-const browsersync = require('browser-sync');
-const mysql = require('mysql');
+const { resolve } = require("path");
+const { execSync } = require("child_process");
+const { upAll, stop } = require("docker-compose");
+const browsersync = require("browser-sync");
+const mysql = require("mysql");
 
-const name = 'windycoys';
+const name = "windycoys";
 
 const dockerOptions = {
   cwd: resolve(__dirname),
@@ -12,15 +12,15 @@ const dockerOptions = {
 };
 
 const browserSyncOptions = {
-  files: ['theme/**/*'],
+  files: ["theme/**/*"],
   watchtask: true,
   open: false,
 };
 
 const mysqlConfig = {
-  user: 'root',
-  password: 'password',
-  database: 'wordpress',
+  user: "root",
+  password: "password",
+  database: "wordpress",
 };
 
 process.env.COMPOSE_PROJECT_NAME = name;
@@ -30,7 +30,7 @@ const getIpAddr = function getIpAddr(id) {
   return execSync(
     `docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' ${id}`,
   )
-    .toString('utf8')
+    .toString("utf8")
     .trim();
 };
 
@@ -42,7 +42,7 @@ const updateUriData = function updateUriData(wordpress, db) {
 
   const query = `UPDATE wp_options SET option_value='http://${wordpress}' WHERE option_name in ('siteurl', 'home')`;
 
-  con.query(query, (error) => {
+  con.query(query, error => {
     if (error) {
       process.stderr.write(`Error: ${error.sqlMessage}\n`);
       process.exit(1);
@@ -56,27 +56,27 @@ const updateUriData = function updateUriData(wordpress, db) {
 const exitHandler = function exitHandler() {
   stop(dockerOptions).then(
     () => {
-      process.stdout.write('\n');
+      process.stdout.write("\n");
       process.exit();
     },
-    (err) => {
+    err => {
       process.stderr.write(`Error: ${err.message}\n`);
       process.exit(1);
     },
   );
 };
 
-process.on('beforeExit', exitHandler.bind());
-process.on('SIGINT', exitHandler.bind());
-process.on('SIGUSR1', exitHandler.bind());
-process.on('SIGUSR2', exitHandler.bind());
-process.on('uncaughtException', exitHandler.bind());
+process.on("beforeExit", exitHandler.bind());
+process.on("SIGINT", exitHandler.bind());
+process.on("SIGUSR1", exitHandler.bind());
+process.on("SIGUSR2", exitHandler.bind());
+process.on("uncaughtException", exitHandler.bind());
 
 // Start Docker containers
 upAll(dockerOptions).then(
   () => {
     process.stdout.write(
-      'Docker containers launched, starting browser-sync...',
+      "Docker containers launched, starting browser-sync...",
     );
     const wordpress = getIpAddr(`${name}_wordpress_1`);
     const db = getIpAddr(`${name}_db_1`);
@@ -87,12 +87,12 @@ upAll(dockerOptions).then(
       bs.init(browserSyncOptions);
     } else {
       process.stderr.write(
-        'Error: No IP address for Docker containers. Aborting.\n',
+        "Error: No IP address for Docker containers. Aborting.\n",
       );
       process.exit(1);
     }
   },
-  (err) => {
+  err => {
     process.strerr.write(`Error: ${err.message}\n`);
     process.exit(1);
   },

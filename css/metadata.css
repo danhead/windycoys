@@ -79,8 +79,7 @@
 }
 
 .metadata__tag-link {
-  transition:
-    box-shadow var(--transition-md) ease-out,
+  transition: box-shadow var(--transition-md) ease-out,
     color var(--transition-md) ease-out;
 }
 

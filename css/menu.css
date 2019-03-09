@@ -9,8 +9,7 @@
   position: fixed;
   top: var(--space-xxs);
   opacity: 0;
-  transition:
-    filter var(--transition-md) ease-out,
+  transition: filter var(--transition-md) ease-out,
     opacity var(--transition-md) ease-out,
     transform var(--transition-md) ease-out;
   width: var(--menu-size);

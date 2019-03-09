@@ -1,4 +1,4 @@
-import ReplyToComment from './reply-to-comment';
+import ReplyToComment from "./reply-to-comment";
 
 const commentHtml = `
 <div class="comment">
@@ -66,73 +66,77 @@ let inlineReply;
 
 beforeEach(() => {
   document.body.innerHTML = `${commentHtml}${formHtml}`;
-  form = document.querySelector('.comments__foot');
-  links = document.querySelectorAll('.comment__reply');
-  inlineReply = document.querySelector('.comment__inline-reply');
+  form = document.querySelector(".comments__foot");
+  links = document.querySelectorAll(".comment__reply");
+  inlineReply = document.querySelector(".comment__inline-reply");
   comments = new ReplyToComment({ form, links });
 });
 
-describe('ReplyToComment', () => {
-  it('Should initialise', () => {
+describe("ReplyToComment", () => {
+  it("Should initialise", () => {
     expect(comments.form).toBeInstanceOf(HTMLDivElement);
     expect(comments.links).toBeInstanceOf(Array);
   });
 
-  it('Should fail to initialise if form is missing', () => {
+  it("Should fail to initialise if form is missing", () => {
     expect(new ReplyToComment()).toEqual({});
   });
 
-  it('Should fail to initialise if there are no links', () => {
-    expect(new ReplyToComment({
-      form: document.querySelector('#respond'),
-    })).toEqual({});
-    expect(new ReplyToComment({
-      form: document.querySelector('#respond'),
-      links: document.querySelectorAll('.no-links-here'),
-    })).toEqual({});
+  it("Should fail to initialise if there are no links", () => {
+    expect(
+      new ReplyToComment({
+        form: document.querySelector("#respond"),
+      }),
+    ).toEqual({});
+    expect(
+      new ReplyToComment({
+        form: document.querySelector("#respond"),
+        links: document.querySelectorAll(".no-links-here"),
+      }),
+    ).toEqual({});
   });
 
-  it('Should remove the form from the DOM when a reply link is clicked', () => {
-    const event = new Event('click');
+  it("Should remove the form from the DOM when a reply link is clicked", () => {
+    const event = new Event("click");
     comments.handleLinkClick(event, links[0]);
-    expect(form.innerHTML).toEqual('');
+    expect(form.innerHTML).toEqual("");
   });
 
-  it('Should hide the link when it is clicked', () => {
-    const event = new Event('click');
+  it("Should hide the link when it is clicked", () => {
+    const event = new Event("click");
     comments.handleLinkClick(event, links[0]);
-    expect(links[0].classList.contains('is-hidden')).toBe(true);
+    expect(links[0].classList.contains("is-hidden")).toBe(true);
   });
 
-  it('Should insert the form into the inline reply container', () => {
+  it("Should insert the form into the inline reply container", () => {
     comments.insertForm(inlineReply);
-    const inlineForm = inlineReply.querySelectorAll('form');
+    const inlineForm = inlineReply.querySelectorAll("form");
     expect(inlineForm.length).toEqual(1);
   });
 
-  it('Should update the comment_parent hidden element', () => {
-    comments.insertForm(inlineReply, '123', 'Mr Smith');
-    const { value } = inlineReply.querySelector('#comment_parent');
-    expect(value).toEqual('123');
+  it("Should update the comment_parent hidden element", () => {
+    comments.insertForm(inlineReply, "123", "Mr Smith");
+    const { value } = inlineReply.querySelector("#comment_parent");
+    expect(value).toEqual("123");
   });
 
-  it('Should add a cancel link to the inline form', () => {
+  it("Should add a cancel link to the inline form", () => {
     comments.insertForm(inlineReply);
-    const el = inlineReply.querySelector('#cancel-comment-reply-link');
-    expect(el.style.display).toEqual('inline-block');
+    const el = inlineReply.querySelector("#cancel-comment-reply-link");
+    expect(el.style.display).toEqual("inline-block");
   });
 
-  it('Should restore the reply link when the cancel link is clicked', () => {
-    const event = new Event('click');
-    comments.insertForm(inlineReply);
-    comments.handleCancelClick(event, inlineReply);
-    expect(links[0].classList.contains('is-hidden')).toBe(false);
-  });
-
-  it('Should remove the inline form when the cancel link is clicked', () => {
-    const event = new Event('click');
+  it("Should restore the reply link when the cancel link is clicked", () => {
+    const event = new Event("click");
     comments.insertForm(inlineReply);
     comments.handleCancelClick(event, inlineReply);
-    expect(inlineReply.innerHTML).toEqual('');
+    expect(links[0].classList.contains("is-hidden")).toBe(false);
+  });
+
+  it("Should remove the inline form when the cancel link is clicked", () => {
+    const event = new Event("click");
+    comments.insertForm(inlineReply);
+    comments.handleCancelClick(event, inlineReply);
+    expect(inlineReply.innerHTML).toEqual("");
   });
 });

@@ -1,3 +1,3 @@
-import windy from './windy';
+import windy from "./windy";
 
-document.addEventListener('DOMContentLoaded', windy);
+document.addEventListener("DOMContentLoaded", windy);

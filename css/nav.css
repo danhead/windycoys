@@ -5,13 +5,12 @@
 .nav:after {
   background-color: rgba(0, 0, 0, 0.5);
   bottom: 0;
-  content: '';
+  content: "";
   left: 0;
   opacity: 0;
   position: fixed;
   right: 0;
-  transition:
-    opacity var(--nav-transition-duration) ease-out,
+  transition: opacity var(--nav-transition-duration) ease-out,
     visibility var(--nav-transition-duration) ease-out;
   top: 0;
   visibility: hidden;
@@ -90,8 +89,7 @@
   position: absolute;
   right: var(--space-sm);
   top: var(--space-sm);
-  transition:
-    box-shadow var(--nav-transition-duration) ease-out,
+  transition: box-shadow var(--nav-transition-duration) ease-out,
     filter var(--nav-transition-duration) ease-out;
   width: var(--icon-size-sm);
 }
@@ -111,7 +109,8 @@
   height: 8%;
   position: absolute;
   left: 0;
-  transition: transform var(--nav-transition-duration) ease-out var(--nav-transition-duration);
+  transition: transform var(--nav-transition-duration) ease-out
+    var(--nav-transition-duration);
   transform: translateY(-50%);
   top: 50%;
   width: 100%;
@@ -143,8 +142,7 @@
   color: #fff;
   display: inline-block;
   margin-bottom: var(--space-xs);
-  transition:
-    box-shadow var(--nav-transition-duration) ease-out,
+  transition: box-shadow var(--nav-transition-duration) ease-out,
     text-shadow var(--nav-transition-duration) ease-out;
 }
 
@@ -171,8 +169,7 @@
 .nav__social-link:visited {
   display: inline-block;
   color: #fff;
-  transition:
-    box-shadow var(--nav-transition-duration) ease-out,
+  transition: box-shadow var(--nav-transition-duration) ease-out,
     filter var(--nav-transition-duration) ease-out;
 }
 

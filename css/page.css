@@ -72,7 +72,9 @@
 @media (--viewport-lg) {
   .page {
     grid-template-columns: var(--logo-size-lg) 1fr;
-    grid-template-rows: var(--icon-size-md) calc(var(--logo-size-lg) - var(--space-md) - 32px) 1fr;
+    grid-template-rows:
+      var(--icon-size-md) calc(var(--logo-size-lg) - var(--space-md) - 32px)
+      1fr;
   }
 
   .page__logo {
@@ -93,7 +95,11 @@
 @media (--viewport-xl) {
   .page {
     grid-template-columns: var(--logo-size-xl) 1fr;
-    grid-template-rows: var(--icon-size-md) calc(var(--logo-size-xl) - var(--space-md) - var(--icon-size-md)) 1fr;
+    grid-template-rows:
+      var(--icon-size-md) calc(
+        var(--logo-size-xl) - var(--space-md) - var(--icon-size-md)
+      )
+      1fr;
     margin: var(--space-md) auto 0;
   }
 
