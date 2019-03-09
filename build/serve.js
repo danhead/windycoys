@@ -93,7 +93,7 @@ upAll(dockerOptions).then(
     }
   },
   (err) => {
-    console.error(`Error: ${err.message}\n`);
+    process.strerr.write(`Error: ${err.message}\n`);
     process.exit(1);
   },
 );

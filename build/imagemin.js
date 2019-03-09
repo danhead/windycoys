@@ -29,6 +29,6 @@ imagemin(['images/*.{png,jpg,gif}'], 'theme/images', {
     });
   })
   .catch((error) => {
-    process.stdout.write(`${error}\n`);
+    process.stderr.write(`${error}\n`);
     process.exit(1);
   });
