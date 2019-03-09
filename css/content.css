@@ -143,6 +143,10 @@
   padding: var(--space-sm) var(--space-md);
 }
 
+.content .wp-block-quote cite {
+  font-size: 0.8rem;
+}
+
 .content table {
   border-collapse: collapse;
   table-layout: fixed;
