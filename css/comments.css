@@ -12,7 +12,7 @@
 }
 
 .comments__list--sub-list .comments__item {
-  border-left: 2px solid var(--color-light-grey);
+  border-left: 2px solid var(--color-light-blue);
   padding-left: var(--space-sm);
 }
 
