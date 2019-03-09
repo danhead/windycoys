@@ -68,7 +68,7 @@
   --body-font-family: 'Open Sans', sans-serif;
   --link-focus: 0 0.1rem 0 0 var(--color-light-blue);
   --image-focus: 0 0 0 0.2rem #fff, 0 0 0 0.4rem var(--color-light-blue);
-  --bullet-size: 0.334rem;
+  --bullet-size: 0.45rem;
 }
 
 @custom-media --viewport-sm (min-width: 30rem);
