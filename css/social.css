@@ -1,9 +1,18 @@
 .social {
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.social__item {
+  margin-left: var(--space-xs);
 }
 
 .social__link {
-  display: inline-block;
+  display: block;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
   transition: filter var(--transition-fs) ease-out,
     transform var(--transition-fs) ease-out;
   transform-origin: center bottom;
@@ -11,6 +20,20 @@
 
 .social__link:focus,
 .social__link:hover {
+  filter: saturate(1.5) contrast(1.5);
+  transform: scale(1.1);
+}
+
+/* Donate button */
+
+.social__item input[type="image"] {
+  transition: filter var(--transition-fs) ease-out,
+    transform var(--transition-fs) ease-out;
+  transform-origin: center bottom;
+}
+
+.social__item input[type="image"]:focus,
+.social__item input[type="image"]:hover {
   filter: saturate(1.5) contrast(1.5);
   transform: scale(1.1);
 }
