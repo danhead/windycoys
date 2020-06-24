@@ -186,3 +186,11 @@ function windycoys_jetpack_custom_image($media, $post_id, $args) {
   }
 }
 add_filter('jetpack_images_get_images', 'windycoys_jetpack_custom_image', 10, 3);
+
+function windycoys_strip_scripts(&$scripts) {
+  if(!is_admin()){
+    $scripts->remove('jquery');
+  }
+}
+
+add_filter('wp_default_scripts', 'windycoys_strip_scripts');
