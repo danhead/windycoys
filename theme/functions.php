@@ -151,6 +151,23 @@ function windycoys_is_ie() {
   return false;
 }
 
+function windycoys_first_sentence($string) {
+  $sentence = preg_split( '/(\.|!|\?)\s/', $string, 2, PREG_SPLIT_DELIM_CAPTURE );
+  return $sentence['0'] . $sentence['1'];
+}
+
+function windycoys_get_description($post_id) {
+  if (get_post_type() == "post") {
+    $post = get_post($post_id);
+    $content = (strlen($post->post_excerpt) === 0) ?
+      strip_tags(windycoys_first_sentence($post->post_content)) :
+      $post->post_excerpt;
+    return $content;
+  } else {
+    return get_bloginfo('description');
+  }
+}
+
 function windycoys_jetpack_custom_image($media, $post_id, $args) {
   if ($media) {
     return $media;
