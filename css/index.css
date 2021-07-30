@@ -71,8 +71,8 @@
   --bullet-size: 0.45rem;
 }
 
-@custom-media --viewport-sm (min-width: 30rem);
-@custom-media --viewport-md (min-width: 40rem);
-@custom-media --viewport-lg (min-width: 60rem);
-@custom-media --viewport-xl (min-width: 75rem);
+@custom-media --viewport-sm (min-width: 30em);
+@custom-media --viewport-md (min-width: 40em);
+@custom-media --viewport-lg (min-width: 60em);
+@custom-media --viewport-xl (min-width: 75em);
 @custom-media --viewport-wordpress-admin-bar (min-width: 783px);
