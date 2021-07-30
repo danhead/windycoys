@@ -127,8 +127,7 @@
 @media (--viewport-md) {
   .content .twitter-tweet,
   .content .wp-caption {
-    margin: 0 0 var(--space-md);
-    padding: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
   }
 }
 
@@ -145,6 +144,13 @@
 
 .content .wp-block-quote cite {
   font-size: 0.8rem;
+}
+
+.content figcaption {
+  font-size: var(--size-body-extra-small);
+  font-style: italic;
+  text-align: center;
+  color: var(--color-dark-blue);
 }
 
 .content table {
