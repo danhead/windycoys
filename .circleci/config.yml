@@ -1,128 +1,99 @@
-defaults: &defaults
-  working_directory: ~/tmp/windycoys
-  docker:
-    - image: circleci/node:10.15
-
-semver-tags: &semver-tags
-  filters:
-    tags:
-      only: /^v.*/
-    branches:
-      ignore: /.*/
-develop: &develop
-  filters:
-    branches:
-      only: develop
-other-branches: &other-branches
-  filters:
-    branches:
-      ignore:
-        - master
-        - develop
-
-version: 2
+version: 2.1
+orbs:
+  node: circleci/node@5.1
+  aws-s3: circleci/aws-s3@3.1
 jobs:
-  install:
-    <<: *defaults
+  build_and_test:
+    executor: node/default
     steps:
-      - attach_workspace:
-          at: ~/tmp/windycoys
       - checkout
-      - run:
-          name: Install dependencies
-          command: npm install
-      - persist_to_workspace:
-          root: .
-          paths: .
-  test:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/tmp/windycoys
+      - node/install-packages:
+          pkg-manager: npm
       - run:
           name: Run tests
-          command: npm test
-  build:
-    <<: *defaults
-    environment:
-      NODE_ENV: production
-    steps:
-      - attach_workspace:
-          at: ~/tmp/windycoys
+          command: npm run lint
       - run:
-          name: Build CSS and JavaScript
+          name: Build app
           command: npm run build
-      - run:
-          name: Generate timestamp
-          command: bash build/generate_timestamp.sh
       - persist_to_workspace:
-          root: .
-          paths: .
-  deploy-prod:
-    <<: *defaults
+          root: ~/project
+          paths:
+            - .
+  deploy:
+    executor: node/default
     steps:
       - attach_workspace:
-          at: ~/tmp/windycoys
+          at: ~/project
       - run:
-          name: Install rsync
-          command: sudo apt install -y rsync
+          name: Known Hosts
+          command: |
+            mkdir ~/.ssh || :
+            echo -e $KNOWN_HOSTS > ~/.ssh/known_hosts
       - run:
-          name: Deploy theme
-          command: bash build/deploy.sh prod
+          name: Clean
+          command: sh build/clean.sh
       - run:
-          name: Purge Cloudflare cache
-          command: bash build/purge_cache.sh
-  deploy-develop:
-    <<: *defaults
+          name: Deploy
+          command: sh build/deploy.sh
+  backup_to_s3:
+    docker:
+      - image: 'cimg/python:3.10'
     steps:
-      - attach_workspace:
-          at: ~/tmp/windycoys
+      - checkout
       - run:
-          name: Install rsync
-          command: sudo apt install -y rsync
+          name: Known Hosts
+          command: |
+            mkdir ~/.ssh || :
+            echo -e $KNOWN_HOSTS > ~/.ssh/known_hosts
       - run:
-          name: Deploy theme
-          command: bash build/deploy.sh develop
+          name: Prepare filename
+          command: |
+            filename=windycoys-$(date +'%Y-%m-%dT%H-%M-%S').tgz
+            echo "export filename='$filename'" >> $BASH_ENV
       - run:
-          name: Purge Cloudflare cache
-          command: bash build/purge_cache.sh
+          name: Prepare backups
+          command: |
+            ssh $SSH_USER@$SSH_IP "bash -c '\
 
+            source windycoys/.env
+            rm -rf windycoys/backup
+            mkdir -p windycoys/backup/data
+            scp -r windycoys/wp-content windycoys/backup/data/
+            docker exec -t $DOCKER_DB_NAME /usr/bin/mysqldump \
+              -uroot --password=$DB_ROOT_PASSWORD \
+              $DB_NAME | gzip -9 > windycoys/backup/data/database.sql.gz
+            /usr/bin/tar zcf windycoys/backup/windycoys.tgz windycoys/backup/data'"
+      - run:
+          name: Copy backup
+          command: |
+            scp $SSH_USER@$SSH_IP:~/windycoys/backup/windycoys.tgz ./
+            mv windycoys.tgz $filename
+      - aws-s3/copy:
+          aws-region: AWS_REGION
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+          from: '$filename'
+          to: 's3://$AWS_S3_BUCKET_NAME'
 workflows:
-  version: 2
-  test:
+  test_my_app:
     jobs:
-      - install: *other-branches
-      - test:
-          <<: *other-branches
+      - build_and_test:
+          filters:
+            branches:
+              only: main
+      - deploy:
           requires:
-            - install
-  develop:
+            - build_and_test
+          filters:
+            branches:
+              only: main
+  backup:
+    triggers:
+      - schedule:
+          cron: "0 2 * * 1"
+          filters:
+            branches:
+              only:
+                - next
     jobs:
-      - install: *develop
-      - test:
-          <<: *develop
-          requires:
-            - install
-      - build:
-          <<: *develop
-          requires:
-            - test
-      - deploy-develop:
-          <<: *develop
-          requires:
-            - build
-  prod:
-    jobs:
-      - install: *semver-tags
-      - test:
-          <<: *semver-tags
-          requires:
-            - install
-      - build:
-          <<: *semver-tags
-          requires:
-            - test
-      - deploy-prod:
-          <<: *semver-tags
-          requires:
-            - build
+      - backup_to_s3

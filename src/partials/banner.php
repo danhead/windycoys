@@ -21,6 +21,6 @@
     </a>
   </div>
   <div class="social__item">
-    <?php echo do_shortcode('[paypal-donation]'); ?>
+    <?php echo do_shortcode("[paypal-donation]"); ?>
   </div>
 </div>

@@ -7,12 +7,12 @@
         </svg>
       </span>
       <span class="metadata__text">
-        <?php the_time(get_option('date_format')) ?>
+        <?php the_time(get_option("date_format")); ?>
       </span>
     </li>
     <?php if (is_user_logged_in()): ?>
     <li class="metadata__list-item">
-      <a class="metadata__link" href="<?php echo get_edit_post_link() ?>">
+      <a class="metadata__link" href="<?php echo get_edit_post_link(); ?>">
         <span class="metadata__icon">
           <svg class="icon icon--small" aria-hidden="true">
             <use href="#icon-edit"></use>
@@ -25,7 +25,7 @@
     </li>
     <?php endif; ?>
     <li class="metadata__list-item">
-      <a class="metadata__link" href="<?php the_permalink() ?>#comments">
+      <a class="metadata__link" href="<?php the_permalink(); ?>#comments">
         <span class="metadata__icon">
           <svg class="icon icon--small" aria-hidden="true">
             <use href="#icon-comments"></use>
@@ -43,13 +43,13 @@
         </svg>
       </span>
       <span class="metadata__text">
-        <?php windycoys_the_tags() ?>
+        <?php windycoys_the_tags(); ?>
       </span>
     </div>
     <li class="metadata__list-item">
       <div
         class="fb-share-button"
-        data-href="<?php echo get_the_permalink() ?>"
+        data-href="<?php echo get_the_permalink(); ?>"
         data-layout="box_count"
         data-size="small"
         data-mobile-iframe="false"
@@ -66,8 +66,8 @@
     <li class="metadata__list-item">
       <a
         class="twitter-share-button"
-        href="<?php echo windycoys_get_twitter_share_url() ?>"
-        data-url="<?php echo get_the_permalink() ?>"
+        href="<?php echo windycoys_get_twitter_share_url(); ?>"
+        data-url="<?php echo get_the_permalink(); ?>"
       >
         Tweet
       </a>

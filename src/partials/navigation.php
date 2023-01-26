@@ -1,13 +1,13 @@
 <?php
-require get_template_directory() . '/classes/walker.navigation.php';
+require get_template_directory() . "/classes/walker.navigation.php";
 
-$menu = wp_nav_menu(array(
-  'echo' => false,
-  'menu' => 'navigation',
-  'container_class' => 'nav__menu',
-  'menu_class' => 'nav__list',
-  'walker' => new Windycoys_Walker_Navigation(),
-));
+$menu = wp_nav_menu([
+  "echo" => false,
+  "menu" => "navigation",
+  "container_class" => "nav__menu",
+  "menu_class" => "nav__list",
+  "walker" => new Windycoys_Walker_Navigation(),
+]);
 
 $menu = str_replace(
   'ul id="menu-navigation" class="nav__list"',
@@ -21,11 +21,13 @@ $menu = str_replace(
   <span class="menu__line"></span>
   <span class="menu__text">Open menu</span>
 </button>
-<nav class="nav<?php echo is_user_logged_in() ? ' logged-in' : '' ?>" aria-label="Main Navigation">
+<nav class="nav<?php echo is_user_logged_in()
+  ? " logged-in"
+  : ""; ?>" aria-label="Main Navigation">
   <div class="nav__content">
     <div class="nav__head">
       <h2 class="nav__title">
-        <a class="nav__title-link" href="<?php get_site_url() ?>/" aria-label="Back Home" tabindex="-1">
+        <a class="nav__title-link" href="<?php get_site_url(); ?>/" aria-label="Back Home" tabindex="-1">
           <span class="nav__title-link-icon">
             <svg class="icon icon--extra-large">
               <use href="#icon-windy"></use>
@@ -36,7 +38,7 @@ $menu = str_replace(
       </h2>
     </div>
     <div class="nav__body">
-      <?php echo $menu ?>
+      <?php echo $menu; ?>
     </div>
     <div class="nav__foot">
       <div class="nav__social">
@@ -52,7 +54,7 @@ $menu = str_replace(
         </a>
       </div>
       <div class="nav__search">
-        <?php get_search_form() ?>
+        <?php get_search_form(); ?>
       </div>
       <button class="nav__close">
         <span class="nav__close-bar"></span>

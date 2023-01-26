@@ -1,12 +1,14 @@
 <footer class="footer">
   <div class="footer__head">
-    <p class="footer__text">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
+    <p class="footer__text">&copy; <?php echo date("Y"); ?> <?php bloginfo(
+   "name"
+ ); ?></p>
   </div>
   <div class="footer__body">
     <a href="https://www.newsnow.co.uk/h/Sport/Football/Premier+League/Tottenham+Hotspur" title="Click here for more Tottenham Hotspur news from NewsNow">
-      <img src="<?php echo get_template_directory_uri() ?>/images/newsnow_sw.gif" alt="As featured on NewsNow: Tottenham Hotspur news">
+      <img src="<?php echo get_template_directory_uri(); ?>/images/newsnow_sw.gif" alt="As featured on NewsNow: Tottenham Hotspur news">
     </a>
   </div>
-  <?php get_template_part('icons') ?>
+  <?php get_template_part("icons"); ?>
 </footer>
-<?php wp_footer() ?>
+<?php wp_footer(); ?>

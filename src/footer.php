@@ -1,12 +1,12 @@
 <?php
-$js_url = get_template_directory_uri() . '/bundle.js';
+$js_url = get_template_directory_uri() . "/bundle.js";
 $deploy_timestamp = windycoys_get_deploy_timestamp();
 if ($deploy_timestamp) {
-  $js_url .= '?t=' . $deploy_timestamp;
+  $js_url .= "?t=" . $deploy_timestamp;
 }
 ?>
 <div id="fb-root"></div>
-<script type="text/javascript" src="<?php echo $js_url ?>"></script>
+<script type="text/javascript" src="<?php echo $js_url; ?>"></script>
 <script type="text/javascript">
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];

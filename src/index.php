@@ -1,17 +1,23 @@
-<?php get_header() ?>
+<?php get_header(); ?>
 <main class="page">
   <section class="page__logo">
-    <?php get_template_part('partials/logo') ?>
+    <?php get_template_part("partials/logo"); ?>
   </section>
-  <?php $index = 0; while ( have_posts() ) : the_post(); $index++; ?>
-  <section class="page__article<?php echo ($index === 1 ? ' is-first' : '') ?>">
+  <?php
+  $index = 0;
+  while (have_posts()):
+
+    the_post();
+    $index++;
+    ?>
+  <section class="page__article<?php echo $index === 1 ? " is-first" : ""; ?>">
     <article class="article">
       <div class="article__date">
         <svg class="icon icon--extra-small">
           <use href="#icon-calendar"></use>
         </svg>
         <span class="article__date-text">
-          <?php the_time(get_option('date_format')) ?>
+          <?php the_time(get_option("date_format")); ?>
         </span>
       </div>
       <div class="article__content">
@@ -21,24 +27,31 @@
           </a>
         </h1>
         <div class="content">
-          <?php the_content(__('Continue reading <span class="meta-nav">&raquo;</span>', 'windycoys')); ?>
+          <?php the_content(
+            __(
+              'Continue reading <span class="meta-nav">&raquo;</span>',
+              "windycoys"
+            )
+          ); ?>
         </div>
       </div>
     </article>
   </section>
   <section class="page__metadata">
-    <?php get_template_part('partials/metadata') ?>
+    <?php get_template_part("partials/metadata"); ?>
   </section>
-  <?php endwhile; ?>
+  <?php
+  endwhile;
+  ?>
   <section class="page__pagination">
-    <?php get_template_part('partials/pagination') ?>
+    <?php get_template_part("partials/pagination"); ?>
   </section>
   <section class="page__banner">
-    <?php get_template_part('partials/banner') ?>
+    <?php get_template_part("partials/banner"); ?>
   </section>
   <section class="page__footer">
-    <?php get_template_part('partials/footer') ?>
+    <?php get_template_part("partials/footer"); ?>
   </section>
 </main>
-<?php get_template_part('partials/navigation') ?>
-<?php get_footer() ?>
+<?php get_template_part("partials/navigation"); ?>
+<?php get_footer(); ?>

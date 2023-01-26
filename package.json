@@ -16,7 +16,7 @@
     "build:ts": "cross-env NODE_ENV=production webpack",
     "lint": "run-p lint:*",
     "lint:eslint": "eslint src --ext .ts",
-    "postinstall": "run-p browser-sync",
+    "postinstallf": "run-p browser-sync",
     "serve": "docker-compose -f build/docker-compose.dev.yml up --force-recreate 2>/dev/null",
     "start": "run-p serve watch",
     "test": "jest",

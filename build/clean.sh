@@ -5,5 +5,4 @@
 [ -z "$SSH_USER" ] && { echo >&2 "Error: SSH_USER is missing. Aborting."; exit 1; }
 
 # Deploy theme
-scp ./build/docker-compose.yml $SSH_USER@$SSH_IP:~/windycoys/
-scp -r ./dist $SSH_USER@$SSH_IP:~/windycoys/
+ssh $SSH_USER@$SSH_IP rm -r ~/windycoys/dist/*
