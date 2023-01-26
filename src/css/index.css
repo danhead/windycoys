@@ -1,0 +1,80 @@
+@import "base";
+@import "archive";
+@import "article";
+@import "avatar";
+@import "comment-respond";
+@import "comment";
+@import "comments";
+@import "content";
+@import "excerpt";
+@import "footer";
+@import "icon";
+@import "link";
+@import "logo";
+@import "menu";
+@import "metadata";
+@import "nav";
+@import "page";
+@import "pagination";
+@import "search";
+@import "silhouette";
+@import "social";
+@import "title";
+
+body {
+  --space-xxs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --base-line-height: 1.625;
+  --base-font-size: 1.125rem;
+  --size-heading-1: 2rem;
+  --size-heading-2: 1.8rem;
+  --size-heading-3: 1.6rem;
+  --size-heading-4: 1.424rem;
+  --size-heading-5: 1.267rem;
+  --size-heading-6: 1.125rem;
+  --size-body: 1rem;
+  --size-body-small: 0.889rem;
+  --size-body-extra-small: 0.79rem;
+  --logo-size-sm: 7rem;
+  --logo-size-md: 9rem;
+  --logo-size-lg: 10rem;
+  --logo-size-xl: 12rem;
+  --icon-size-xxs: 0.7rem;
+  --icon-size-xs: 1rem;
+  --icon-size-sm: 1.5rem;
+  --icon-size-md: 2rem;
+  --icon-size-lg: 2.5rem;
+  --icon-size-xl: 4rem;
+  --menu-size: 3rem;
+  --menu-size-xl: 4rem;
+  --transition-fs: 0.15s;
+  --transition-md: 0.3s;
+  --transition-sl: 0.6s;
+  --heading-font-family: "Raleway", sans-serif;
+  --body-font-family: "Open Sans", sans-serif;
+}
+
+.theme-light {
+  --color-black: #000;
+  --color-near-black: #333;
+  --color-dark-blue: #201f42;
+  --color-light-blue: #1574d2;
+  --color-pale-blue: #e9f4ff;
+  --color-grey: #757575;
+  --color-light-grey: #e0e0e0;
+  --color-facebook: #3e5a98;
+  --color-twitter: #1da1f2;
+  --color-rss: #ee802f;
+  --link-focus: 0 0.1rem 0 0 var(--color-light-blue);
+  --image-focus: 0 0 0 0.2rem #fff, 0 0 0 0.4rem var(--color-light-blue);
+  --bullet-size: 0.45rem;
+}
+
+@custom-media --viewport-sm (min-width: 30em);
+@custom-media --viewport-md (min-width: 40em);
+@custom-media --viewport-lg (min-width: 60em);
+@custom-media --viewport-xl (min-width: 75em);
+@custom-media --viewport-wordpress-admin-bar (min-width: 783px);

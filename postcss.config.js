@@ -1,6 +1,6 @@
-const { resolve } = require('path');
+const { resolve } = require("path");
 
-const pkg = require(resolve(__dirname, 'package.json'));
+const pkg = require(resolve(__dirname, "package.json"));
 const year = new Date().getFullYear();
 
 const banner = `Theme Name: WindyCOYS
@@ -13,22 +13,15 @@ Copyright: (c) ${year} ${pkg.author}
 License: MIT
 License URI: https://choosealicense.com/licenses/mit/`;
 
-
-module.exports = ctx => ({
-  map: ctx.env !== 'production',
+module.exports = (ctx) => ({
+  map: ctx.env !== "production",
   plugins: {
-    'postcss-import': {},
-    'postcss-normalize': {},
-    'postcss-preset-env': {
-      stage: 0,
-      features: {
-        'custom-properties': {
-          preserve: false,
-        },
-      },
+    "postcss-import": true,
+    "postcss-preset-env": {
+      "custom-media-queries": true,
     },
-    cssnano: ctx.env === 'production' ? {} : false,
-    'postcss-banner': {
+    cssnano: ctx.env === "production" ? {} : false,
+    "postcss-banner": {
       banner,
       important: true,
     },

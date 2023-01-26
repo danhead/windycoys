@@ -12,4 +12,3 @@ curl -X DELETE \
   -H "X-Auth-Email: $CLOUDFLARE_EMAIL" \
   --data '{"purge_everything":true}' \
   "https://api.cloudflare.com/client/v4/zones/$CLOUDFLARE_IDENTIFIER/purge_cache"
-

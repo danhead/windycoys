@@ -1,6 +1,6 @@
 {
   "name": "windycoys",
-  "version": "1.0.2",
+  "version": "2.0.0-alpha1",
   "description": "Wordpress theme for windycoys.com",
   "author": "Dan Head <me@danielhead.com>",
   "license": "MIT",
@@ -9,98 +9,55 @@
     "url": "https://github.com/danhead/windycoys"
   },
   "scripts": {
-    "build": "run-s images css:compile js:compile",
-    "css": "run-p -c css:*",
-    "css:compile": "postcss -o theme/style.css css/index.css",
-    "css:lint": "stylelint css/*.css",
-    "images": "node build/imagemin.js",
-    "jest": "jest",
-    "jest:watch": "jest --watch",
-    "js": "run-s js:*",
-    "js:compile": "rollup --config rollup.config.js",
-    "js:lint": "eslint build js",
-    "serve": "node build/serve.js",
-    "start": "run-p watch serve",
-    "test": "run-s css:lint js:lint jest",
+    "browser-sync": "docker build -t windycoys-browser-sync browser-sync",
+    "build": "run-p build:*",
+    "build:css": "cross-env NODE_ENV=production postcss src/index.css -o dist/style.css",
+    "build:files": "copyfiles -u 1 'src/**/*.{json,php,jpg,png,gif}' dist",
+    "build:ts": "cross-env NODE_ENV=production webpack",
+    "lint": "run-p lint:*",
+    "lint:eslint": "eslint src --ext .ts",
+    "postinstall": "run-p browser-sync",
+    "serve": "docker-compose -f build/docker-compose.dev.yml up --force-recreate 2>/dev/null",
+    "start": "run-p serve watch",
+    "test": "jest",
     "watch": "run-p watch:*",
-    "watch:css": "nodemon -q --watch css -e css --exec npm run css",
-    "watch:images": "nodemon -q --watch images -e png,jpg,gif --exec npm run images",
-    "watch:js": "nodemon -q --watch js -e js --exec npm run js"
-  },
-  "dependencies": {
-    "@babel/cli": "^7.14.8",
-    "@babel/core": "^7.10.3",
-    "@babel/preset-env": "^7.10.3",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^26.1.0",
-    "browser-sync": "^2.27.5",
-    "cssnano": "^4.1.10",
-    "docker-compose": "^0.12.0",
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb-base": "^13.2.0",
-    "eslint-config-prettier": "^4.3.0",
-    "eslint-plugin-import": "^2.21.2",
-    "eslint-plugin-prettier": "^3.1.4",
-    "husky": "^1.3.1",
-    "imagemin": "^6.1.0",
-    "imagemin-gifsicle": "^6.0.1",
-    "imagemin-jpegtran": "^6.0.0",
-    "imagemin-pngquant": "^7.0.0",
-    "jest": "^26.1.0",
-    "lint-staged": "^8.2.1",
-    "mysql": "^2.18.1",
-    "nodemon": "^2.0.4",
-    "npm-run-all": "^4.1.5",
-    "postcss-banner": "^3.0.2",
-    "postcss-cli": "^7.1.1",
-    "postcss-import": "^12.0.1",
-    "postcss-normalize": "^7.0.1",
-    "postcss-preset-env": "^6.7.0",
-    "prettier": "^1.19.1",
-    "rollup": "^1.32.1",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-uglify": "^6.0.4",
-    "stylelint": "^13.6.1",
-    "stylelint-config-prettier": "^5.3.0",
-    "stylelint-config-standard": "^18.3.0",
-    "stylelint-prettier": "^1.1.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "build/*.js": [
-      "eslint --fix",
-      "prettier --write",
-      "git add"
-    ],
-    "css/*.css": [
-      "stylelint --fix",
-      "prettier --write",
-      "git add"
-    ],
-    "js/*.js": [
-      "eslint --fix",
-      "prettier --write",
-      "jest",
-      "git add"
-    ]
+    "watch:css": "postcss src/index.css -o dist/styles.css -w",
+    "watch:ts": "webpack -w",
+    "watch:files": "copy-and-watch --watch 'src/**/*.{json,php,jpg,png,gif}' dist/"
   },
   "browserslist": [
     "last 1 version",
     "not dead",
     "> 2% in GB"
   ],
-  "jest": {
-    "testURL": "http://localhost:3000",
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-      "js/**/*.js"
-    ],
-    "roots": [
-      "js"
-    ]
+  "devDependencies": {
+    "@prettier/plugin-php": "^0.19.3",
+    "@types/jest": "^27.5.2",
+    "@types/jsdom": "^16.2.15",
+    "@typescript-eslint/eslint-plugin": "^5.15.0",
+    "@typescript-eslint/parser": "^5.15.0",
+    "eslint": "^8.11.0",
+    "eslint-config-prettier": "^8.5.0",
+    "jest": "^27.5.1",
+    "jsdom": "^19.0.0",
+    "prettier": "^2.8.3",
+    "ts-jest": "^27.1.3"
+  },
+  "dependencies": {
+    "copy-and-watch": "^0.1.6",
+    "copyfiles": "^2.4.1",
+    "cross-env": "^7.0.3",
+    "cssnano": "^5.1.14",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.21",
+    "postcss-banner": "^4.0.1",
+    "postcss-cli": "^9.1.0",
+    "postcss-import": "^14.1.0",
+    "postcss-preset-env": "^7.8.3",
+    "rimraf": "^3.0.2",
+    "ts-loader": "^9.4.2",
+    "typescript": "^4.9.4",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^4.10.0"
   }
 }

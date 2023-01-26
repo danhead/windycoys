@@ -4,7 +4,7 @@ services:
     image: mariadb:10.8
     container_name: windycoys_db
     volumes:
-      - ./.tmp/db:/var/lib/mysql
+      - ../.tmp/db:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=${dbRootPassword}
       - MYSQL_PASSWORD=${dbPassword}
@@ -20,9 +20,17 @@ services:
       - WORDPRESS_DB_PASSWORD=${dbPassword}
       - WORDPRESS_DB_NAME=wordpress
       - WORDPRESS_TABLE_PREFIX=wp_
+      - WORDPRESS_DEBUG=1
     volumes:
-      - ./.tmp/wp-content:/var/www/html/wp-content
-      - ./dist:/var/www/html/wp-content/themes/windycoys
+      - ../.tmp/wp-content:/var/www/html/wp-content
+      - ../dist:/var/www/html/wp-content/themes/windycoys
     restart: unless-stopped
     depends_on:
       - db
+  browser_sync:
+    image: windycoys-browser-sync:latest
+    container_name: windycoys_browser_sync
+    volumes:
+      - ../dist:/usr/src/app/dist
+    ports:
+      - "3000:3000"

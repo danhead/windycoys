@@ -1,0 +1,11 @@
+{
+  "name": "windycoys-browser-sync",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Browsersync Docker container for local developement",
+  "main": "index.js",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.27.9"
+  }
+}
